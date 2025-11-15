@@ -88,26 +88,21 @@ textarea {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 .entre-em-contato-animated {
-  margin-top: 0;
   font-weight: 700;
-  font-size: 1.6rem;
-  background: linear-gradient(90deg,
-    #0057ff,
-    #00b894,
-    #f9ca24,
-    #f39c12,
-    #e74c3c,
-    #8e44ad
-  );
+  font-size: 1.05rem;
+
+  background: var(--spectrum);
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
-  background-size: 300%;
-  animation: fluxo-cores 5s ease-in-out infinite alternate;
-  text-shadow: 0 0 12px rgba(0,0,0,0.08);
+
+  animation: shine 4s linear infinite;
 }
 
-@keyframes fluxo-cores {
-  0% { background-position: 0% }
-  100% { background-position: 100% }
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
