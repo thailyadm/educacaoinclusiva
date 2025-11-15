@@ -12,7 +12,13 @@
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
-
+.form-card h3.envie-uma-mensagem-animated {
+  color: transparent !important;
+  background: var(--spectrum);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 .form-note {
   font-size: 0.9rem;
   color: #555;
