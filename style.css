@@ -98,11 +98,14 @@ textarea {
     #9b59b6
   );
 }
+
 .entre-em-contato-animated {
   font-weight: 700;
   font-size: 1.1rem;
   background: var(--spectrum);
+  background-size: 300% auto;   /* ESSENCIAL para animar */
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   animation: shine 4s linear infinite;
   text-transform: uppercase;
