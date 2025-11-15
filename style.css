@@ -87,31 +87,3 @@ textarea {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-:root {
-  --spectrum: linear-gradient(
-    90deg,
-    #2a6fdb,
-    #27b36a,
-    #ffd644,
-    #ff8a3d,
-    #ff3b30,
-    #9b59b6
-  );
-}
-.entre-em-contato-animated {
-  font-weight: 700;
-  font-size: 1.25rem;
-  background: var(--spectrum);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shine 4s linear infinite;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-}
-
-@keyframes shine {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
