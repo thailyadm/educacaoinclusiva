@@ -90,17 +90,18 @@ textarea {
 :root {
   --spectrum: linear-gradient(
     90deg,
-    #2156c9,
-    #2fbf4a,
-    #ffc92b,
-    #ff8c42,
-    #f44336,
-    #9b3efc
+    #2a6fdb,
+    #27b36a,
+    #ffd644,
+    #ff8a3d,
+    #ff3b30,
+    #9b59b6
   );
 }
 .envie-uma-mensagem-animated {
+.envie-uma-mensagem-animated {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   background: var(--spectrum);
   background-size: 300% auto;
   -webkit-background-clip: text;
@@ -108,9 +109,8 @@ textarea {
   color: transparent;
   animation: shine 4s linear infinite;
   text-transform: uppercase;
-  margin-bottom: 0.3rem;
+  display: inline-block;
 }
-
 @keyframes shine {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
