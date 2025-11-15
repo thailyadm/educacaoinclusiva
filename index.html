@@ -869,28 +869,36 @@
   
         <!-- COLUNA DIREITA -->
         <div class="form-card">
-  
-          <!-- 🔵 AQUI O TÍTULO COLORIDO VAI FUNCIONAR -->
-          <h3 class="entre-em-contato-animated">ENTRE EM CONTATO</h3>
-  
-          <p class="form-note">
-            Preencha o formulário abaixo e nossa equipe retornará seu contato.
-          </p>
-        </div>
-  
-        <!-- 🔵 AQUI O IFRAME FICA FORA DO FORM-CARD PARA NÃO QUEBRAR O CSS -->
-       <div class="form-card">
-        <h3 class="entre-em-contato-animated">ENTRE EM CONTATO</h3>
+        <h3 style="margin-top:0;color:var(--azul-escuro);">Envie uma mensagem</h3>
         <p class="form-note">
-          Preencha o formulário abaixo e nossa equipe retornará seu contato.
+          Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.
         </p>
       
-        <!-- FORMULÁRIO ZOHO -->
-        <iframe 
-          frameborder="0"
-          style="height:800px;width:100%;border:none;"
-          src="https://forms.zohopublic.com/contatoeducacao1/form/FormulriodeContatoEducaoInclusiva/formperma/Dm32dxRTdBiL-hJLS9_8NWllLFdaY1AO98OeOCI1jkI?iframe=true">
-        </iframe>
+        <form id="formBonito">
+          <div class="form-row">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" name="Name" placeholder="Seu nome completo" required>
+          </div>
+      
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="Email" placeholder="seuemail@exemplo.com" required>
+          </div>
+      
+          <div class="form-row">
+            <label for="tipo">Você é</label>
+            <input id="tipo" type="text" name="Tipo" placeholder="Família, escola, parlamentar...">
+          </div>
+      
+          <div class="form-row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="Mensagem" placeholder="Conte um pouco sobre sua demanda."></textarea>
+          </div>
+      
+          <button type="submit" class="btn-primary">Enviar mensagem</button>
+        </form>
+      
+        <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p>
       </div>
       </div>
     </div>
