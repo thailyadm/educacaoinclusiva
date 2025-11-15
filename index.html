@@ -871,16 +871,37 @@
         </p>
 
         <!-- 🔵 FORMULÁRIO ZOHO FORMS INTEGRADO -->
-        <div class="form-card" style="padding:0; border:none; box-shadow:none; background:transparent;">
-          <h3 style="margin:0 0 1rem;color:var(--azul-escuro);">Envie uma mensagem</h3>
+        <div class="form-card">
+          <h3 style="margin-top:0;color:var(--azul-escuro);">Envie uma mensagem</h3>
+          <p class="form-note">
+            Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.
+          </p>
 
-        <iframe 
-          src="https://forms.zohopublic.com/contatoeducacao1/form/FormulriodeContatoEducaoInclusiva/formperma/Dm32dxRTdBiL-hJLS9_8NWllLFdaY1AO98OeOCI1jkI"
-          width="100%" 
-          height="700"
-          frameborder="0"
-          style="border:none; overflow:hidden; background:#fff; padding:20px; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,0.08);">
-        </iframe>
+          <form id="formBonito">
+            <div class="form-row">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" name="Name" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="Email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="form-row">
+              <label for="tipo">Você é</label>
+              <input id="tipo" type="text" name="Tipo" placeholder="Família, escola, parlamentar...">
+            </div>
+
+            <div class="form-row">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="Mensagem" placeholder="Conte um pouco sobre sua demanda."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Enviar mensagem</button>
+          </form>
+
+          <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p>
         </div>
         <!-- 🔵 FIM DO FORMULÁRIO -->
         
@@ -903,12 +924,29 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("open");
+  document.getElementById("formBonito").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    document.getElementById("msgStatus").innerText = "Enviando...";
+
+    const formData = new FormData(this);
+
+    const response = await fetch(
+      "https://forms.zohopublic.com/form/api/Dm32dxRTdBiL-hJLS9_8NWllLFdaY1AO98OeOCI1jkI/submit",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    if (response.ok) {
+      document.getElementById("msgStatus").innerText = "Mensagem enviada com sucesso! Obrigada pelo contato.";
+      this.reset();
+    }else{
+      document.getElementById("msgStatus").innerText = "Erro ao enviar. Tente novamente.";
     }
-    document.getElementById("ano").textContent = new Date().getFullYear();
-  </script>
+  });
+</script>
 
 </body>
 </html>
