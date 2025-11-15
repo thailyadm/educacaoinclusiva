@@ -98,26 +98,21 @@ textarea {
     #9b59b6
   );
 }
-
+/* TÍTULO ANIMADO ARCO-ÍRIS */
 .entre-em-contato-animated {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.6rem;
   background: var(--spectrum);
-  background-size: 300% auto;   /* ESSENCIAL para animar */
-  background-position: 0 center;
-  -webkit-background-clip: text;       /* necessário no Chrome/Safari */
+  background-size: 300% auto;
+  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent; /* <-- ESTA LINHA É A CURA */
-  color: transparent;                   /* fallback */
+  color: transparent;
   animation: shine 4s linear infinite;
   text-transform: uppercase;
+  margin-top: 0;
 }
 
 @keyframes shine {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
