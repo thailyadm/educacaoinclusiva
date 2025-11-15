@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Educação Inclusiva com Resultado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projeto Educação Inclusiva com Resultado – modelo de educação especial com foco em PEI, tecnologia assistiva e resultados concretos para crianças com deficiência, TEA e altas habilidades no Brasil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cinza-fundo: #f5f7fb;
+      --cinza-texto: #444;
+      --radius-card: 18px;
+      --shadow-card: 0 10px 25px rgba(0,0,0,0.08);
+      --azul-escuro: #153064;
+
+      /* Degradê com as cores do espectro (∞ autismo) */
+      --spectrum: linear-gradient(90deg,
+        #2156c9,  /* azul */
+        #2fbf4a,  /* verde */
+        #ffc92b,  /* amarelo */
+        #ff8c42,  /* laranja */
+        #f44336,  /* vermelho */
+        #9b3efc   /* roxo */
+      );
+
+      --spectrum-soft: linear-gradient(90deg,
+        rgba(33,86,201,0.18),
+        rgba(47,191,74,0.18),
+        rgba(255,201,43,0.18),
+        rgba(255,140,66,0.18),
+        rgba(244,67,54,0.18),
+        rgba(155,62,252,0.18)
+      );
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--cinza-texto);
+      background: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 4px solid transparent;
+      background-clip: padding-box;
+      border-image: var(--spectrum) 1;
+    }
+
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--azul-escuro);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--spectrum);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--spectrum);
+      color: #fff;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: white;
+        padding: 0.75rem 1.25rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #e2e6f0;
+        display: none;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* HERO */
+
+    .hero {
+      background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
+      padding: 2.3rem 1.5rem 2.8rem;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .hero-logo-block {
+      text-align: center;
+    }
+
+    .hero-logo {
+      max-width: 260px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: var(--spectrum-soft);
+      color: var(--azul-escuro);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .hero-title {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 700;
+      color: var(--azul-escuro);
+      margin: 0.9rem 0 0.4rem;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      max-width: 520px;
+      margin: 0.2rem auto 0;
+      color: #555;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px,1fr));
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero-chip {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: 2px solid transparent;
+      border-image: var(--spectrum) 1;
+      font-weight: 600;
+    }
+
+    /* Colore os emojis por posição */
+    .hero-chip:nth-child(1) span:first-child { color: #2156c9; }
+    .hero-chip:nth-child(2) span:first-child { color: #2fbf4a; }
+    .hero-chip:nth-child(3) span:first-child { color: #ffc92b; }
+    .hero-chip:nth-child(4) span:first-child { color: #f44336; }
+
+    .hero-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      padding: 0.8rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--spectrum);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+    }
+
+    .btn-secondary {
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      border-image: var(--spectrum) 1;
+      background: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    /* SEÇÕES GENÉRICAS */
+
+    .section {
+      padding: 2.3rem 1.5rem;
+      background: #fff;
+    }
+
+    .section:nth-of-type(even) {
+      background: var(--cinza-fundo);
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 1.4rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #2156c9;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--azul-escuro);
+      margin: 0;
+    }
+
+    .section-sub {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+      max-width: 640px;
+    }
+
+    /* COLUNAS / CARDS */
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 880px) {
+      .two-cols {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #e5e9f5;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--azul-escuro);
+      font-size: 1.05rem;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      border: 1px solid #dde1f0;
+      background: #fff;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin: 0.4rem 0 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 0.18rem;
+    }
+
+    /* PILARES */
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .pillar-item {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1rem 1.1rem;
+      border: 1px solid #dde3f5;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--spectrum);
+    }
+
+    .pillar-number {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #2156c9;
+      margin-bottom: 0.2rem;
+    }
+
+    .pillar-item h3 {
+      font-size: 0.98rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--azul-escuro);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--spectrum-soft);
+      color: var(--azul-escuro);
+    }
+
+    /* PILOTO */
+
+    .badge-year {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #fff7e1;
+      color: #8a5a00;
+      font-weight: 600;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step-item {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 0.95rem 1rem;
+      border: 1px solid #e5e9f5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background: var(--spectrum);
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #2156c9;
+      margin-bottom: 0.3rem;
+    }
+
+    /* CONTATO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.4rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--azul-escuro);
+    }
+
+    .form-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #e3e8f7;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input, textarea {
+      border-radius: 10px;
+      border: 1px solid #d4daee;
+      padding: 0.55rem 0.7rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: #777;
+      margin-bottom: 0.7rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: var(--azul-escuro);
+      color: #e8ecff;
+      padding: 1.3rem 1.5rem 1.4rem;
+      font-size: 0.82rem;
+      border-top: 4px solid transparent;
+      border-image: var(--spectrum) 1;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer small {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand-name">Educação Inclusiva com Resultado</div>
+
+      <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre o Projeto</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#piloto">Piloto Brasília</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">
+          ✉ Fale conosco
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo-block">
+        <img src="heart-puzzle.jpeg" alt="Logo Educação Inclusiva com Resultado" class="hero-logo" />
+
+        <div class="hero-badge">
+          💙 Educação Inclusiva · Tecnologia · Resultado
+        </div>
+
+        <h1 class="hero-title">
+          Modelo de Educação Inclusiva com Resultado no Brasil
+        </h1>
+
+        <p class="hero-sub">
+          Proposta idealizada por Thaianne Kelly Pereira da Silva, MS Cybersecurity —
+          mãe de um menino autista com nível 3 de suporte em comunicação e nível 2 nas demais áreas,
+          inspirada na experiência com educação especial nos Estados Unidos.
+        </p>
+
+        <div class="hero-grid">
+          <div class="hero-chip"><span>🧩</span><span>PEI obrigatório e vivo</span></div>
+          <div class="hero-chip"><span>📱</span><span>Tecnologia assistiva e AAC</span></div>
+          <div class="hero-chip"><span>🤝</span><span>Família como parceira</span></div>
+          <div class="hero-chip"><span>📊</span><span>Dados, transparência e resultado</span></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contato">Quero saber mais</a>
+          <a class="btn-secondary" href="#piloto">Ver proposta do Piloto Brasília 2025</a>
+        </div>
+
+        <div class="hero-note">
+          Foco inicial em <strong>Brasília – DF</strong>, com visão de política pública nacional.
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+            Por que este projeto existe?
+          </h3>
+          <ul>
+            <li>Crescimento das matrículas de estudantes com deficiência, TEA e altas habilidades.</li>
+            <li>Falta de estrutura e apoio nas redes de ensino, especialmente na rede pública.</li>
+            <li>Ausência de padrão nacional para PEI.</li>
+            <li>Baixa oferta de tecnologia assistiva e comunicadores.</li>
+            <li>Necessidade de dados reais para orientar leis e políticas públicas.</li>
+          </ul>
+          <div class="chip-list">
+            <span class="chip">Educação especial</span>
+            <span class="chip">Autismo</span>
+            <span class="chip">AEE</span>
+            <span class="chip">Política pública</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Sobre o projeto</div>
+        <h2 class="section-title">Minha vivência como mãe e inspiração para o modelo</h2>
+        <p class="section-sub">
+          O projeto nasce da vivência direta com o sistema de educação especial nos Estados Unidos
+          e da percepção de que muitos avanços podem ser adaptados à realidade brasileira,
+          respeitando a legislação vigente e a estrutura da rede pública.
+        </p>
+      </div>
+
+      <div class="two-cols">
+        <div class="card">
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+            Modelo americano (IEP)
+          </h3>
+          <ul>
+            <li>PEI (IEP – Individualized Education Program) obrigatório, revisado anualmente, com metas claras.</li>
+            <li>LRE (Least Restrictive Environment) – busca do ambiente menos restritivo possível.</li>
+            <li>Salas de educação especial por nível de suporte, com turmas reduzidas (4–6 alunos).</li>
+            <li>Equipes multiprofissionais: pedagogos, fonoaudiólogos, terapeutas ocupacionais, psicólogos.</li>
+            <li>Uso intenso de tecnologia assistiva e comunicadores (AAC).</li>
+            <li>Indicadores de acesso, permanência e aprendizagem acompanhados continuamente.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+            Adaptação ao Brasil
+          </h3>
+          <ul>
+            <li>Alinhamento à LDB e às políticas nacionais de educação especial na perspectiva inclusiva.</li>
+            <li>Foco em redes públicas de ensino, começando pelo Distrito Federal.</li>
+            <li>Criação de um padrão nacional de PEI digital e acessível.</li>
+            <li>Fortalecimento do AEE com centros-polo e co-ensino em sala regular.</li>
+            <li>Uso de dados para apoiar leis, emendas parlamentares e programas permanentes.</li>
+          </ul>
+          <p style="font-size:0.88rem;margin-top:0.6rem;">
+            O objetivo é construir uma política que sobreviva a mudanças de governo,
+            garantindo serviços contínuos para todas as crianças – não apenas para um caso individual.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section id="pilares" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Estrutura do modelo</div>
+        <h2 class="section-title">Os 5 pilares da Educação Inclusiva com Resultado</h2>
+      </div>
+
+      <div class="pillar-grid">
+        <div class="pillar-item">
+          <div class="pillar-number">Pilar 1</div>
+          <h3>PEI obrigatório e vivo</h3>
+          <p>Documento padrão na rede, com metas específicas, mensuráveis e participação ativa da família.</p>
+          <div class="tag-row">
+            <span class="tag">PEI digital</span>
+            <span class="tag">Metas claras</span>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-number">Pilar 2</div>
+          <h3>AEE + Co-Ensino</h3>
+          <p>Centros-polo, equipes multiprofissionais e co-teaching entre professor da sala regular e professor de educação especial.</p>
+          <div class="tag-row">
+            <span class="tag">AEE</span>
+            <span class="tag">Co-teaching</span>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-number">Pilar 3</div>
+          <h3>Tecnologia assistiva e AAC</h3>
+          <p>Tablets, comunicadores, apps e recursos de comunicação alternativa como parte do currículo, com formação para equipes e famílias.</p>
+          <div class="tag-row">
+            <span class="tag">AAC</span>
+            <span class="tag">Tablets</span>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-number">Pilar 4</div>
+          <h3>Ambiente menos restritivo (LRE)</h3>
+          <p>Salas de suporte intenso com transição planejada para sala regular com apoio e turmas que acolhem até 3 alunos com PEI.</p>
+          <div class="tag-row">
+            <span class="tag">Inclusão real</span>
+            <span class="tag">Transição segura</span>
+          </div>
+        </div>
+
+        <div class="pillar-item">
+          <div class="pillar-number">Pilar 5</div>
+          <h3>Dados, transparência e resultado</h3>
+          <p>Painel público de indicadores de acesso, permanência, comunicação e aprendizagem, com respeito à privacidade.</p>
+          <div class="tag-row">
+            <span class="tag">Indicadores</span>
+            <span class="tag">Política baseada em evidências</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILOTO BRASÍLIA -->
+  <section id="piloto" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Projeto piloto</div>
+        <h2 class="section-title">Piloto Brasília – 2025</h2>
+        <p class="section-sub">
+          Proposta de implementação inicial na rede pública de Brasília, com possibilidade de expansão
+          para outros estados a partir de resultados mensuráveis.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="badge-year">Brasília – DF · 2025</div>
+        <p style="margin-top:0.7rem;font-size:0.95rem;">
+          O piloto prevê a seleção de escolas referência, formação de equipes, implantação do PEI digital,
+          tecnologia assistiva, salas de suporte por nível de necessidade e acompanhamento mensal dos indicadores.
+        </p>
+
+        <div class="steps">
+          <div class="step-item">
+            <div class="step-label">Etapa 1</div>
+            <strong>Seleção de escolas e centros-polo.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">
+              Escolas estratégicas em diferentes regiões administrativas, garantindo diversidade de contextos.
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-label">Etapa 2</div>
+            <strong>Formação das equipes.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">
+              Professores, gestores e equipes de apoio formados em PEI, AAC, autismo, TDAH e inclusão.
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-label">Etapa 3</div>
+            <strong>PEI digital + tecnologia assistiva.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">
+              Implantação de sistema digital de PEI, tablets e comunicadores nas escolas-polo.
+            </p>
+          </div>
+          <div class="step-item">
+            <div class="step-label">Etapa 4</div>
+            <strong>Monitoramento e indicadores.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">
+              Relatórios semestrais com foco em acesso, participação, comunicação e aprendizagem.
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;font-size:0.9rem;">
+          O apoio parlamentar é fundamental para garantir:
+          emendas para centros-polo, lei de PEI obrigatório, política de tecnologia assistiva
+          e financiamento contínuo para equipes e formação.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Contato</div>
+        <h2 class="section-title">Fale com o projeto Educação Inclusiva com Resultado</h2>
+        <p class="section-sub">
+          Este site é um ponto de apoio para famílias, escolas, redes públicas e parlamentares
+          interessados em construir um modelo de educação inclusiva com base em evidências.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">Canais oficiais</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">E-mail institucional:</span><br />
+              <a href="mailto:contato@educacaoinclusiva.com">contato@educacaoinclusiva.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Localização atual:</span><br />
+              Salt Lake City – Utah (EUA) · Projeto com foco em Brasília – DF e expansão nacional.
+            </li>
+            <li>
+              <span class="contact-label">Idealizadora:</span><br />
+              Thaianne Kelly Pereira da Silva, MS Cybersecurity –
+              mãe de um menino autista (nível 3 de suporte em comunicação e nível 2 nas demais áreas).
+            </li>
+          </ul>
+          <p style="font-size:0.85rem;margin-top:0.9rem;">
+            <strong>Importante:</strong> materiais técnicos detalhados, dossiês e apresentações
+            para parlamentares não são disponibilizados para download direto aqui.
+            O envio é feito mediante contato institucional.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h3 style="margin-top:0;color:var(--azul-escuro);">Envie uma mensagem</h3>
+          <p class="form-note">
+            Este formulário é um exemplo visual. Você pode integrar depois com seu provedor de formulários
+            (Google Forms, Zoho Forms etc.).
+          </p>
+          <form onsubmit="alert('Obrigado pela mensagem! Em breve entraremos em contato.'); return false;">
+            <div class="form-row">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+            <div class="form-row">
+              <label for="tipo">Você é</label>
+              <input id="tipo" type="text" placeholder="Família, escola, parlamentar, rede de ensino..." />
+            </div>
+            <div class="form-row">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <small>
+        © <span id="ano"></span> Educação Inclusiva com Resultado – um projeto de política pública
+        para uma educação especial inclusiva, tecnológica e com resultados reais.
+      </small>
+      <small>
+        “Inclusão não é presença. É participação, aprendizagem e resultado.”
+      </small>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
