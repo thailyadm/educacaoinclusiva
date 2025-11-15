@@ -104,9 +104,11 @@ textarea {
   font-size: 1.1rem;
   background: var(--spectrum);
   background-size: 300% auto;   /* ESSENCIAL para animar */
-  -webkit-background-clip: text;
+  background-position: 0 center;
+  -webkit-background-clip: text;       /* necessário no Chrome/Safari */
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent; /* <-- ESTA LINHA É A CURA */
+  color: transparent;                   /* fallback */
   animation: shine 4s linear infinite;
   text-transform: uppercase;
 }
