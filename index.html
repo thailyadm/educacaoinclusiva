@@ -831,7 +831,7 @@
   </section>
 
   <!-- CONTATO -->
-  <!-- SEÇÃO CONTATO ATUALIZADA COM FORMSPREE -->
+  <!-- SEÇÃO CONTATO ATUALIZADA COM AJAX -->
   <section id="contato" class="section">
     <div class="section-inner">
       <div class="section-header">
@@ -871,8 +871,8 @@
             Sua mensagem será enviada diretamente para nosso e-mail institucional.
           </p>  
           
-          <!-- FORMULÁRIO FORMSPREE - SUBSTITUA SEU_FORM_ID -->
-          <form action="https://formspree.io/f/xpwbqzkw" method="POST">
+          <!-- FORMULÁRIO COM AJAX -->
+          <form id="contactForm">
             <div class="form-row">
               <label for="nome">Nome *</label>
               <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
@@ -897,32 +897,89 @@
               <label for="mensagem">Mensagem *</label>
               <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse." required></textarea>
             </div>
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="submitBtn">
               Enviar mensagem
             </button>
+            <div id="formMessage" style="margin-top: 1rem; display: none; padding: 12px; border-radius: 8px;"></div>
           </form>
-          
-          <div id="formMessage" style="margin-top: 1rem; display: none;"></div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- SCRIPT PARA MELHORAR A EXPERIÊNCIA DO USUÁRIO -->
   <script>
-    document.querySelector('form').addEventListener('submit', function(e) {
-      const submitBtn = this.querySelector('button[type="submit"]');
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
       const originalText = submitBtn.textContent;
       
-      // Mostra loading
+      // Loading
       submitBtn.textContent = 'Enviando...';
       submitBtn.disabled = true;
+      formMessage.style.display = 'none';
       
-      // Volta ao normal depois de 3 segundos (caso a página recarregue)
-      setTimeout(function() {
+      try {
+        const formData = new FormData(this);
+        
+        // ⚠️ SUBSTITUA SEU_FORM_ID_AQUI pelo seu ID real do Formspree
+        const response = await fetch('https://formspree.io/f/xpwbqzkw', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Sucesso - mostra mensagem personalizada
+          formMessage.style.background = 'var(--spectrum-soft)';
+          formMessage.style.color = 'green';
+          formMessage.style.border = '2px solid green';
+          formMessage.innerHTML = `
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 10px;">✅</div>
+              <strong style="font-size: 1.1em;">Mensagem enviada com sucesso!</strong><br>
+              Obrigado pelo seu interesse no projeto Educação Inclusiva.<br>
+              <span style="font-size: 0.9em; color: #555;">Retornaremos em até 48 horas.</span>
+            </div>
+          `;
+          formMessage.style.display = 'block';
+          
+          // Limpa o formulário
+          this.reset();
+          
+          // Rola a tela para mostrar a mensagem
+          formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          throw new Error('Erro ao enviar formulário');
+        }
+        
+      } catch (error) {
+        // Erro - mostra mensagem de erro
+        formMessage.style.background = '#ffebee';
+        formMessage.style.color = 'red';
+        formMessage.style.border = '2px solid red';
+        formMessage.innerHTML = `
+          <div style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">❌</div>
+            <strong style="font-size: 1.1em;">Erro ao enviar mensagem</strong><br>
+            <span style="font-size: 0.9em; color: #555;">
+              Tente novamente ou envie diretamente para:<br>
+              <a href="mailto:contato@educacaoinclusiva.com" style="color: red;">contato@educacaoinclusiva.com</a>
+            </span>
+          </div>
+        `;
+        formMessage.style.display = 'block';
+        
+        // Rola a tela para mostrar o erro
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        // Restaura o botão
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-      }, 3000);
+      }
     });
   </script>
 </body>
