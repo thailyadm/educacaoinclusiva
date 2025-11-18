@@ -5,6 +5,17 @@
   <title>Educação Inclusiva com Resultado</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Projeto Educação Inclusiva com Resultado. Modelo de educação especial com foco em PEI, tecnologia assistiva e resultados concretos para crianças com deficiência, TEA e altas habilidades no Brasil." />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH36VE13B4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-DH36VE13B4');
+  </script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -718,7 +729,6 @@ textarea {
   border-radius: 4px;
   font-weight: 600;
   z-index: 10000;
-
   transition: top 0.3s;
 }
 
@@ -1268,6 +1278,41 @@ textarea {
       const navLinks = document.getElementById('navLinks');
       navLinks.classList.toggle('open');
     }
+
+    // Rastreamento do Google Analytics para engajamento
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+      button.addEventListener('click', function() {
+        gtag('event', 'click', {
+          'event_category': 'Engajamento',
+          'event_label': this.textContent.trim()
+        });
+      });
+    });
+
+    // Rastrear envio do formulário
+    document.getElementById('contactForm').addEventListener('submit', function() {
+      gtag('event', 'form_submit', {
+        'event_category': 'Contato',
+        'event_label': 'Formulário Principal'
+      });
+    });
+
+    // Rastrear visualização de seções
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          gtag('event', 'view_section', {
+            'event_category': 'Engajamento',
+            'event_label': entry.target.id
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observar todas as seções
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
 
     // Form submission
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
