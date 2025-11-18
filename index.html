@@ -877,36 +877,31 @@
           <p class="form-note">
             Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.
           </p>   
-          <form 
-            action="https://forms.zohopublic.com/contatoeducacao1/form/FormulriodeContatoEducaoInclusiva/formperma/WkbtCggLZUFHHSktOR7THIzjs0tMyLWZufWsN33kcew/htmlRecords/submit"
-            method="POST"
-            accept-charset="UTF-8"
-            enctype="multipart/form-data"
-            onsubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
-            id="formBonito"
-          >
-              <input type="hidden" name="zf_referrer_name" value="">
-              <input type="hidden" name="zf_redirect_url" value="">
-              <input type="hidden" name="zc_gad" value="">      
-              <div class="row">
-                  <div class="col">
-                      <label>Nome</label>
-                      <input type="text" name="Name_First" placeholder="Seu nome" required>
-                  </div>
-                  <div class="col">
-                      <label>Sobrenome</label>
-                      <input type="text" name="Name_Last" placeholder="Seu sobrenome" required>
-                  </div>
-              </div>       
-              <label>E-mail</label>
-              <input type="email" name="Email" placeholder="seuemail@exemplo.com" required>   
-              <label>Você é</label>
-              <input type="text" name="SingleLine" placeholder="Família, escola, parlamentar..." required>      
-              <label>Mensagem</label>
-              <textarea name="MultiLine" placeholder="Conte um pouco sobre sua demanda." required></textarea>
-              <button type="submit">Enviar mensagem</button>
-          </form>
-          <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p> 
+          <form id="formBonito">
+          <div class="form-row">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" name="Name" placeholder="Seu nome completo" required>
+          </div>
+  
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="Email" placeholder="seuemail@exemplo.com" required>
+          </div>
+  
+          <div class="form-row">
+            <label for="tipo">Você é</label>
+            <input id="tipo" type="text" name="Tipo" placeholder="Família, escola, parlamentar...">
+          </div>
+  
+          <div class="form-row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="Mensagem" placeholder="Conte um pouco sobre sua demanda."></textarea>
+          </div>
+  
+          <button type="submit" class="btn-primary">Enviar mensagem</button>
+        </form>
+  
+        <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p>
         </div>
       </div>
     </div>
