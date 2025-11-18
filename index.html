@@ -883,27 +883,27 @@
           <form id="formBonito">
             <div class="form-row">
               <label for="nome">Nome</label>
-              <input id="nome" type="text" name="Name" placeholder="Seu nome completo" required>
+              <input id="nome" type="text" name="Name_First" placeholder="Seu nome completo" required>
             </div>
-  
+          
             <div class="form-row">
               <label for="email">E-mail</label>
               <input id="email" type="email" name="Email" placeholder="seuemail@exemplo.com" required>
             </div>
-  
+          
             <div class="form-row">
               <label for="tipo">Você é</label>
-              <input id="tipo" type="text" name="Tipo" placeholder="Família, escola, parlamentar...">
+              <input id="tipo" type="text" name="SingleLine" placeholder="Família, escola, parlamentar...">
             </div>
-  
+          
             <div class="form-row">
               <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="Mensagem" placeholder="Conte um pouco sobre sua demanda."></textarea>
+              <textarea id="mensagem" name="MultiLine" placeholder="Conte um pouco sobre sua demanda."></textarea>
             </div>
-  
-            <button type="submit" class="btn-primary">Enviar mensagem</button>
-          </form>
-  
+        
+          <button type="submit" class="btn-primary">Enviar mensagem</button>
+        </form>
+
           <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p>
   
         </div>
@@ -924,28 +924,28 @@
   </footer>
 
   <script>
-  document.getElementById("formBonito").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    document.getElementById("msgStatus").innerText = "Enviando...";
-
-    const formData = new FormData(this);
-
-    const response = await fetch(
-      "https://forms.zohopublic.com/form/api/Dm32dxRTdBiL-hJLS9_8NWllLFdaY1AO98OeOCI1jkI/submit",
-      {
-        method: "POST",
-        body: formData
+    document.getElementById("formBonito").addEventListener("submit", async function(e) {
+      e.preventDefault();
+    
+      document.getElementById("msgStatus").innerText = "Enviando...";
+    
+      const formData = new FormData(this);
+    
+      const response = await fetch(
+        "https://forms.zohopublic.com/contatoeducacao1/form/FormulriodeContatoEducaoInclusiva/formperma/WkbtCggLZUFHHSktOR7THIzjs0tMyLWZufWsN33kcew/htmlRecords/submit",
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+    
+      if (response.ok) {
+        document.getElementById("msgStatus").innerText = "Mensagem enviada com sucesso! Obrigada pelo contato.";
+        this.reset();
+      } else {
+        document.getElementById("msgStatus").innerText = "Erro ao enviar. Tente novamente.";
       }
-    );
-
-    if (response.ok) {
-      document.getElementById("msgStatus").innerText = "Mensagem enviada com sucesso! Obrigada pelo contato.";
-      this.reset();
-    }else{
-      document.getElementById("msgStatus").innerText = "Erro ao Enviar. Tente Novamente.";
-    }
-  });
+    });
 </script>
 
 </body>
