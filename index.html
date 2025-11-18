@@ -12,7 +12,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-DH36VE13B4'); <!-- SUBSTITUA PELO SEU ID REAL -->
+    gtag('config', 'G-DH36VE13B4');
   </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,6 +61,7 @@ body {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--cinza-texto);
   background: white;
+  padding-top: 80px; /* CORREÇÃO PARA NAVBAR FIXA */
 }
 
 a {
@@ -81,6 +82,7 @@ img {
   width: 100%;
   top: 0;
   z-index: 1000;
+  height: 80px;
 }
 
 .navbar-inner {
@@ -90,6 +92,7 @@ img {
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .brand-name {
@@ -133,6 +136,14 @@ img {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .navbar {
+    height: 70px;
+  }
+  
   .nav-toggle {
     display: block;
   }
@@ -157,7 +168,7 @@ img {
 /* HERO - LAYOUT COMPACTO COMO NO PRINT */
 .hero {
   background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
-  padding: 80px 1.5rem 2.8rem; /* 80px no topo para a navbar */
+  padding: 2.3rem 1.5rem 2.8rem;
 }
 
 .hero-inner {
@@ -381,7 +392,8 @@ img {
 
 /* RESTANTE DO CSS */
 .section {
-  padding: 80px 1.5rem 2.3rem; /* 80px no topo também */
+  padding: 2.3rem 1.5rem;
+  background: #fff;
 }
 
 .section:nth-of-type(even) {
@@ -723,7 +735,6 @@ textarea {
 .skip-link:focus {
   top: 6px;
 }
-
   </style>
 </head>
 <body>
@@ -1086,10 +1097,10 @@ textarea {
     // Ano atual no footer
     document.getElementById('ano').textContent = new Date().getFullYear();
 
-    // Menu mobile
+    // Menu mobile - CORRIGIDO
     function toggleMenu() {
       const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');  // ← CORRETO: 'active'
+      navLinks.classList.toggle('active');
     }
 
     // Form submission
