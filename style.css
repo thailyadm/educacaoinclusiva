@@ -1,74 +1,89 @@
-#formBonito {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 28px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+/* --- FORMULÁRIO BONITO --- */
+
+.form-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
-#formBonito label {
-    display: block;
-    margin: 18px 0 6px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #303030;
+.form-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
 }
 
-#formBonito input,
-#formBonito textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #dcdcdc;
-    border-radius: 12px;
-    font-size: 1rem;
-    outline: none;
+.form-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-#formBonito textarea {
-    min-height: 130px;
-    resize: vertical;
+.form-row {
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.row {
-    display: flex;
-    gap: 16px;
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #222;
 }
 
-.col {
-    flex: 1;
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d1d9e6;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fbff;
+  transition: 0.2s;
 }
 
-#formBonito input:focus,
-#formBonito textarea:focus {
-    border-color: #7f5cff;
-    box-shadow: 0 0 0 3px rgba(127,92,255,0.15);
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: #b3baca;
 }
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #6a92ff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(106,146,255,0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* BOTÃO BONITO ARCO-ÍRIS */
 
 .btn-primary {
-    margin-top: 25px;
-    width: fit-content;
-    padding: 16px 34px;
-    border: none;
-    border-radius: 40px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    background: linear-gradient(90deg,#00ce7c,#7f5cff,#ff5f6d);
-    color: white;
-    transition: transform .2s;
+  margin-top: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg,
+    #22c55e,
+    #eab308,
+    #f97316,
+    #ef4444,
+    #a855f7,
+    #3b82f6
+  );
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
-    transform: scale(1.05);
-}
-
-.form-title {
-    margin-bottom: 10px;
-    font-size: 1.6rem;
-    font-weight: 800;
-}
-
-.form-sub {
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    color: #4a4a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
