@@ -880,28 +880,55 @@
             Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.
           </p>
   
-          <form id="formBonito">
-            <div class="form-row">
-              <label for="nome">Nome</label>
-              <input id="nome" type="text" name="Name_First" placeholder="Seu nome completo" required>
-            </div>
+          <form 
+            action="https://forms.zohopublic.com/contatoeducacao1/form/FormulriodeContatoEducaoInclusiva/formperma/WkbtCggLZUFHHSktOR7THIzjs0tMyLWZufWsN33kcew/htmlRecords/submit"
+            method="POST"
+            accept-charset="UTF-8"
+            enctype="multipart/form-data"
+            onsubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+            id="formBonito"
+            style="width:100%; max-width:700px; margin:0 auto;"
+          >
           
-            <div class="form-row">
-              <label for="email">E-mail</label>
-              <input id="email" type="email" name="Email" placeholder="seuemail@exemplo.com" required>
-            </div>
+              <!-- Hidden Zoho fields -->
+              <input type="hidden" name="zf_referrer_name" value="">
+              <input type="hidden" name="zf_redirect_url" value="">
+              <input type="hidden" name="zc_gad" value="">
           
-            <div class="form-row">
-              <label for="tipo">Você é</label>
-              <input id="tipo" type="text" name="SingleLine" placeholder="Família, escola, parlamentar...">
-            </div>
+              <h2 class="form-title">ENVIE UMA MENSAGEM</h2>
+              <p class="form-sub">Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.</p>
           
-            <div class="form-row">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="MultiLine" placeholder="Conte um pouco sobre sua demanda."></textarea>
-            </div>
-        
-          <button type="submit" class="btn-primary">Enviar mensagem</button>
+              <!-- NOME COMPLETO (ZOHOFORMS EXIGE FIRST/LAST) -->
+              <label>Nome</label>
+              <input type="text" name="Name_First" placeholder="Seu nome" required>
+              <input type="text" name="Name_Last" placeholder="Seu sobrenome" required>
+          
+              <!-- EMAIL -->
+              <label>E-mail</label>
+              <input type="email" name="Email" placeholder="seuemail@exemplo.com" required>
+          
+              <!-- VOCÊ É -->
+              <label>Você é</label>
+              <input type="text" name="SingleLine" placeholder="Família, escola, parlamentar..." required>
+          
+              <!-- MENSAGEM -->
+              <label>Mensagem</label>
+              <textarea name="MultiLine" placeholder="Conte um pouco sobre sua demanda." required></textarea>
+          
+              <!-- BOTÃO -->
+              <button type="submit" class="btn-primary">Enviar mensagem</button>
+
+            </form>
+                  
+            <script>
+            var dateAndMonthRegexFormateArray = zf_SetDateAndMonthRegexBasedOnDateFormate('dd-MMM-yyyy');
+            var zf_DateRegex = new RegExp(dateAndMonthRegexFormateArray[0]);
+            var zf_MonthYearRegex = new RegExp(dateAndMonthRegexFormateArray[1]);
+            var zf_MandArray = []; 
+            var zf_FieldArray = [ "Name_First", "Name_Last", "Email", "SingleLine", "MultiLine" ];
+            var isSalesIQIntegrationEnabled = false;
+            var salesIQFieldsArray = [];
+            </script>
         </form>
 
           <p id="msgStatus" style="margin-top:10px; font-size:0.85rem;"></p>
