@@ -75,100 +75,85 @@ img {
 
 /* NAVBAR */
 .navbar {
-  position: sticky;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 4px solid transparent;
-  background-clip: padding-box;
-  border-image: var(--spectrum) 1;
 }
 
 .navbar-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0.6rem 1.25rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .brand-name {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--azul-escuro);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
+  gap: 2rem;
   align-items: center;
-  gap: 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
 }
 
 .nav-links a {
-  position: relative;
-  padding-bottom: 0.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--spectrum);
-  transition: width 0.2s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover {
+  color: #007bff;
 }
 
 .nav-cta {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: var(--spectrum);
-  color: #fff;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background: #007bff;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 5px;
 }
 
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-@media (max-width: 720px) {
-  .nav-links {
-    position: absolute;
-    inset: 100% 0 auto 0;
-    background: white;
-    padding: 0.75rem 1.25rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid #e2e6f0;
-    display: none;
-  }
-  .nav-links.open {
-    display: flex;
-  }
+@media (max-width: 768px) {
   .nav-toggle {
     display: block;
   }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
 }
-
+    
 /* HERO - LAYOUT COMPACTO COMO NO PRINT */
 .hero {
   background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
