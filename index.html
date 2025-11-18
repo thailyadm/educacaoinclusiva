@@ -169,7 +169,7 @@ img {
   max-width: 1120px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* Mudei de 1.1fr para 1fr */
   align-items: center;
   gap: 2.5rem;
 }
@@ -179,7 +179,7 @@ img {
 }
 
 .hero-logo {
-  max-width: 260px;
+  max-width: 200px; /* Reduzido de 260px */
   margin: 0 auto 1.5rem;
 }
 
@@ -696,6 +696,13 @@ textarea {
 .skip-link:focus {
   top: 6px;
 }
+   /* GARANTIR QUE FOOTER SEMPRE APAREÇA */
+  .footer.footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }   
   </style>
   <!-- Schema Markup para SEO -->
   <script type="application/ld+json">
