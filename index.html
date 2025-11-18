@@ -159,7 +159,7 @@ img {
   }
 }
 
-/* HERO */
+/* HERO - CORREÇÕES APLICADAS */
 .hero {
   background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
   padding: 2.3rem 1.5rem 2.8rem;
@@ -169,18 +169,25 @@ img {
   max-width: 1120px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* 1fr em vez de 1.1fr */
-  align-items: center;
-  gap: 1.5rem; /* Reduzido o gap */
+  grid-template-columns: 1fr 1fr; /* Lado a lado */
+  align-items: start; /* Alinha no topo */
+  gap: 2rem; /* Espaço entre as colunas */
+}
+
+/* COLUNA DA ESQUERDA - Conteúdo principal */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .hero-logo-block {
-  text-align: center;
+  text-align: left; /* Alinhado à esquerda */
 }
 
 .hero-logo {
-  max-width: 180px; /* Reduzido de 260px */
-  margin: 0 auto 1.5rem;
+  max-width: 120px; /* FOTO MENOR - reduzida de 180px */
+  margin: 0 0 1rem 0; /* Remove margin auto para alinhar à esquerda */
 }
 
 .hero-badge {
@@ -202,20 +209,19 @@ img {
   font-weight: 700;
   color: var(--azul-escuro);
   margin: 0.9rem 0 0.4rem;
+  line-height: 1.2;
 }
 
 .hero-sub {
   font-size: 0.98rem;
-  max-width: 520px;
-  margin: 0.2rem auto 0;
   color: #555;
+  line-height: 1.6;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px,1fr));
   gap: 0.9rem;
-  margin-top: 1.5rem;
 }
 
 .hero-chip {
@@ -239,11 +245,10 @@ img {
 .hero-chip:nth-child(4) span:first-child { color: #f44336; }
 
 .hero-actions {
-  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  justify-content: center;
+  justify-content: flex-start; /* Alinha à esquerda */
 }
 
 /* BOTÕES ORIGINAIS MANTIDOS */
@@ -282,14 +287,37 @@ img {
 }
 
 .hero-note {
-  margin-top: 0.8rem;
   font-size: 0.8rem;
   color: #666;
 }
 
+/* COLUNA DA DIREITA - "Por que é urgente" */
+.hero-urgent-card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #e5e9f5;
+  height: fit-content;
+}
+
+/* RESPONSIVO */
 @media (max-width: 880px) {
   .hero-inner {
-    grid-template-columns: minmax(0,1fr);
+    grid-template-columns: 1fr; /* Empilha em mobile */
+    gap: 1.5rem;
+  }
+  
+  .hero-logo {
+    max-width: 100px; /* Ainda menor em mobile */
+  }
+  
+  .hero-actions {
+    justify-content: center; /* Centraliza em mobile */
+  }
+  
+  .hero-logo-block {
+    text-align: center; /* Centraliza em mobile */
   }
 }
 
@@ -745,92 +773,94 @@ textarea {
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO - ESTRUTURA CORRIGIDA -->
   <main id="main" class="hero">
     <div class="hero-inner">
-      <div class="hero-logo-block">
-        <img src="heart-puzzle.jpeg" 
-           alt="Logo Educação Inclusiva - quebra-cabeça com coração representando inclusão"
-           loading="lazy"
-           width="260" 
-           height="260"
-           style="width: 100%; height: auto;">
+      <!-- COLUNA DA ESQUERDA - Conteúdo principal -->
+      <div class="hero-content">
+        <div class="hero-logo-block">
+          <img src="heart-puzzle.jpeg" 
+             alt="Logo Educação Inclusiva - quebra-cabeça com coração representando inclusão"
+             loading="lazy"
+             width="120" 
+             height="120"
+             class="hero-logo">
 
-        <div class="hero-badge">
-          💙 Educação Inclusiva · Tecnologia · Resultado
-        </div>
+          <div class="hero-badge">
+            💙 Educação Inclusiva · Tecnologia · Resultado
+          </div>
 
-        <h1 class="hero-title">
-          Modelo de Educação Inclusiva com Resultado no Brasil
-        </h1>
+          <h1 class="hero-title">
+            Modelo de Educação Inclusiva com Resultado no Brasil
+          </h1>
 
-        <div class="hero-sub">
-          <p>
-          Proposta idealizada por Thaianne Kelly Pereira da Silva. Sou mãe de um menino autista com Nível 3 de suporte em comunicação e Nível 2 nas demais áreas, uma experiência que transformou minha trajetória pessoal e ampliou minha visão sobre educação, inclusão e políticas públicas. Nos Estados Unidos (Utah), acompanhei de perto um sistema de Educação Especial estruturado, no qual o IEP é obrigatório, padronizado e revisado anualmente, com equipes multiprofissionais atuando dentro da escola, tecnologia assistiva integrada ao currículo e monitoramento real do progresso dos estudantes. Também presenciei momentos de retrocesso, quando serviços importantes correram risco de interrupção, um alerta claro sobre a fragilidade de políticas que não são permanentes.
-          </p>
-        </div>
+          <div class="hero-sub">
+            <p>
+            Proposta idealizada por Thaianne Kelly Pereira da Silva. Sou mãe de um menino autista com Nível 3 de suporte em comunicação e Nível 2 nas demais áreas, uma experiência que transformou minha trajetória pessoal e ampliou minha visão sobre educação, inclusão e políticas públicas. Nos Estados Unidos (Utah), acompanhei de perto um sistema de Educação Especial estruturado, no qual o IEP é obrigatório, padronizado e revisado anualmente, com equipes multiprofissionais atuando dentro da escola, tecnologia assistiva integrada ao currículo e monitoramento real do progresso dos estudantes. Também presenciei momentos de retrocesso, quando serviços importantes correram risco de interrupção, um alerta claro sobre a fragilidade de políticas que não são permanentes.
+            </p>
+          </div>
 
-        <div class="hero-grid">
-          <div class="hero-chip"><span>🧩</span><span>PEI Obrigatório e Vivo</span></div>
-          <div class="hero-chip"><span>📱</span><span>Tecnologia Assistiva e AAC</span></div>
-          <div class="hero-chip"><span>🤝</span><span>Família como Parceira</span></div>
-          <div class="hero-chip"><span>📚</span><span>Salas de Educação Especial</span></div>
-          <div class="hero-chip"><span>🧩</span><span>Equipes multiprofissionais nas escolas</span></div>
-          <div class="hero-chip"><span>📊</span><span>Dados, Transparência e Resultado</span></div>
-          
-        </div>
+          <div class="hero-grid">
+            <div class="hero-chip"><span>🧩</span><span>PEI Obrigatório e Vivo</span></div>
+            <div class="hero-chip"><span>📱</span><span>Tecnologia Assistiva e AAC</span></div>
+            <div class="hero-chip"><span>🤝</span><span>Família como Parceira</span></div>
+            <div class="hero-chip"><span>📚</span><span>Salas de Educação Especial</span></div>
+            <div class="hero-chip"><span>🧩</span><span>Equipes multiprofissionais nas escolas</span></div>
+            <div class="hero-chip"><span>📊</span><span>Dados, Transparência e Resultado</span></div>
+          </div>
 
-        <div class="hero-actions">
-          <a class="btn-primary" href="#contato">Quero Saber Mais</a>
-          <a class="btn-secondary" href="#piloto">Ver Proposta do Piloto Distrito Federal 2026</a>
-        </div>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#contato">Quero Saber Mais</a>
+            <a class="btn-secondary" href="#piloto">Ver Proposta do Piloto Distrito Federal 2026</a>
+          </div>
 
-        <div class="hero-note">
-          Foco inicial no <strong>Distrito Federal</strong>, com visão de política pública nacional.
+          <div class="hero-note">
+            Foco inicial no <strong>Distrito Federal</strong>, com visão de política pública nacional.
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="card">
-          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
-            📊 Por que este Projeto é Urgente?
-          </h3>
-          
-          <div style="margin-bottom: 1rem;">
-            <h4 style="color: var(--azul-escuro); margin: 0.5rem 0 0.3rem; font-size: 0.95rem;">🎯 Dados do Censo Escolar:</h4>
-            <ul style="font-size: 0.9rem; margin-top: 0.2rem;">
-              <li><strong>1,3 milhão</strong> de matrículas na educação especial</li>
-              <li><strong>33% de crescimento</strong> em matrículas de autismo (5 anos)</li>
-              <li><strong>Falta de dados</strong> sobre evasão e progresso real</li>
-            </ul>
-          </div>
+      <!-- COLUNA DA DIREITA - "Por que é urgente" LADO A LADO -->
+      <div class="hero-urgent-card">
+        <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+          📊 Por que este Projeto é Urgente?
+        </h3>
         
-          <div style="margin-bottom: 1rem;">
-            <h4 style="color: var(--azul-escuro); margin: 0.5rem 0 0.3rem; font-size: 0.95rem;">⚡ Problemas Identificados:</h4>
-            <ul style="font-size: 0.9rem; margin-top: 0.2rem;">
-              <li>Falta de estrutura e profissionais especializados</li>
-              <li>Ausência de padrão nacional para PEI</li>
-              <li>Baixa oferta de tecnologia assistiva</li>
-              <li>Acompanhamento contínuo insuficiente</li>
-            </ul>
-          </div>
-        
-          <div style="background: var(--spectrum-soft); padding: 0.8rem; border-radius: 10px; margin-top: 0.5rem;">
-            <p style="margin: 0; font-size: 0.85rem; font-weight: 600; color: var(--azul-escuro);">
-              💡 <strong>Solução:</strong> Modelo baseado em evidências com PEI obrigatório, tecnologia assistiva e dados transparentes
-            </p>
-          </div>
-        
-          <div class="chip-list">
-            <span class="chip">Dados Reais</span>
-            <span class="chip">Evidências</span>
-            <span class="chip">Solução Prática</span>
-          </div>
+        <div style="margin-bottom: 1rem;">
+          <h4 style="color: var(--azul-escuro); margin: 0.5rem 0 0.3rem; font-size: 0.95rem;">🎯 Dados do Censo Escolar:</h4>
+          <ul style="font-size: 0.9rem; margin-top: 0.2rem;">
+            <li><strong>1,3 milhão</strong> de matrículas na educação especial</li>
+            <li><strong>33% de crescimento</strong> em matrículas de autismo (5 anos)</li>
+            <li><strong>Falta de dados</strong> sobre evasão e progresso real</li>
+          </ul>
+        </div>
+      
+        <div style="margin-bottom: 1rem;">
+          <h4 style="color: var(--azul-escuro); margin: 0.5rem 0 0.3rem; font-size: 0.95rem;">⚡ Problemas Identificados:</h4>
+          <ul style="font-size: 0.9rem; margin-top: 0.2rem;">
+            <li>Falta de estrutura e profissionais especializados</li>
+            <li>Ausência de padrão nacional para PEI</li>
+            <li>Baixa oferta de tecnologia assistiva</li>
+            <li>Acompanhamento contínuo insuficiente</li>
+          </ul>
+        </div>
+      
+        <div style="background: var(--spectrum-soft); padding: 0.8rem; border-radius: 10px; margin-top: 0.5rem;">
+          <p style="margin: 0; font-size: 0.85rem; font-weight: 600; color: var(--azul-escuro);">
+            💡 <strong>Solução:</strong> Modelo baseado em evidências com PEI obrigatório, tecnologia assistiva e dados transparentes
+          </p>
+        </div>
+      
+        <div class="chip-list">
+          <span class="chip">Dados Reais</span>
+          <span class="chip">Evidências</span>
+          <span class="chip">Solução Prática</span>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- Restante do código permanece igual -->
   <!-- SOBRE -->
   <section id="sobre" class="section">
     <div class="section-inner">
@@ -991,6 +1021,8 @@ textarea {
       </div>
     </div>
   </section>
+
+  <!-- Restante das seções permanecem iguais -->
   <!-- SEÇÃO URGENTE -->
   <section id="urgente" class="section">
     <div class="section-inner">
@@ -1060,8 +1092,8 @@ textarea {
       </div>
     </div>
   </section>
+
   <!-- CONTATO -->
-  <!-- SEÇÃO CONTATO ATUALIZADA COM AJAX -->
   <section id="contato" class="section">
     <div class="section-inner">
       <div class="section-header">
@@ -1136,6 +1168,7 @@ textarea {
       </div>
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
@@ -1144,11 +1177,22 @@ textarea {
         para uma educação especial inclusiva, tecnológica e com resultados reais.
       </small>
       <small>
-        “Inclusão não é presença. É participação, aprendizagem e resultado.”
+        "Inclusão não é presença. É participação, aprendizagem e resultado."
       </small>
     </div>
   </footer>
+
   <script>
+    // Ano atual no footer
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Menu mobile
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('open');
+    }
+
+    // Form submission
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
@@ -1169,7 +1213,6 @@ textarea {
       try {
         const formData = new FormData(this);
         
-        // ⚠️ SUBSTITUA SEU_FORM_ID_AQUI pelo seu ID real do Formspree
         const response = await fetch('https://formspree.io/f/xpwbqzkw', {
           method: 'POST',
           body: formData,
@@ -1179,7 +1222,6 @@ textarea {
         });
         
         if (response.ok) {
-          // Sucesso - mostra mensagem personalizada
           formMessage.style.background = 'var(--spectrum-soft)';
           formMessage.style.color = 'green';
           formMessage.style.border = '2px solid green';
@@ -1192,18 +1234,13 @@ textarea {
             </div>
           `;
           formMessage.style.display = 'block';
-          
-          // Limpa o formulário
           this.reset();
-          
-          // Rola a tela para mostrar a mensagem
           formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
           throw new Error('Erro ao enviar formulário');
         }
         
       } catch (error) {
-        // Erro - mostra mensagem de erro
         formMessage.style.background = '#ffebee';
         formMessage.style.color = 'red';
         formMessage.style.border = '2px solid red';
@@ -1218,11 +1255,8 @@ textarea {
           </div>
         `;
         formMessage.style.display = 'block';
-        
-        // Rola a tela para mostrar o erro
         formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } finally {
-        // Restaura o botão
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
