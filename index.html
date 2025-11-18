@@ -1108,8 +1108,13 @@
       const formMessage = document.getElementById('formMessage');
       const originalText = submitBtn.textContent;
       
-      // Loading
-      submitBtn.textContent = 'Enviando...';
+      // Loading com spinner
+      submitBtn.innerHTML = `
+        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          <div class="spinner" style="border-top-color: white;"></div>
+          Enviando...
+        </span>
+      `;
       submitBtn.disabled = true;
       formMessage.style.display = 'none';
       
