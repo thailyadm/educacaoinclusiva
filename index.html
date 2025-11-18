@@ -481,73 +481,126 @@
     }
 
     /* CONTATO */
-
+    
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
       gap: 2rem;
     }
-
+    
     @media (max-width: 880px) {
       .contact-grid {
         grid-template-columns: minmax(0,1fr);
       }
     }
-
+    
     .contact-list {
       list-style: none;
       padding: 0;
       margin: 0.4rem 0 0;
       font-size: 0.95rem;
     }
-
+    
     .contact-list li + li {
       margin-top: 0.4rem;
     }
-
+    
     .contact-label {
       font-weight: 600;
       color: var(--azul-escuro);
     }
-
+    
+    /* --- FORMULÁRIO BONITO --- */
+    
     .form-card {
-      background: #fff;
-      border-radius: var(--radius-card);
-      padding: 1.2rem 1.3rem;
-      box-shadow: var(--shadow-card);
-      border: 1px solid #e3e8f7;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
-
+    
+    .form-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    
+    .form-note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    
     .form-row {
+      margin-bottom: 1.3rem;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-      margin-bottom: 0.75rem;
     }
-
-    label {
-      font-size: 0.85rem;
+    
+    .form-row label {
       font-weight: 600;
-      color: #555;
+      margin-bottom: 0.4rem;
+      color: #222;
     }
-
-    input, textarea {
-      border-radius: 10px;
-      border: 1px solid #d4daee;
-      padding: 0.55rem 0.7rem;
+    
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid #d1d9e6;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: #f9fbff;
+      transition: 0.2s;
       font-family: inherit;
-      font-size: 0.9rem;
     }
-
+    
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: #b3baca;
+    }
+    
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus {
+      outline: none;
+      border-color: #6a92ff;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(106,146,255,0.15);
+    }
+    
     textarea {
-      min-height: 90px;
+      min-height: 120px;
       resize: vertical;
     }
-
-    .form-note {
-      font-size: 0.78rem;
-      color: #777;
-      margin-bottom: 0.7rem;
+    
+    /* BOTÃO BONITO ARCO-ÍRIS */
+    
+    .btn-primary {
+      margin-top: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(90deg,
+        #22c55e,
+        #eab308,
+        #f97316,
+        #ef4444,
+        #a855f7,
+        #3b82f6
+      );
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
 
     /* FOOTER */
@@ -575,9 +628,27 @@
       opacity: 0.9;
     }
   </style>
+  <!-- Schema Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization", 
+    "name": "Educação Inclusiva com Resultado",
+    "description": "Projeto de educação especial com foco em PEI, tecnologia assistiva e resultados concretos para crianças com deficiência, TEA e altas habilidades",
+    "url": "https://seusite.github.io",
+    "logo": "https://seusite.github.io/heart-puzzle.jpeg",
+    "founder": {
+      "@type": "Person",
+      "name": "Thaianne Kelly Pereira da Silva",
+      "jobTitle": "Idealizadora do Projeto"
+    },
+    "areaServed": "Brasil"
+  }
+</script>
 </head>
 <body>
-
+  <!-- Skip Link para Acessibilidade -->
+  <a href="#main" class="skip-link">Pular para conteúdo principal</a>
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="navbar-inner">
@@ -599,10 +670,15 @@
   </header>
 
   <!-- HERO -->
-  <main id="inicio" class="hero">
+  <main id="main" class="hero">
     <div class="hero-inner">
       <div class="hero-logo-block">
-        <img src="heart-puzzle.jpeg" alt="Logo Educação Inclusiva com Resultado" class="hero-logo" />
+        <img src="heart-puzzle.jpeg" 
+           alt="Logo Educação Inclusiva - quebra-cabeça com coração representando inclusão"
+           loading="lazy"
+           width="260" 
+           height="260"
+           style="width: 100%; height: auto;">
 
         <div class="hero-badge">
           💙 Educação Inclusiva · Tecnologia · Resultado
