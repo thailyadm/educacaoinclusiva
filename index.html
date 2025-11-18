@@ -831,9 +831,9 @@
   </section>
 
   <!-- CONTATO -->
+  <!-- SEÇÃO CONTATO ATUALIZADA COM FORMSPREE -->
   <section id="contato" class="section">
     <div class="section-inner">
-      
       <div class="section-header">
         <div class="section-kicker">Contato</div>
         <h2 class="section-title">Fale com o projeto Educação Inclusiva com Resultado</h2>
@@ -848,7 +848,7 @@
           <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
             Canais oficiais
           </h3>  
-          <ul class="Contact-List">
+          <ul class="contact-list">
             <li>
               <span class="contact-label">E-mail institucional:</span><br />
               <a href="mailto:contato@educacaoinclusiva.com">contato@educacaoinclusiva.com</a>
@@ -866,53 +866,64 @@
         </div>
         <!-- COLUNA DIREITA -->
         <div class="form-card">
-          <!-- TÍTULO ANIMADO -->
-          <h3 class="envie-uma-mensagem-animated" style="margin-top:0;color:var(--azul-escuro);">ENVIE UMA MENSAGEM</h3>
+          <h3 style="margin-top:0;color:var(--azul-escuro);">ENVIE UMA MENSAGEM</h3>
           <p class="form-note">
-            Sua mensagem será enviada diretamente para nosso e-mail institucional via Zoho Forms.
+            Sua mensagem será enviada diretamente para nosso e-mail institucional.
           </p>  
-          <form onsubmit="alert('Obrigado pela mensagem! Em breve entraremos em contato.'); return false;">
+          
+          <!-- FORMULÁRIO FORMSPREE - SUBSTITUA SEU_FORM_ID -->
+          <form action="https://formspree.io/f/xpwbqzkw" method="POST">
             <div class="form-row">
-              <label for="nome">Nome</label>
-              <input id="nome" type="text" placeholder="Seu nome completo" required />
+              <label for="nome">Nome *</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
             </div>
             <div class="form-row">
-              <label for="email">E-mail</label>
-              <input id="email" type="email" placeholder="contato@educacaoinclusiva.com" required />
+              <label for="email">E-mail *</label>
+              <input id="email" name="email" type="email" placeholder="seu@email.com" required />
             </div>
             <div class="form-row">
               <label for="tipo">Você é</label>
-              <input id="tipo" type="text" placeholder="Família, escola, parlamentar, rede de ensino..." />
+              <select id="tipo" name="tipo">
+                <option value="">Selecione...</option>
+                <option value="Família">Família</option>
+                <option value="Educador">Educador/Professor</option>
+                <option value="Gestor">Gestor Escolar</option>
+                <option value="Parlamentar">Parlamentar</option>
+                <option value="Rede de Ensino">Rede de Ensino</option>
+                <option value="Outro">Outro</option>
+              </select>
             </div>
             <div class="form-row">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse."></textarea>
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse." required></textarea>
             </div>
-            <button type="submit" class="btn-primary">Enviar mensagem</button>
+            <button type="submit" class="btn-primary">
+              Enviar mensagem
+            </button>
           </form>
+          
+          <div id="formMessage" style="margin-top: 1rem; display: none;"></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <small>
-        © <span id="ano"></span> Educação Inclusiva com Resultado – um projeto de política pública
-        para uma educação especial inclusiva, tecnológica e com resultados reais.
-      </small>
-      <small>
-        “Inclusão não é Presença. É Participação, Aprendizagem e Resultado.”
-      </small>
-    </div>
-  </footer>
+  
+  <!-- SCRIPT PARA MELHORAR A EXPERIÊNCIA DO USUÁRIO -->
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("open");
-    }
-    document.getElementById("ano").textContent = new Date().getFullYear();
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      // Mostra loading
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+      
+      // Volta ao normal depois de 3 segundos (caso a página recarregue)
+      setTimeout(function() {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 3000);
+    });
   </script>
 </body>
 </html>
