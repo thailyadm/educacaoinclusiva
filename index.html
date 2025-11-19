@@ -12,7 +12,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-DH36VE13B4'); <!-- SUBSTITUA PELO SEU ID REAL -->
+    gtag('config', 'G-DH36VE13B4');
   </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,726 +20,689 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    /* SEU CSS COMPLETO AQUI (mantive igual) */
     :root {
-  --cinza-fundo: #f5f7fb;
-  --cinza-texto: #444;
-  --radius-card: 18px;
-  --shadow-card: 0 10px 25px rgba(0,0,0,0.08);
-  --azul-escuro: #153064;
-
-  /* Degradê com as cores do espectro (∞ autismo) */
-  --spectrum: linear-gradient(90deg,
-    #2156c9,  /* azul */
-    #2fbf4a,  /* verde */
-    #ffc92b,  /* amarelo */
-    #ff8c42,  /* laranja */
-    #f44336,  /* vermelho */
-    #9b3efc   /* roxo */
-  );
-
-  --spectrum-soft: linear-gradient(90deg,
-    rgba(33,86,201,0.18),
-    rgba(47,191,74,0.18),
-    rgba(255,201,43,0.18),
-    rgba(255,140,66,0.18),
-    rgba(244,67,54,0.18),
-    rgba(155,62,252,0.18)
-  );
-
-  /* Variáveis de animação */
-  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--cinza-texto);
-  background: white;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 4px solid transparent;
-  background-clip: padding-box;
-  border-image: var(--spectrum) 1;
-}
-
-.navbar-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0.6rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.brand-name {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--azul-escuro);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.nav-links a {
-  position: relative;
-  padding-bottom: 0.2rem;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--spectrum);
-  transition: width 0.2s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-cta {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: var(--spectrum);
-  color: #fff;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-}
-
-@media (max-width: 720px) {
-  .nav-links {
-    position: absolute;
-    inset: 100% 0 auto 0;
-    background: white;
-    padding: 0.75rem 1.25rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid #e2e6f0;
-    display: none;
-  }
-  .nav-links.open {
-    display: flex;
-  }
-  .nav-toggle {
-    display: block;
-  }
-}
-
-/* HERO - LAYOUT COMPACTO COMO NO PRINT */
-.hero {
-  background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
-  padding: 2.3rem 1.5rem 2.8rem;
-}
-
-.hero-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr; /* Card mais compacto à direita */
-  align-items: start;
-  gap: 1.5rem;
-}
-
-/* COLUNA DA ESQUERDA - Conteúdo principal */
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.hero-logo-block {
-  text-align: left;
-}
-
-.hero-logo {
-  max-width: 120px;
-  margin: 0 0 1rem 0;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  background: var(--spectrum-soft);
-  color: var(--azul-escuro);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 1rem;
-}
-
-.hero-title {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  font-weight: 700;
-  color: var(--azul-escuro);
-  margin: 0.5rem 0 0.8rem 0;
-  line-height: 1.2;
-}
-
-.hero-sub {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.7rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-chip {
-  background: #ffffff;
-  border-radius: 999px;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.82rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  border: 2px solid transparent;
-  border-image: var(--spectrum) 1;
-  font-weight: 600;
-  text-align: center;
-  min-height: 42px;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  justify-content: flex-start;
-}
-
-.btn-primary {
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--spectrum);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-.btn-secondary {
-  padding: 0.75rem 1.3rem;
-  border-radius: 999px;
-  border: 2px solid transparent;
-  border-image: var(--spectrum) 1;
-  background: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-2px);
-}
-
-.hero-note {
-  font-size: 0.75rem;
-  color: #666;
-  margin-top: 0.8rem;
-}
-
-/* COLUNA DA DIREITA - Card compacto como no print */
-.hero-urgent-card {
-  background: #fff;
-  border-radius: var(--radius-card);
-  padding: 1.2rem;
-  box-shadow: var(--shadow-card);
-  border: 1px solid #e5e9f5;
-  height: fit-content;
-  max-width: 320px;
-  margin-left: auto;
-}
-
-.hero-urgent-card h3 {
-  margin: 0 0 0.8rem 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  background: var(--spectrum);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.urgent-section {
-  margin-bottom: 1rem;
-}
-
-.urgent-section h4 {
-  color: var(--azul-escuro);
-  margin: 0.5rem 0 0.3rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.urgent-section ul {
-  font-size: 0.82rem;
-  margin: 0.2rem 0 0.5rem;
-  padding-left: 1.1rem;
-  line-height: 1.4;
-}
-
-.urgent-section li {
-  margin-bottom: 0.2rem;
-}
-
-.solution-box {
-  background: var(--spectrum-soft);
-  padding: 0.7rem;
-  border-radius: 8px;
-  margin: 0.8rem 0;
-}
-
-.solution-box p {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--azul-escuro);
-  line-height: 1.3;
-}
-
-.chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.5rem;
-}
-
-.chip {
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  border: 1px solid #dde1f0;
-  background: #fff;
-}
-
-/* RESPONSIVO */
-@media (max-width: 880px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .hero-urgent-card {
-    max-width: 100%;
-    margin-left: 0;
-  }
-  
-  .hero-logo-block {
-    text-align: center;
-  }
-  
-  .hero-actions {
-    justify-content: center;
-  }
-}
-
-/* RESTANTE DO CSS */
-.section {
-  padding: 2.3rem 1.5rem;
-  background: #fff;
-}
-
-.section:nth-of-type(even) {
-  background: var(--cinza-fundo);
-}
-
-.section-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.section-header {
-  margin-bottom: 1.4rem;
-}
-
-.section-kicker {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: #2156c9;
-  margin-bottom: 0.2rem;
-}
-
-.section-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--azul-escuro);
-  margin: 0;
-}
-
-.section-sub {
-  margin-top: 0.35rem;
-  font-size: 0.95rem;
-  max-width: 640px;
-}
-
-.two-cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 2rem;
-}
-
-@media (max-width: 880px) {
-  .two-cols {
-    grid-template-columns: minmax(0,1fr);
-  }
-}
-
-.card {
-  background: #fff;
-  border-radius: var(--radius-card);
-  padding: 1.3rem 1.4rem;
-  box-shadow: var(--shadow-card);
-  border: 1px solid #e5e9f5;
-  transition: all 0.4s var(--ease-out);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: var(--azul-escuro);
-  font-size: 1.05rem;
-}
-
-.chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-.chip {
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  border: 1px solid #dde1f0;
-  background: #fff;
-}
-
-ul {
-  padding-left: 1.1rem;
-  margin: 0.4rem 0 0.2rem;
-  font-size: 0.95rem;
-}
-
-li + li {
-  margin-top: 0.18rem;
-}
-
-/* PILARES */
-.pillar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
-}
-
-.pillar-item {
-  background: #fff;
-  border-radius: var(--radius-card);
-  padding: 1rem 1.1rem;
-  border: 1px solid #dde3f5;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s var(--ease-out);
-}
-
-.pillar-item:hover {
-  transform: translateY(-3px);
-}
-
-.pillar-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--spectrum);
-}
-
-.pillar-number {
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #2156c9;
-  margin-bottom: 0.2rem;
-}
-
-.pillar-item h3 {
-  font-size: 0.98rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.3rem;
-  color: var(--azul-escuro);
-}
-
-.tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
-  font-size: 0.78rem;
-}
-
-.tag {
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: var(--spectrum-soft);
-  color: var(--azul-escuro);
-}
-
-/* CONTATO */
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-  gap: 2rem;
-}
-
-@media (max-width: 880px) {
-  .contact-grid {
-    grid-template-columns: minmax(0,1fr);
-  }
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.4rem 0 0;
-  font-size: 0.95rem;
-}
-
-.contact-list li + li {
-  margin-top: 0.4rem;
-}
-
-.contact-label {
-  font-weight: 600;
-  color: var(--azul-escuro);
-}
-
-/* FORMULÁRIO */
-.form-card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-}
-
-.form-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-  color: var(--azul-escuro);
-}
-
-.form-note {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 1.2rem;
-}
-
-.form-row {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-row label {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: #222;
-  font-size: 0.9rem;
-}
-
-.form-row input,
-.form-row textarea,
-.form-row select {
-  width: 100%;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid #d1d9e6;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  background: #f9fbff;
-  transition: 0.2s;
-  font-family: inherit;
-}
-
-.form-row input::placeholder,
-.form-row textarea::placeholder {
-  color: #b3baca;
-}
-
-.form-row input:focus,
-.form-row textarea:focus,
-.form-row select:focus {
-  outline: none;
-  border-color: #6a92ff;
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(106,146,255,0.15);
-}
-
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.form-card .btn-primary {
-  margin-top: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 40px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  background: linear-gradient(90deg, #22c55e, #eab308, #f97316, #ef4444, #a855f7, #3b82f6);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  width: 100%;
-}
-
-.form-card .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* FOOTER */
-.footer {
-  background: var(--azul-escuro);
-  color: #e8ecff;
-  padding: 1.3rem 1.5rem 1.4rem;
-  font-size: 0.82rem;
-  border-top: 4px solid transparent;
-  border-image: var(--spectrum) 1;
-}
-
-.footer-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.footer small {
-  opacity: 0.9;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid transparent;
-  border-top: 2px solid currentColor;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  display: inline-block;
-}
-
-/* Skip link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--azul-escuro);
-  color: white;
-  padding: 8px 12px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  z-index: 10000;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
+      --cinza-fundo: #f5f7fb;
+      --cinza-texto: #444;
+      --radius-card: 18px;
+      --shadow-card: 0 10px 25px rgba(0,0,0,0.08);
+      --azul-escuro: #153064;
+      --spectrum: linear-gradient(90deg, #2156c9, #2fbf4a, #ffc92b, #ff8c42, #f44336, #9b3efc);
+      --spectrum-soft: linear-gradient(90deg, rgba(33,86,201,0.18), rgba(47,191,74,0.18), rgba(255,201,43,0.18), rgba(255,140,66,0.18), rgba(244,67,54,0.18), rgba(155,62,252,0.18));
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--cinza-texto);
+      background: white;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 4px solid transparent;
+      background-clip: padding-box;
+      border-image: var(--spectrum) 1;
+    }
+    
+    .navbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--azul-escuro);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+    
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--spectrum);
+      transition: width 0.2s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--spectrum);
+      color: #fff;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+    }
+    
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: white;
+        padding: 0.75rem 1.25rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #e2e6f0;
+        display: none;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+    
+    /* HERO - LAYOUT COMPACTO */
+    .hero {
+      background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
+      padding: 2.3rem 1.5rem 2.8rem;
+    }
+    
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      align-items: start;
+      gap: 1.5rem;
+    }
+    
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .hero-logo-block {
+      text-align: left;
+    }
+    
+    .hero-logo {
+      max-width: 120px;
+      margin: 0 0 1rem 0;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: var(--spectrum-soft);
+      color: var(--azul-escuro);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-title {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 700;
+      color: var(--azul-escuro);
+      margin: 0.5rem 0 0.8rem 0;
+      line-height: 1.2;
+    }
+    
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-chip {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: 2px solid transparent;
+      border-image: var(--spectrum) 1;
+      font-weight: 600;
+      text-align: center;
+      min-height: 42px;
+    }
+    
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: flex-start;
+    }
+    
+    .btn-primary {
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--spectrum);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    
+    .btn-secondary {
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      border-image: var(--spectrum) 1;
+      background: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+    
+    .hero-note {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.8rem;
+    }
+    
+    .hero-urgent-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #e5e9f5;
+      height: fit-content;
+      max-width: 320px;
+      margin-left: auto;
+    }
+    
+    .hero-urgent-card h3 {
+      margin: 0 0 0.8rem 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: var(--spectrum);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    
+    .urgent-section {
+      margin-bottom: 1rem;
+    }
+    
+    .urgent-section h4 {
+      color: var(--azul-escuro);
+      margin: 0.5rem 0 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .urgent-section ul {
+      font-size: 0.82rem;
+      margin: 0.2rem 0 0.5rem;
+      padding-left: 1.1rem;
+      line-height: 1.4;
+    }
+    
+    .urgent-section li {
+      margin-bottom: 0.2rem;
+    }
+    
+    .solution-box {
+      background: var(--spectrum-soft);
+      padding: 0.7rem;
+      border-radius: 8px;
+      margin: 0.8rem 0;
+    }
+    
+    .solution-box p {
+      margin: 0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--azul-escuro);
+      line-height: 1.3;
+    }
+    
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+    
+    .chip {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      border: 1px solid #dde1f0;
+      background: #fff;
+    }
+    
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .hero-urgent-card {
+        max-width: 100%;
+        margin-left: 0;
+      }
+      
+      .hero-logo-block {
+        text-align: center;
+      }
+      
+      .hero-actions {
+        justify-content: center;
+      }
+    }
+    
+    /* SEÇÕES GENÉRICAS */
+    .section {
+      padding: 2.3rem 1.5rem;
+      background: #fff;
+    }
+    
+    .section:nth-of-type(even) {
+      background: var(--cinza-fundo);
+    }
+    
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      margin-bottom: 1.4rem;
+    }
+    
+    .section-kicker {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #2156c9;
+      margin-bottom: 0.2rem;
+    }
+    
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--azul-escuro);
+      margin: 0;
+    }
+    
+    .section-sub {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+      max-width: 640px;
+    }
+    
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+    
+    @media (max-width: 880px) {
+      .two-cols {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+    
+    .card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #e5e9f5;
+      transition: all 0.4s var(--ease-out);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .card h3 {
+      margin-top: 0;
+      color: var(--azul-escuro);
+      font-size: 1.05rem;
+    }
+    
+    ul {
+      padding-left: 1.1rem;
+      margin: 0.4rem 0 0.2rem;
+      font-size: 0.95rem;
+    }
+    
+    li + li {
+      margin-top: 0.18rem;
+    }
+    
+    /* PILARES */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+    
+    .pillar-item {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 1rem 1.1rem;
+      border: 1px solid #dde3f5;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out);
+    }
+    
+    .pillar-item:hover {
+      transform: translateY(-3px);
+    }
+    
+    .pillar-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--spectrum);
+    }
+    
+    .pillar-number {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #2156c9;
+      margin-bottom: 0.2rem;
+    }
+    
+    .pillar-item h3 {
+      font-size: 0.98rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--azul-escuro);
+    }
+    
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+    }
+    
+    .tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--spectrum-soft);
+      color: var(--azul-escuro);
+    }
+    
+    /* CONTATO */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 2rem;
+    }
+    
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+    
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.95rem;
+    }
+    
+    .contact-list li + li {
+      margin-top: 0.4rem;
+    }
+    
+    .contact-label {
+      font-weight: 600;
+      color: var(--azul-escuro);
+    }
+    
+    /* FORMULÁRIO */
+    .form-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+    
+    .form-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--azul-escuro);
+    }
+    
+    .form-note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+    
+    .form-row {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-row label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #222;
+      font-size: 0.9rem;
+    }
+    
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #d1d9e6;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      background: #f9fbff;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+    
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: #b3baca;
+    }
+    
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus {
+      outline: none;
+      border-color: #6a92ff;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(106,146,255,0.15);
+    }
+    
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .form-card .btn-primary {
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(90deg, #22c55e, #eab308, #f97316, #ef4444, #a855f7, #3b82f6);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    
+    .form-card .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--azul-escuro);
+      color: #e8ecff;
+      padding: 1.3rem 1.5rem 1.4rem;
+      font-size: 0.82rem;
+      border-top: 4px solid transparent;
+      border-image: var(--spectrum) 1;
+    }
+    
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    
+    .footer small {
+      opacity: 0.9;
+    }
+    
+    /* ANIMAÇÕES */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+    }
+    
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--azul-escuro);
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      z-index: 10000;
+      transition: top 0.3s;
+    }
+    
+    .skip-link:focus {
+      top: 6px;
+    }
   </style>
 </head>
 <body>
@@ -756,7 +719,9 @@ textarea {
         <a href="#sobre">Minha História</a>
         <a href="#dados">Dados & Urgência</a>
         <a href="#pilares">Pilares</a>
+        <a href="#tecnologia">Tecnologia</a>
         <a href="#piloto">Piloto DF 2026</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
         <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">✉ Fale Conosco</a>
       </nav>
@@ -787,7 +752,7 @@ textarea {
           <div class="hero-sub">
             <p>
               Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. 
-              Ao vinvenciar um sistema estruturado com IEP obrigatório, tecnologia assistiva e equipes multiprofissionais 
+              Ao vivenciar um sistema estruturado com IEP obrigatório, tecnologia assistiva e equipes multiprofissionais 
               nas escolas. Também presenciei a fragilidade de políticas não-permanentes, o que inspirou este 
               projeto adaptando a um modelo sustentável no Brasil.
             </p>
@@ -859,9 +824,9 @@ textarea {
           <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
             👨‍👩‍👦 Minha Jornada como Mãe
           </h3>
-          <p>Meu nome é<strong>Thaianne</strong>, sou mãe de um menino autista não verbal.</p>
+          <p>Meu nome é <strong>Thaianne</strong>, sou mãe de um menino autista não verbal.</p>
           
-          <p>E Esta experiência transformou minha trajetória pessoal e ampliou minha visão sobre 
+          <p>Esta experiência transformou minha trajetória pessoal e ampliou minha visão sobre 
           educação, inclusão e políticas públicas de forma profunda e irreversível.</p>
 
           <p>Como mãe, vivencio diariamente os desafios e as possibilidades da educação especial, 
@@ -898,59 +863,7 @@ textarea {
           estruturado para a educação inclusiva no Brasil.
         </p>
       </div>
-        <div class="card">
-          <h3>⚖️ Marco Legal</h3>
-          <ul>
-            <li>Lei Brasileira de Inclusão (LBI) - Lei 13.146/2015</li>
-            <li>Política Nacional de Educação Especial (PNEE)</li>
-            <li>Necessidade de implementação prática nas redes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SEÇÃO TECNOLOGIA -->
-  <section id="tecnologia" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-kicker">Recursos</div>
-        <h2 class="section-title">Tecnologia Assistiva na Prática</h2>
-      </div>  
-      <div class="pillar-grid">
-        <div class="pillar-item">
-          <h3>💬 Comunicadores AAC</h3>
-          <p>Apps como Communicator, Talk Suite e Proloquo2Go para comunicação alternativa.</p>
-        </div>    
-        <div class="pillar-item">
-          <h3>⌨️ Acessibilidade Digital</h3>
-          <p>Teclados adaptados, controles por voz e navegação por switch.</p>
-        </div>      
-        <div class="pillar-item">
-          <h3>📱 Tablets Educacionais</h3>
-          <p>Dispositivos com apps especializados para apoio ao aprendizado.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO FAQ -->
-  <section id="faq" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-kicker">FAQ</div>
-        <h2 class="section-title">Perguntas Frequentes</h2>
-      </div>    
-      <div class="card">
-        <h3>❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?</h3>
-        <p><strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação e tecnologia.</p>   
-        <h3>❓ Como as famílias podem participar?</h3>
-        <p>Através de reuniões de PEI, formação em tecnologia assistiva e acompanhamento do progresso.</p>
-        <h3>❓ Qual o custo para implantação?</h3>
-        <p>O projeto prevê uso de emendas parlamentares, verba de educação e parcerias com secretarias.</p>
-      </div>
-    </div>
-  </section>
       <div class="two-cols">
         <div class="card">
           <h3>📊 Dados do Censo Escolar</h3>
@@ -969,6 +882,30 @@ textarea {
             <li><strong>Baixa oferta de tecnologia assistiva</strong> nas escolas públicas</li>
             <li><strong>Acompanhamento contínuo insuficiente</strong> do progresso</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 2rem;">
+        <h3>⚖️ Marco Legal vs. Realidade</h3>
+        <div class="two-cols">
+          <div>
+            <h4 style="color: var(--azul-escuro);">📜 Legislação Existente</h4>
+            <ul>
+              <li>Lei Brasileira de Inclusão (LBI) - Lei 13.146/2015</li>
+              <li>Política Nacional de Educação Especial (PNEE)</li>
+              <li>Direito à educação inclusiva garantido</li>
+              <li>Obrigatoriedade do atendimento especializado</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--azul-escuro);">🔍 Lacunas na Implementação</h4>
+            <ul>
+              <li>Falta de padronização nacional</li>
+              <li>Recursos insuficientes</li>
+              <li>Capacitação descontínua</li>
+              <li>Monitoramento ineficaz</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -1031,6 +968,53 @@ textarea {
     </div>
   </section>
 
+  <!-- TECNOLOGIA ASSISTIVA -->
+  <section id="tecnologia" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Recursos</div>
+        <h2 class="section-title">Tecnologia Assistiva na Prática</h2>
+        <p class="section-sub">
+          Ferramentas e recursos que fazem a diferença no dia a dia dos estudantes com necessidades especiais.
+        </p>
+      </div>  
+      <div class="pillar-grid">
+        <div class="pillar-item">
+          <h3>💬 Comunicadores AAC</h3>
+          <p>Apps como Communicator, Talk Suite e Proloquo2Go para comunicação alternativa e aumentativa.</p>
+          <div class="tag-row">
+            <span class="tag">AAC</span>
+            <span class="tag">Comunicação</span>
+          </div>
+        </div>    
+        <div class="pillar-item">
+          <h3>⌨️ Acessibilidade Digital</h3>
+          <p>Teclados adaptados, controles por voz, navegação por switch e softwares de acesso alternativo.</p>
+          <div class="tag-row">
+            <span class="tag">Acessibilidade</span>
+            <span class="tag">Tecnologia</span>
+          </div>
+        </div>      
+        <div class="pillar-item">
+          <h3>📱 Tablets Educacionais</h3>
+          <p>Dispositivos com apps especializados para apoio ao aprendizado e desenvolvimento de habilidades.</p>
+          <div class="tag-row">
+            <span class="tag">Tablets</span>
+            <span class="tag">Apps</span>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <h3>🎯 Recursos Personalizados</h3>
+          <p>Adaptações específicas para cada necessidade, desde suportes físicos até softwares customizados.</p>
+          <div class="tag-row">
+            <span class="tag">Personalização</span>
+            <span class="tag">Adaptações</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PILOTO DF 2026 -->
   <section id="piloto" class="section">
     <div class="section-inner">
@@ -1061,7 +1045,48 @@ textarea {
             <strong>Formação das Equipes.</strong>
             <p style="font-size:0.9rem;margin-top:0.2rem;">Professores, gestores e equipes de apoio formados em PEI, AAC e inclusão.</p>
           </div>
+          <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;">Etapa 3</div>
+            <strong>PEI Digital + Tecnologia Assistiva.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">Implantação de sistema digital de PEI, tablets e comunicadores nas escolas-polo.</p>
+          </div>
+          <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;">Etapa 4</div>
+            <strong>Monitoramento e Indicadores.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;">Relatórios semestrais com foco em acesso, participação, comunicação e aprendizagem.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+      </div>    
+      <div class="card">
+        <h3>❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?</h3>
+        <p><strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação continuada, tecnologia 
+        e padrões claros de atuação. O AEE é a base, e este modelo traz a estruturação necessária.</p>   
+        
+        <h3>❓ Como as famílias podem participar ativamente?</h3>
+        <p>Através de reuniões regulares de PEI, formação em tecnologia assistiva, acompanhamento do progresso 
+        e participação nas decisões sobre o plano educacional de seus filhos.</p>
+        
+        <h3>❓ Qual o custo estimado para implantação?</h3>
+        <p>O projeto prevê uso estratégico de emendas parlamentares, verba de educação existente e parcerias 
+        com secretarias. Foca em eficiência e redirecionamento de recursos já disponíveis.</p>
+
+        <h3>❓ Por que começar pelo Distrito Federal?</h3>
+        <p>O DF reúne características ideais para um piloto: diversidade socioeconômica, estrutura de 
+        gestão unificada e potencial de replicação para outros estados.</p>
+
+        <h3>❓ Como garantir a continuidade do projeto?</h3>
+        <p>Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais 
+        e transparência total nos resultados - tornando o modelo parte da estrutura educacional.</p>
       </div>
     </div>
   </section>
