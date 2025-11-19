@@ -718,8 +718,62 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
+        /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 48px;
+      height: 48px;
+      background: var(--spectrum);
+      color: white;
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 
+        0 4px 15px rgba(0,0,0,0.2),
+        0 0 0 3px rgba(33, 86, 201, 0.1);
+      transition: all 0.4s var(--ease-out);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.8) translateY(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(0);
+    }
+    
+    .back-to-top:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 
+        0 6px 20px rgba(0,0,0,0.3),
+        0 0 0 4px rgba(33, 86, 201, 0.15);
+    }
+    
+    /* Efeito de pulso sutil */
+    .back-to-top.pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 0 3px rgba(33, 86, 201, 0.1); }
+      50% { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 0 5px rgba(33, 86, 201, 0.2); }
+      100% { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 0 3px rgba(33, 86, 201, 0.1); }
+    }
   </style>
 </head>
+    <!-- Botão Voltar ao Topo -->
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Voltar ao topo">
+    ↑
+  </button>
 <body>
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
@@ -1366,6 +1420,59 @@
       } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
+      }
+    });
+    // Botão Voltar ao Topo Melhorado
+    function createBackToTopButton() {
+      const button = document.createElement('button');
+      button.className = 'back-to-top';
+      button.innerHTML = '↑';
+      button.setAttribute('aria-label', 'Voltar ao início da página');
+      button.setAttribute('title', 'Voltar ao topo');
+      
+      button.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        
+        // Feedback visual no clique
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+      });
+      
+      document.body.appendChild(button);
+      return button;
+    }
+    
+    // Inicializar o botão
+    const backToTopBtn = createBackToTopButton();
+    
+    // Mostrar/ocultar baseado no scroll
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.pageYOffset;
+      
+      if (scrollPosition > 400) {
+        backToTopBtn.classList.add('show');
+        
+        // Adicionar efeito pulse depois de 5 segundos visível
+        if (scrollPosition > 1000) {
+          backToTopBtn.classList.add('pulse');
+        } else {
+          backToTopBtn.classList.remove('pulse');
+        }
+        
+      } else {
+        backToTopBtn.classList.remove('show', 'pulse');
+      }
+    });
+    
+    // Também funciona com teclado (acessibilidade)
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   </script>
