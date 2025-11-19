@@ -154,24 +154,29 @@
     /* HERO - LAYOUT COMPACTO */
     .hero {
       background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
-      padding: 2.3rem 1.5rem 2.8rem;
+      padding: 3rem 1.5rem 3rem; /* MUDOU: mais padding */
+      min-height: 80vh; /* NOVO: altura mínima */
+      display: flex; /* NOVO */
+      align-items: center; /* NOVO */
     }
     
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.6fr 0.8fr;
+      grid-template-columns: 1.35fr 0.85fr; /* MUDOU: proporção */
       align-items: start;
-      gap: 1.5rem;
+      gap: 2.5rem; /* MUDOU: gap maior */
+      width: 100%;
     }
     
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem; /* MUDOU: gap maior */
+      padding: 1.5rem 0; /* NOVO: padding vertical */
     }
-    
+   
     .hero-logo-block {
       text-align: left;
     }
@@ -197,25 +202,25 @@
     }
     
     .hero-title {
-      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-size: clamp(1.8rem, 4vw, 2.5rem); /* MUDOU: maior */
       font-weight: 700;
       color: var(--azul-escuro);
-      margin: 0.5rem 0 0.8rem 0;
-      line-height: 1.2;
+      margin: 0.5rem 0 1rem 0; /* MUDOU: margem maior embaixo */
+      line-height: 1.3; /* MUDOU: mais espaçamento entre linhas */
     }
     
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 1.05rem; /* MUDOU: texto maior */
       color: #555;
-      line-height: 1.6;
+      line-height: 1.7; /* MUDOU: mais espaçamento */
       margin-bottom: 1.5rem;
     }
     
     .hero-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.7rem;
-      margin-bottom: 1.5rem;
+      gap: 0.9rem; /* MUDOU: mais espaço entre chips */
+      margin-bottom: 2rem; /* MUDOU: margem maior */
     }
     
     .hero-chip {
@@ -284,12 +289,15 @@
     .hero-urgent-card {
       background: #fff;
       border-radius: var(--radius-card);
-      padding: 1.2rem;
+      padding: 1.8rem; /* MUDOU: mais padding */
       box-shadow: var(--shadow-card);
       border: 1px solid #e5e9f5;
       height: fit-content;
       max-width: 320px;
       margin-left: auto;
+      margin-top: 1.5rem; /* NOVO: empurra para baixo */
+      position: sticky; /* NOVO: fixa no scroll */
+      top: 100px; /* NOVO: posição fixa */
     }
     
     .hero-urgent-card h3 {
@@ -354,14 +362,21 @@
     }
     
     @media (max-width: 880px) {
+      .hero {
+        padding: 2rem 1.5rem; /* MUDOU: padding mobile */
+        min-height: auto; /* NOVO: remove altura mínima no mobile */
+      }
+      
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem; /* MUDOU: gap maior no mobile */
       }
       
       .hero-urgent-card {
         max-width: 100%;
         margin-left: 0;
+        margin-top: 0; /* NOVO: remove margem top no mobile */
+        position: static; /* NOVO: remove sticky no mobile */
       }
       
       .hero-logo-block {
