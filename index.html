@@ -815,6 +815,47 @@
         text-align: center;
       }
     }
+    /* NAVBAR COM LOGO */
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+    
+    .brand-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--azul-escuro);
+      line-height: 1.2;
+    }
+    
+    .brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #666;
+      display: block;
+    }
+    
+    @media (max-width: 720px) {
+      .brand-name {
+        font-size: 0.9rem;
+      }
+      
+      .brand-subtitle {
+        font-size: 0.7rem;
+      }
+      
+      .navbar-logo {
+        width: 35px;
+        height: 35px;
+      }
+    }
     
   </style>
 </head>
@@ -826,11 +867,24 @@
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
   
-  <!-- NAVBAR -->
+  <!-- NAVBAR COM LOGO -->
   <header class="navbar">
     <div class="navbar-inner">
-      <div class="brand-name">Educação Inclusiva com Resultado</div>
+      <!-- Logo + Nome -->
+      <div class="brand-container">
+        <img src="heart-puzzle.png" 
+             alt="Educação Inclusiva com Resultado" 
+             class="navbar-logo"
+             width="40" 
+             height="40">
+        <div class="brand-name">
+          Educação Inclusiva<br>
+          <span class="brand-subtitle">com Resultado</span>
+        </div>
+      </div>
+  
       <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+      
       <nav class="nav-links" id="navLinks">
         <a href="#inicio">Início</a>
         <a href="#sobre">Minha História</a>
