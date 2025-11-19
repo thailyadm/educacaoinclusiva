@@ -12,7 +12,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-DH36VE13B4'); <!-- SUBSTITUA PELO SEU ID REAL -->
+    gtag('config', 'G-DH36VE13B4');
   </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,102 +73,113 @@ img {
   display: block;
 }
 
-/* NAVBAR */
+/* NAVBAR SIMPLES E FUNCIONAL */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1500;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 4px solid transparent;
-  background-clip: padding-box;
-  border-image: var(--spectrum) 1;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.8rem 0;
 }
 
 .navbar-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0.6rem 1.25rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .brand-name {
-  font-weight: 700;
-  font-size: 1.03rem;
-  color: var(--azul-escuro);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 2rem;
 }
 
 .nav-links {
   display: flex;
+  gap: 0.8rem;
   align-items: center;
-  gap: 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav-links a {
-  position: relative;
-  padding-bottom: 0.2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+  flex-shrink: 0;
+  border-radius: 4px;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--spectrum);
-  transition: width 0.2s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover {
+  color: #007bff;
+  background: #f8f9fa;
 }
 
 .nav-cta {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: var(--spectrum);
-  color: #fff;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background: #007bff;
+  color: white !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 5px;
+  font-size: 0.75rem !important;
+  margin-left: 0.5rem;
 }
 
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
-@media (max-width: 720px) {
-  .nav-links {
-    position: absolute;
-    inset: 100% 0 auto 0;
-    background: white;
-    padding: 0.75rem 1.25rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid #e2e6f0;
-    display: none;
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: 0 1rem;
   }
-  .nav-links.open {
-    display: flex;
-  }
+  
   .nav-toggle {
     display: block;
   }
+  
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap: 0.5rem;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
 }
-
+    
 /* HERO - LAYOUT COMPACTO COMO NO PRINT */
 .hero {
   background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
@@ -740,13 +751,100 @@ textarea {
   top: 6px;
 }
 
+/* FAQ STYLES */
+.faq-item {
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e9f5;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s var(--ease-out);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.faq-question {
+  font-weight: 600;
+  color: var(--azul-escuro);
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.faq-answer {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* LEGISLAÇÃO STYLES */
+.legislation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.legislation-card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  border: 1px solid #e5e9f5;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s var(--ease-out);
+}
+
+.legislation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.legislation-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2156c9;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.legislation-title {
+  font-weight: 600;
+  color: var(--azul-escuro);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.legislation-description {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.legislation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.legislation-link:hover {
+  color: #0056b3;
+}
   </style>
 </head>
 <body>
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
   
-  <!-- NAVBAR -->
+  <!-- NAVBAR FUNCIONAL -->
   <header class="navbar">
     <div class="navbar-inner">
       <div class="brand-name">Educação Inclusiva com Resultado</div>
@@ -757,6 +855,8 @@ textarea {
         <a href="#dados">Dados & Urgência</a>
         <a href="#pilares">Pilares</a>
         <a href="#piloto">Piloto DF 2026</a>
+        <a href="#legislacao">Legislação</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
         <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">✉ Fale Conosco</a>
       </nav>
@@ -784,7 +884,7 @@ textarea {
             Modelo de Educação Inclusiva com Resultado no Brasil
           </h1>
 
-          <div class="hero-sub">
+          <div class="hero-sub">    
             <p>
               Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. 
               Ao vivenciar um sistema estruturado com IEP obrigatório, tecnologia assistiva e equipes multiprofissionais 
@@ -1014,6 +1114,130 @@ textarea {
     </div>
   </section>
 
+  <!-- LEGISLAÇÃO -->
+  <section id="legislacao" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">Legislação</div>
+        <h2 class="section-title">Base Legal e Marco Regulatório</h2>
+        <p class="section-sub">
+          Conheça a legislação brasileira que fundamenta o direito à educação inclusiva e as 
+          bases legais que sustentam este projeto.
+        </p>
+      </div>
+
+      <div class="legislation-grid">
+        <div class="legislation-card">
+          <div class="legislation-number">Lei 13.146/2015</div>
+          <h3 class="legislation-title">Estatuto da Pessoa com Deficiência</h3>
+          <p class="legislation-description">
+            Garante o direito à educação inclusiva em todos os níveis e aprendizagem ao longo 
+            da vida, assegurando sistema educacional inclusivo.
+          </p>
+          <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" class="legislation-link" target="_blank">
+            📄 Ver lei completa
+          </a>
+        </div>
+
+        <div class="legislation-card">
+          <div class="legislation-number">LDB 9.394/1996</div>
+          <h3 class="legislation-title">Lei de Diretrizes e Bases</h3>
+          <p class="legislation-description">
+            Estabelece a educação especial como modalidade educacional que perpassa todos os 
+            níveis e etapas do ensino.
+          </p>
+          <a href="http://www.planalto.gov.br/ccivil_03/leis/l9394.htm" class="legislation-link" target="_blank">
+            📄 Ver lei completa
+          </a>
+        </div>
+
+        <div class="legislation-card">
+          <div class="legislation-number">PNE 2014-2024</div>
+          <h3 class="legislation-title">Plano Nacional de Educação</h3>
+          <p class="legislation-description">
+            Meta 4: universalizar o acesso à educação básica para população 4-17 anos com 
+            deficiência, TEA e altas habilidades.
+          </p>
+          <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13005.htm" class="legislation-link" target="_blank">
+            📄 Ver lei completa
+          </a>
+        </div>
+
+        <div class="legislation-card">
+          <div class="legislation-number">Resolução CNE/CEB 4/2009</div>
+          <h3 class="legislation-title">Diretrizes Educação Especial</h3>
+          <p class="legislation-description">
+            Estabelece diretrizes operacionais para o atendimento educacional especializado 
+            na educação básica.
+          </p>
+          <a href="http://portal.mec.gov.br/dmdocuments/rceb004_09.pdf" class="legislation-link" target="_blank">
+            📄 Ver resolução
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-sub">
+          Tire suas dúvidas sobre o projeto Educação Inclusiva com Resultado.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">📋 O que é o PEI (Plano Educacional Individualizado)?</div>
+          <div class="faq-answer">
+            O PEI é um documento vivo e obrigatório que detalha as necessidades específicas de cada estudante, 
+            estabelece metas mensuráveis de aprendizado, define os apoios necessários e envolve a família no 
+            processo educacional. É revisado anualmente e adaptado conforme o progresso do estudante.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">💻 Como a tecnologia assistiva será implementada?</div>
+          <div class="faq-answer">
+            A tecnologia assistiva será integrada ao currículo através de tablets, comunicadores alternativos, 
+            aplicativos especializados e recursos de AAC (Comunicação Alternativa e Aumentativa). Será fornecida 
+            gratuitamente nas escolas e os professores receberão formação específica para seu uso pedagógico.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">👥 Quem compõe as equipes multiprofissionais?</div>
+          <div class="faq-answer">
+            As equipes incluem professores de educação especial, psicólogos, fonoaudiólogos, terapeutas 
+            ocupacionais, assistentes sociais e outros profissionais necessários. Atuam dentro da escola 
+            em regime de colaboração com os professores regulares.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">📊 Como será o acompanhamento dos resultados?</div>
+          <div class="faq-answer">
+            Através de um painel público de indicadores que monitora acesso, permanência, comunicação, 
+            aprendizagem e progresso dos estudantes. Os dados são atualizados mensalmente e disponibilizados 
+            de forma transparente para famílias, escolas e gestores públicos.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">🏫 O projeto será expandido para outros estados?</div>
+          <div class="faq-answer">
+            Sim, o piloto no Distrito Federal em 2026 servirá como modelo para expansão nacional. Após a 
+            comprovação dos resultados, o projeto será escalado gradualmente para outros estados através 
+            de parcerias com secretarias estaduais de educação.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato" class="section">
     <div class="section-inner">
@@ -1102,10 +1326,10 @@ textarea {
     // Ano atual no footer
     document.getElementById('ano').textContent = new Date().getFullYear();
 
-    // Menu mobile
+    // Menu mobile - FUNCIONANDO
     function toggleMenu() {
       const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('open');
+      navLinks.classList.toggle('active');
     }
 
     // Form submission
