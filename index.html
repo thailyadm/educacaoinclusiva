@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Inclusive Education with Results</title>
+  <title>Educação Inclusiva com Resultado</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Structured model proposal for special education in Brazil. Pilot project in Distrito Federal focusing on IEP, assistive technology and concrete results." />
+  <meta name="description" content="Proposta de modelo estruturado para educação especial no Brasil. Projeto piloto no Distrito Federal com foco em PEI, tecnologia assistiva e resultados concretos." />
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH36VE13B4"></script>
@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* SEU CSS COMPLETO AQUI (mantido igual) */
+    /* SEU CSS COMPLETO AQUI (mantive igual) */
     :root {
       --cinza-fundo: #f5f7fb;
       --cinza-texto: #444;
@@ -154,27 +154,27 @@
     /* HERO - LAYOUT COMPACTO */
     .hero {
       background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 55%);
-      padding: 3rem 1.5rem 3rem;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
+      padding: 3rem 1.5rem 3rem; /* MUDOU: mais padding */
+      min-height: 80vh; /* NOVO: altura mínima */
+      display: flex; /* NOVO */
+      align-items: center; /* NOVO */
     }
     
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
+      grid-template-columns: 1.35fr 0.85fr; /* MUDOU: proporção */
       align-items: start;
-      gap: 2.5rem;
+      gap: 2.5rem; /* MUDOU: gap maior */
       width: 100%;
     }
     
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding: 1.5rem 0;
+      gap: 2rem; /* MUDOU: gap maior */
+      padding: 1.5rem 0; /* NOVO: padding vertical */
     }
    
     .hero-logo-block {
@@ -202,25 +202,25 @@
     }
     
     .hero-title {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.8rem, 4vw, 2.5rem); /* MUDOU: maior */
       font-weight: 700;
       color: var(--azul-escuro);
-      margin: 0.5rem 0 1rem 0;
-      line-height: 1.3;
+      margin: 0.5rem 0 1rem 0; /* MUDOU: margem maior embaixo */
+      line-height: 1.3; /* MUDOU: mais espaçamento entre linhas */
     }
     
     .hero-sub {
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.7;
+      font-size: 1.05rem; /* MUDOU: texto maior */
+      color: #444; /* Era #555 - mais escuro */
+      line-height: 1.7; /* MUDOU: mais espaçamento */
       margin-bottom: 1.5rem;
     }
     
     .hero-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.9rem;
-      margin-bottom: 2rem;
+      gap: 0.9rem; /* MUDOU: mais espaço entre chips */
+      margin-bottom: 2rem; /* MUDOU: margem maior */
     }
     
     .hero-chip {
@@ -289,15 +289,15 @@
     .hero-urgent-card {
       background: #fff;
       border-radius: var(--radius-card);
-      padding: 1.8rem;
+      padding: 1.8rem; /* MUDOU: mais padding */
       box-shadow: var(--shadow-card);
       border: 1px solid #e5e9f5;
       height: fit-content;
       max-width: 320px;
       margin-left: auto;
-      margin-top: 1.5rem;
-      position: sticky;
-      top: 100px;
+      margin-top: 1.5rem; /* NOVO: empurra para baixo */
+      position: sticky; /* NOVO: fixa no scroll */
+      top: 100px; /* NOVO: posição fixa */
     }
     
     .hero-urgent-card h3 {
@@ -363,20 +363,20 @@
     
     @media (max-width: 880px) {
       .hero {
-        padding: 2rem 1.5rem;
-        min-height: auto;
+        padding: 2rem 1.5rem; /* MUDOU: padding mobile */
+        min-height: auto; /* NOVO: remove altura mínima no mobile */
       }
       
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2rem; /* MUDOU: gap maior no mobile */
       }
       
       .hero-urgent-card {
         max-width: 100%;
         margin-left: 0;
-        margin-top: 2rem;
-        position: static;
+        margin-top: 2rem; /* NOVO: remove margem top no mobile */
+        position: static; /* NOVO: remove sticky no mobile */
       }
       
       .hero-logo-block {
@@ -892,11 +892,7 @@
         margin: 0.5rem 0;
         justify-content: center;
       }
-      .nav-cta {
-      align-self: center;    /* ← ADICIONE ESTA LINHA */
-      margin-top: 0.5rem;    /* ← E ESTA LINHA */
-      }
-  }
+    }
     
   </style>
 </head>
@@ -906,7 +902,7 @@
   </button>
 <body>
   <!-- Skip Link para Acessibilidade -->
-  <a href="#main" class="skip-link" data-i18n="skip.link">Skip to main content</a>
+  <a href="#main" class="skip-link">Pular para conteúdo principal</a>
   
   <!-- NAVBAR COM LOGO E BANDEIRAS -->
   <header class="navbar">
@@ -919,34 +915,34 @@
              width="40" 
              height="40">
         <div class="brand-name">
-          <span data-i18n="nav.brand1">Inclusive Education</span><br>
-          <span class="brand-subtitle" data-i18n="nav.brand2">with Results</span>
+          Educação Inclusiva<br>
+          <span class="brand-subtitle">com Resultado</span>
         </div>
       </div>
   
       <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
       
       <nav class="nav-links" id="navLinks">
-        <a href="#inicio" data-i18n="nav.inicio">Home</a>
-        <a href="#sobre" data-i18n="nav.sobre">My Story</a>
-        <a href="#dados" data-i18n="nav.dados">Data & Urgency</a>
-        <a href="#pilares" data-i18n="nav.pilares">Pillars</a>
-        <a href="#tecnologia" data-i18n="nav.tecnologia">Technology</a>
-        <a href="#piloto" data-i18n="nav.piloto">Pilot DF 2026</a>
-        <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a href="#contato" data-i18n="nav.contato">Contact</a>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Minha História</a>
+        <a href="#dados">Dados & Urgência</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#piloto">Piloto DF 2026</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
         
         <!-- Seletor de Idioma -->
         <div class="language-switcher">
-          <button class="lang-btn" data-lang="pt" aria-label="Português">
+          <button class="lang-btn active" data-lang="pt" aria-label="Português">
             🇧🇷
           </button>
-          <button class="lang-btn active" data-lang="en" aria-label="English">
+          <button class="lang-btn" data-lang="en" aria-label="English">
             🇺🇸
           </button>
         </div>
         
-        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com" data-i18n="nav.faleconosco"><span class="nav-cta-text">✉ Contact</span></a>
+        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">✉ Fale Conosco</a>
       </nav>
     </div>
   </header>
@@ -964,73 +960,73 @@
   
           <!-- STATUS com tradução -->
           <div class="status-badge" data-i18n="hero.status">
-            📋 STATUS: PROPOSAL UNDER REVIEW
+            📋 STATUS: PROPOSTA EM ANÁLISE
           </div>
   
           <div class="hero-badge" data-i18n="hero.badge">
-            💙 INCLUSIVE EDUCATION - TECHNOLOGY - RESULTS
+            💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO
           </div>
   
           <h1 class="hero-title" data-i18n="hero.title">
-            Structured Model Proposal for Inclusive Education in Brazil
+            Proposta de Modelo Estruturado para Educação Inclusiva no Brasil
           </h1>
   
           <div class="hero-sub">
             <p data-i18n="hero.subtitle">
-              Proposal created by <strong>Thaianne da Silva</strong>, mother of a non-verbal autistic boy. 
-              Based on experience with the American system and adapted to Brazilian reality, this proposal 
-              aims to implement a sustainable special education model focused on measurable results.
+              Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. 
+              Baseada na vivência do sistema americano e adaptada à realidade brasileira, esta proposta 
+              busca implementar um modelo sustentável de educação especial com foco em resultados mensuráveis.
             </p>
           </div>
   
           <div class="hero-grid">
-            <div class="hero-chip"><span>🧩</span><span data-i18n="hero.chip1">Mandatory Living IEP</span></div>
-            <div class="hero-chip"><span>📱</span><span data-i18n="hero.chip2">Assistive Technology & AAC</span></div>
-            <div class="hero-chip"><span>🤝</span><span data-i18n="hero.chip3">Family as Partner</span></div>
-            <div class="hero-chip"><span>📚</span><span data-i18n="hero.chip4">Special Education Classrooms</span></div>
-            <div class="hero-chip"><span>👥</span><span data-i18n="hero.chip5">Multidisciplinary Teams</span></div>
-            <div class="hero-chip"><span>📊</span><span data-i18n="hero.chip6">Data, Transparency & Results</span></div>
+            <div class="hero-chip"><span>🧩</span><span data-i18n="hero.chip1">PEI Obrigatório e Vivo</span></div>
+            <div class="hero-chip"><span>📱</span><span data-i18n="hero.chip2">Tecnologia Assistiva e AAC</span></div>
+            <div class="hero-chip"><span>🤝</span><span data-i18n="hero.chip3">Família como Parceira</span></div>
+            <div class="hero-chip"><span>📚</span><span data-i18n="hero.chip4">Salas de Educação Especial</span></div>
+            <div class="hero-chip"><span>👥</span><span data-i18n="hero.chip5">Equipes multiprofissionais</span></div>
+            <div class="hero-chip"><span>📊</span><span data-i18n="hero.chip6">Dados, Transparência e Resultado</span></div>
           </div>
   
           <div class="hero-actions">
             <a class="btn-primary" href="#dados" data-i18n="hero.verproposta">
-              See Full Proposal
+              Ver Proposta Completa
             </a>
             <a class="btn-secondary" href="#piloto" data-i18n="hero.piloto">
-              Pilot DF 2026
+              Piloto DF 2026
             </a>
           </div>
   
           <div class="hero-note" data-i18n="hero.nota">
-            Proposal under review by competent authorities • Initial focus on <strong>Distrito Federal</strong>
+            Proposta em análise pelos órgãos competentes • Foco inicial no <strong>Distrito Federal</strong>
           </div>
         </div>
       </div>
   
       <!-- CARD DE URGÊNCIA COM TRADUÇÃO -->
       <div class="hero-urgent-card">
-        <h3 data-i18n="urgencia.title">⚡ Why the Urgency?</h3>
+        <h3 data-i18n="urgencia.title">⚡ Por que a Urgência?</h3>
         
         <div class="urgent-section">
-          <h4 data-i18n="urgencia.cenario">📈 Current Scenario:</h4>
+          <h4 data-i18n="urgencia.cenario">📈 Cenário Atual:</h4>
           <ul>
-            <li><strong>1.3 million</strong> <span data-i18n="urgencia.dado1">special education enrollments</span></li>
-            <li><strong>33% growth</strong> <span data-i18n="urgencia.dado2">autism growth (5 years)</span></li>
-            <li data-i18n="urgencia.dado3"><strong>Lack of data</strong> on dropout and progress</li>
+            <li><strong>1,3 milhão</strong> <span data-i18n="urgencia.dado1">de matrículas na educação especial</span></li>
+            <li><strong>33% de crescimento</strong> <span data-i18n="urgencia.dado2">em autismo (5 anos)</span></li>
+            <li data-i18n="urgencia.dado3"><strong>Falta de dados</strong> sobre evasão e progresso</li>
           </ul>
         </div>
       
         <div class="solution-box">
           <p data-i18n="urgencia.solucao">
-            💡 <strong>Proposed Solution:</strong> Evidence-based model with mandatory IEP, 
-            assistive technology and transparent data
+            💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, 
+            tecnologia assistiva e dados transparentes
           </p>
         </div>
       
         <div class="chip-list">
-          <span class="chip" data-i18n="urgencia.chip1">Real Data</span>
-          <span class="chip" data-i18n="urgencia.chip2">Evidence</span>
-          <span class="chip" data-i18n="urgencia.chip3">Practical Solution</span>
+          <span class="chip" data-i18n="urgencia.chip1">Dados Reais</span>
+          <span class="chip" data-i18n="urgencia.chip2">Evidências</span>
+          <span class="chip" data-i18n="urgencia.chip3">Solução Prática</span>
         </div>
       </div>
     </div>
@@ -1040,41 +1036,41 @@
   <section id="sobre" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="sobre.kicker">My Story</div>
-        <h2 class="section-title" data-i18n="sobre.title">From Personal Experience to Public Policy Proposal</h2>
+        <div class="section-kicker" data-i18n="sobre.kicker">Minha História</div>
+        <h2 class="section-title" data-i18n="sobre.title">Da Vivência Pessoal à Proposta de Política Pública</h2>
         <p class="section-sub" data-i18n="sobre.subtitle">
-          The journey that transformed my experience as a mother into a concrete proposal for 
-          Brazilian inclusive education.
+          A trajetória que transformou minha experiência como mãe em uma proposta concreta para 
+          a educação inclusiva brasileira.
         </p>
       </div>
   
       <div class="two-cols">
         <div class="card">
           <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;" data-i18n="sobre.card1.title">
-            👨‍👩‍👦 My Journey as a Mother
+            👨‍👩‍👦 Minha Jornada como Mãe
           </h3>
-          <p data-i18n="sobre.card1.p1">My name is <strong>Thaianne</strong>, I'm the mother of a non-verbal autistic boy.</p>
+          <p data-i18n="sobre.card1.p1">Meu nome é <strong>Thaianne</strong>, sou mãe de um menino autista não verbal.</p>
           
-          <p data-i18n="sobre.card1.p2">This experience transformed my personal journey and profoundly expanded my vision about 
-          education, inclusion and public policies in an irreversible way.</p>
+          <p data-i18n="sobre.card1.p2">Esta experiência transformou minha trajetória pessoal e ampliou minha visão sobre 
+          educação, inclusão e políticas públicas de forma profunda e irreversível.</p>
   
-          <p data-i18n="sobre.card1.p3">As a mother, I experience daily the challenges and possibilities of special education, 
-          understanding in practice what works and where the biggest gaps are.</p>
+          <p data-i18n="sobre.card1.p3">Como mãe, vivencio diariamente os desafios e as possibilidades da educação especial, 
+          entendendo na prática o que funciona e onde estão as maiores lacunas.</p>
         </div>
   
         <div class="card">
           <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;" data-i18n="sobre.card2.title">
-            🇺🇸 Current International Experience
+            🇺🇸 Experiência Internacional Atual
           </h3>
-          <p data-i18n="sobre.card2.p1">In the United States (Utah), I closely followed a structured Special Education system, 
-          where the IEP (Individualized Education Program) is:</p>
+          <p data-i18n="sobre.card2.p1">Nos Estados Unidos (Utah), acompanhei de perto um sistema de Educação Especial estruturado, 
+          onde o IEP (Individualized Education Program) é:</p>
           
           <ul>
-            <li data-i18n="sobre.card2.li1"><strong>Mandatory and standardized</strong> across the entire network</li>
-            <li data-i18n="sobre.card2.li2"><strong>Reviewed annually</strong> with measurable goals</li>
-            <li data-i18n="sobre.card2.li3">Supported by <strong>multidisciplinary teams working within the school</strong></li>
-            <li data-i18n="sobre.card2.li4">With <strong>assistive technology integrated into the curriculum</strong></li>
-            <li data-i18n="sobre.card2.li5">And <strong>real monitoring of student progress</strong></li>
+            <li data-i18n="sobre.card2.li1"><strong>Obrigatório e padronizado</strong> em toda a rede</li>
+            <li data-i18n="sobre.card2.li2"><strong>Revisado anualmente</strong> com metas mensuráveis</li>
+            <li data-i18n="sobre.card2.li3">Apoiado por <strong>equipes multiprofissionais atuando dentro da escola</strong></li>
+            <li data-i18n="sobre.card2.li4">Com <strong>tecnologia assistiva integrada ao currículo</strong></li>
+            <li data-i18n="sobre.card2.li5">E <strong>monitoramento real do progresso</strong> dos estudantes</li>
           </ul>
         </div>
       </div>
@@ -1085,54 +1081,54 @@
   <section id="dados" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="dados.kicker">Data & Urgency</div>
-        <h2 class="section-title" data-i18n="dados.title">The Scenario That Demands Immediate Action</h2>
+        <div class="section-kicker" data-i18n="dados.kicker">Dados & Urgência</div>
+        <h2 class="section-title" data-i18n="dados.title">O Cenário que Exige Ação Imediata</h2>
         <p class="section-sub" data-i18n="dados.subtitle">
-          Concrete data shows the dimension of the challenge and the urgent need for a structured 
-          model for inclusive education in Brazil.
+          Dados concretos mostram a dimensão do desafio e a necessidade urgente de um modelo 
+          estruturado para a educação inclusiva no Brasil.
         </p>
       </div>
   
       <div class="two-cols">
         <div class="card">
-          <h3 data-i18n="dados.card1.title">📊 School Census Data</h3>
+          <h3 data-i18n="dados.card1.title">📊 Dados do Censo Escolar</h3>
           <ul>
-            <li data-i18n="dados.card1.li1"><strong>1.3 million</strong> enrollments in special education</li>
-            <li data-i18n="dados.card1.li2"><strong>33% growth</strong> in autism enrollments in the last 5 years</li>
-            <li data-i18n="dados.card1.li3"><strong>Lack of systematic data</strong> on dropout and real progress</li>
+            <li data-i18n="dados.card1.li1"><strong>1,3 milhão</strong> de matrículas na educação especial</li>
+            <li data-i18n="dados.card1.li2"><strong>33% de crescimento</strong> em matrículas de autismo nos últimos 5 anos</li>
+            <li data-i18n="dados.card1.li3"><strong>Falta de dados sistemáticos</strong> sobre evasão e progresso real</li>
           </ul>
         </div>
   
         <div class="card">
-          <h3 data-i18n="dados.card2.title">⚡ Identified Problems</h3>
+          <h3 data-i18n="dados.card2.title">⚡ Problemas Identificados</h3>
           <ul>
-            <li data-i18n="dados.card2.li1"><strong>Lack of structure</strong> and specialized professionals</li>
-            <li data-i18n="dados.card2.li2"><strong>Absence of national standard</strong> for IEP</li>
-            <li data-i18n="dados.card2.li3"><strong>Low availability of assistive technology</strong> in public schools</li>
-            <li data-i18n="dados.card2.li4"><strong>Insufficient continuous monitoring</strong> of progress</li>
+            <li data-i18n="dados.card2.li1"><strong>Falta de estrutura</strong> e profissionais especializados</li>
+            <li data-i18n="dados.card2.li2"><strong>Ausência de padrão nacional</strong> para PEI</li>
+            <li data-i18n="dados.card2.li3"><strong>Baixa oferta de tecnologia assistiva</strong> nas escolas públicas</li>
+            <li data-i18n="dados.card2.li4"><strong>Acompanhamento contínuo insuficiente</strong> do progresso</li>
           </ul>
         </div>
       </div>
   
       <div class="card" style="margin-top: 2rem;">
-        <h3 data-i18n="dados.marco.title">⚖️ Legal Framework vs. Reality</h3>
+        <h3 data-i18n="dados.marco.title">⚖️ Marco Legal vs. Realidade</h3>
         <div class="two-cols">
           <div>
-            <h4 style="color: var(--azul-escuro);" data-i18n="dados.marco.legislacao">📜 Existing Legislation</h4>
+            <h4 style="color: var(--azul-escuro);" data-i18n="dados.marco.legislacao">📜 Legislação Existente</h4>
             <ul>
-              <li data-i18n="dados.marco.li1">Brazilian Inclusion Law (LBI) - Law 13.146/2015</li>
-              <li data-i18n="dados.marco.li2">National Special Education Policy (PNEE)</li>
-              <li data-i18n="dados.marco.li3">Right to inclusive education guaranteed</li>
-              <li data-i18n="dados.marco.li4">Mandatory specialized assistance</li>
+              <li data-i18n="dados.marco.li1">Lei Brasileira de Inclusão (LBI) - Lei 13.146/2015</li>
+              <li data-i18n="dados.marco.li2">Política Nacional de Educação Especial (PNEE)</li>
+              <li data-i18n="dados.marco.li3">Direito à educação inclusiva garantido</li>
+              <li data-i18n="dados.marco.li4">Obrigatoriedade do atendimento especializado</li>
             </ul>
           </div>
           <div>
-            <h4 style="color: var(--azul-escuro);" data-i18n="dados.marco.lacunas">🔍 Implementation Gaps</h4>
+            <h4 style="color: var(--azul-escuro);" data-i18n="dados.marco.lacunas">🔍 Lacunas na Implementação</h4>
             <ul>
-              <li data-i18n="dados.marco.li5">Lack of national standardization</li>
-              <li data-i18n="dados.marco.li6">Insufficient resources</li>
-              <li data-i18n="dados.marco.li7">Discontinuous training</li>
-              <li data-i18n="dados.marco.li8">Ineffective monitoring</li>
+              <li data-i18n="dados.marco.li5">Falta de padronização nacional</li>
+              <li data-i18n="dados.marco.li6">Recursos insuficientes</li>
+              <li data-i18n="dados.marco.li7">Capacitação descontínua</li>
+              <li data-i18n="dados.marco.li8">Monitoramento ineficaz</li>
             </ul>
           </div>
         </div>
@@ -1144,67 +1140,66 @@
   <section id="pilares" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="pilares.kicker">Model Structure</div>
-        <h2 class="section-title" data-i18n="pilares.title">The 5 Pillars of Inclusive Education with Results</h2>
+        <div class="section-kicker" data-i18n="pilares.kicker">Estrutura do Modelo</div>
+        <h2 class="section-title" data-i18n="pilares.title">Os 5 pilares da Educação Inclusiva com Resultado</h2>
       </div>
       <div class="pillar-grid">
         <div class="pillar-item">
-          <div class="pillar-number" data-i18n="pilares.pilar1.numero">Pillar 1</div>
-          <h3 data-i18n="pilares.pilar1.titulo">Mandatory Living IEP</h3>
-          <p data-i18n="pilares.pilar1.descricao">Standard document across the network, with specific, measurable goals and active family participation.</p>
+          <div class="pillar-number" data-i18n="pilares.pilar1.numero">Pilar 1</div>
+          <h3 data-i18n="pilares.pilar1.titulo">PEI Obrigatório e Vivo</h3>
+          <p data-i18n="pilares.pilar1.descricao">Documento padrão na rede, com metas específicas, mensuráveis e participação ativa da família.</p>
           <div class="tag-row">
-            <span class="tag" data-i18n="pilares.pilar1.tag1">Digital IEP</span>
-            <span class="tag" data-i18n="pilares.pilar1.tag2">Clear Goals</span>
+            <span class="tag" data-i18n="pilares.pilar1.tag1">PEI Digital</span>
+            <span class="tag" data-i18n="pilares.pilar1.tag2">Metas Claras</span>
           </div>
         </div>
         <div class="pillar-item">
-          <div class="pillar-number" data-i18n="pilares.pilar2.numero">Pillar 2</div>
-          <h3 data-i18n="pilares.pilar2.titulo">AEE + Co-Teaching</h3>
-          <p data-i18n="pilares.pilar2.descricao">Regional hub centers, multidisciplinary teams and co-teaching between regular classroom teacher and special education teacher.</p>
+          <div class="pillar-number" data-i18n="pilares.pilar2.numero">Pilar 2</div>
+          <h3 data-i18n="pilares.pilar2.titulo">AEE + Co-Ensino</h3>
+          <p data-i18n="pilares.pilar2.descricao">Centros-polo, equipes multiprofissionais e co-teaching entre professor da sala regular e professor de educação especial.</p>
           <div class="tag-row">
             <span class="tag" data-i18n="pilares.pilar2.tag1">AEE</span>
             <span class="tag" data-i18n="pilares.pilar2.tag2">Co-Teaching</span>
           </div>
         </div>
         <div class="pillar-item">
-          <div class="pillar-number" data-i18n="pilares.pilar3.numero">Pillar 3</div>
-          <h3 data-i18n="pilares.pilar3.titulo">Assistive Technology & AAC</h3>
-          <p data-i18n="pilares.pilar3.descricao">Tablets, communicators, apps and alternative communication resources as part of the curriculum.</p>
+          <div class="pillar-number" data-i18n="pilares.pilar3.numero">Pilar 3</div>
+          <h3 data-i18n="pilares.pilar3.titulo">Tecnologia Assistiva e AAC</h3>
+          <p data-i18n="pilares.pilar3.descricao">Tablets, comunicadores, apps e recursos de comunicação alternativa como parte do currículo.</p>
           <div class="tag-row">
             <span class="tag" data-i18n="pilares.pilar3.tag1">AAC</span>
             <span class="tag" data-i18n="pilares.pilar3.tag2">Tablets</span>
           </div>
         </div>
         <div class="pillar-item">
-          <div class="pillar-number" data-i18n="pilares.pilar4.numero">Pillar 4</div>
-          <h3 data-i18n="pilares.pilar4.titulo">Least Restrictive Environment</h3>
-          <p data-i18n="pilares.pilar4.descricao">Intensive support classrooms with planned transition to regular classroom with support.</p>
+          <div class="pillar-number" data-i18n="pilares.pilar4.numero">Pilar 4</div>
+          <h3 data-i18n="pilares.pilar4.titulo">Ambiente menos Restritivo</h3>
+          <p data-i18n="pilares.pilar4.descricao">Salas de suporte intenso com transição planejada para sala regular com apoio.</p>
           <div class="tag-row">
-            <span class="tag" data-i18n="pilares.pilar4.tag1">Real Inclusion</span>
-            <span class="tag" data-i18n="pilares.pilar4.tag2">Safe Transition</span>
+            <span class="tag" data-i18n="pilares.pilar4.tag1">Inclusão Real</span>
+            <span class="tag" data-i18n="pilares.pilar4.tag2">Transição Segura</span>
           </div>
         </div>
         <div class="pillar-item">
-          <div class="pillar-number" data-i18n="pilares.pilar5.numero">Pillar 5</div>
-          <h3 data-i18n="pilares.pilar5.titulo">Data, Transparency & Results</h3>
-          <p data-i18n="pilares.pilar5.descricao">Public dashboard of access, retention, communication and learning indicators.</p>
+          <div class="pillar-number" data-i18n="pilares.pilar5.numero">Pilar 5</div>
+          <h3 data-i18n="pilares.pilar5.titulo">Dados, Transparência e Resultado</h3>
+          <p data-i18n="pilares.pilar5.descricao">Painel público de indicadores de acesso, permanência, comunicação e aprendizagem.</p>
           <div class="tag-row">
-            <span class="tag" data-i18n="pilares.pilar5.tag1">Indicators</span>
-            <span class="tag" data-i18n="pilares.pilar5.tag2">Evidence-Based Policy</span>
+            <span class="tag" data-i18n="pilares.pilar5.tag1">Indicadores</span>
+            <span class="tag" data-i18n="pilares.pilar5.tag2">Política Baseada em Evidências</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VISUALIZE O MODELO COM TRADUÇÃO -->
   <section class="section" style="background: var(--cinza-fundo);">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="visualize.kicker">Visualize the Model</div>
-        <h2 class="section-title" data-i18n="visualize.title">How the 5 Pillars Connect</h2>
-        <p class="section-sub" data-i18n="visualize.subtitle">
-          Understand visually how each component of the model works together for real results.
+        <div class="section-kicker">Visualize o Modelo</div>
+        <h2 class="section-title">Como os 5 Pilares se Conectam</h2>
+        <p class="section-sub">
+          Entenda visualmente como cada componente do modelo trabalha em conjunto para resultados reais.
         </p>
       </div>
   
@@ -1215,47 +1210,47 @@
           <!-- Pilar 1 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar1.title">Digital IEP</h3>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;">PEI Digital</h3>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar1.subtitle">Foundation of Everything</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Base de Tudo</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
-              <li data-i18n="visualize.pilar1.li1">Measurable goals</li>
-              <li data-i18n="visualize.pilar1.li2">Real-time access</li>
-              <li data-i18n="visualize.pilar1.li3">Family participation</li>
+              <li>Metas mensuráveis</li>
+              <li>Acesso em tempo real</li>
+              <li>Participação familiar</li>
             </ul>
           </div>
   
           <!-- Pilar 2 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 12px;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">👥</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar2.title">Teams + AEE</h3>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;">Equipes + AEE</h3>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar2.subtitle">Human Support</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Suporte Humano</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
-              <li data-i18n="visualize.pilar2.li1">Multiprofessionals</li>
-              <li data-i18n="visualize.pilar2.li2">Co-teaching</li>
-              <li data-i18n="visualize.pilar2.li3">Hub centers</li>
+              <li>Multiprofissionais</li>
+              <li>Co-teaching</li>
+              <li>Centros-polo</li>
             </ul>
           </div>
   
           <!-- Pilar 3 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 12px;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar3.title">Technology</h3>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;">Tecnologia</h3>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar3.subtitle">Tools</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Ferramentas</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
-              <li data-i18n="visualize.pilar3.li1">AAC and tablets</li>
-              <li data-i18n="visualize.pilar3.li2">Communication</li>
-              <li data-i18n="visualize.pilar3.li3">Curriculum access</li>
+              <li>AAC e tablets</li>
+              <li>Comunicação</li>
+              <li>Acesso ao currículo</li>
             </ul>
           </div>
         </div>
   
         <!-- Linha de Conexão Visual -->
         <div style="text-align: center; margin: 2rem 0;">
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--spectrum-soft); border-radius: 999px; font-weight: 600; color: var(--azul-escuro);" data-i18n="visualize.result">
-            ⬇️ RESULT: Real Inclusion with Measurable Data
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--spectrum-soft); border-radius: 999px; font-weight: 600; color: var(--azul-escuro);">
+            ⬇️ RESULTADO: Inclusão Real com Dados Mensuráveis
           </div>
         </div>
   
@@ -1264,26 +1259,26 @@
           <!-- Pilar 4 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 12px;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏫</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar4.title">Environment</h3>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;">Ambiente</h3>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar4.subtitle">Structured Inclusion</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Inclusão Estruturada</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
-              <li data-i18n="visualize.pilar4.li1">Safe transition</li>
-              <li data-i18n="visualize.pilar4.li2">Specialized classrooms</li>
-              <li data-i18n="visualize.pilar4.li3">Least restrictive environment</li>
+              <li>Transição segura</li>
+              <li>Salas especializadas</li>
+              <li>Ambiente menos restritivo</li>
             </ul>
           </div>
   
           <!-- Pilar 5 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #e0f2f1, #b2dfdb); border-radius: 12px;">
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar5.title">Data</h3>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;">Dados</h3>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
-            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar5.subtitle">Transparency</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>Transparência</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
-              <li data-i18n="visualize.pilar5.li1">Public indicators</li>
-              <li data-i18n="visualize.pilar5.li2">Monitoring</li>
-              <li data-i18n="visualize.pilar5.li3">Evidence</li>
+              <li>Indicadores públicos</li>
+              <li>Monitoramento</li>
+              <li>Evidências</li>
             </ul>
           </div>
   
@@ -1296,43 +1291,43 @@
   <section id="tecnologia" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="tecnologia.kicker">Resources</div>
-        <h2 class="section-title" data-i18n="tecnologia.title">Assistive Technology in Practice</h2>
+        <div class="section-kicker" data-i18n="tecnologia.kicker">Recursos</div>
+        <h2 class="section-title" data-i18n="tecnologia.title">Tecnologia Assistiva na Prática</h2>
         <p class="section-sub" data-i18n="tecnologia.subtitle">
-          Tools and resources that make a difference in the daily lives of students with special needs.
+          Ferramentas e recursos que fazem a diferença no dia a dia dos estudantes com necessidades especiais.
         </p>
       </div>  
       <div class="pillar-grid">
         <div class="pillar-item">
-          <h3 data-i18n="tecnologia.card1.titulo">💬 AAC Communicators</h3>
-          <p data-i18n="tecnologia.card1.descricao">Apps like Communicator, Talk Suite and Proloquo2Go for alternative and augmentative communication.</p>
+          <h3 data-i18n="tecnologia.card1.titulo">💬 Comunicadores AAC</h3>
+          <p data-i18n="tecnologia.card1.descricao">Apps como Communicator, Talk Suite e Proloquo2Go para comunicação alternativa e aumentativa.</p>
           <div class="tag-row">
             <span class="tag" data-i18n="tecnologia.card1.tag1">AAC</span>
-            <span class="tag" data-i18n="tecnologia.card1.tag2">Communication</span>
+            <span class="tag" data-i18n="tecnologia.card1.tag2">Comunicação</span>
           </div>
         </div>    
         <div class="pillar-item">
-          <h3 data-i18n="tecnologia.card2.titulo">⌨️ Digital Accessibility</h3>
-          <p data-i18n="tecnologia.card2.descricao">Adapted keyboards, voice controls, switch navigation and alternative access software.</p>
+          <h3 data-i18n="tecnologia.card2.titulo">⌨️ Acessibilidade Digital</h3>
+          <p data-i18n="tecnologia.card2.descricao">Teclados adaptados, controles por voz, navegação por switch e softwares de acesso alternativo.</p>
           <div class="tag-row">
-            <span class="tag" data-i18n="tecnologia.card2.tag1">Accessibility</span>
-            <span class="tag" data-i18n="tecnologia.card2.tag2">Technology</span>
+            <span class="tag" data-i18n="tecnologia.card2.tag1">Acessibilidade</span>
+            <span class="tag" data-i18n="tecnologia.card2.tag2">Tecnologia</span>
           </div>
         </div>      
         <div class="pillar-item">
-          <h3 data-i18n="tecnologia.card3.titulo">📱 Educational Tablets</h3>
-          <p data-i18n="tecnologia.card3.descricao">Devices with specialized apps for learning support and skills development.</p>
+          <h3 data-i18n="tecnologia.card3.titulo">📱 Tablets Educacionais</h3>
+          <p data-i18n="tecnologia.card3.descricao">Dispositivos com apps especializados para apoio ao aprendizado e desenvolvimento de habilidades.</p>
           <div class="tag-row">
             <span class="tag" data-i18n="tecnologia.card3.tag1">Tablets</span>
             <span class="tag" data-i18n="tecnologia.card3.tag2">Apps</span>
           </div>
         </div>
         <div class="pillar-item">
-          <h3 data-i18n="tecnologia.card4.titulo">🎯 Customized Resources</h3>
-          <p data-i18n="tecnologia.card4.descricao">Specific adaptations for each need, from physical supports to customized software.</p>
+          <h3 data-i18n="tecnologia.card4.titulo">🎯 Recursos Personalizados</h3>
+          <p data-i18n="tecnologia.card4.descricao">Adaptações específicas para cada necessidade, desde suportes físicos até softwares customizados.</p>
           <div class="tag-row">
-            <span class="tag" data-i18n="tecnologia.card4.tag1">Personalization</span>
-            <span class="tag" data-i18n="tecnologia.card4.tag2">Adaptations</span>
+            <span class="tag" data-i18n="tecnologia.card4.tag1">Personalização</span>
+            <span class="tag" data-i18n="tecnologia.card4.tag2">Adaptações</span>
           </div>
         </div>
       </div>
@@ -1343,135 +1338,141 @@
   <section id="piloto" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="piloto.kicker">Pilot project</div>
-        <h2 class="section-title" data-i18n="piloto.title">Pilot Proposal - Distrito Federal 2026</h2>
+        <div class="section-kicker" data-i18n="piloto.kicker">Projeto piloto</div>
+        <h2 class="section-title" data-i18n="piloto.title">Proposta de Piloto - Distrito Federal 2026</h2>
         <p class="section-sub" data-i18n="piloto.subtitle">
-          <strong>Proposal under review</strong> for implementation in the Distrito Federal public network, 
-          with possibility of national expansion based on measurable and proven results.
+          <strong>Proposta em análise</strong> para implementação na rede pública do Distrito Federal, 
+          com possibilidade de expansão nacional a partir de resultados mensuráveis e comprovados.
         </p>
       </div>
       <div class="card">
         <div style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; padding: 0.25rem 0.7rem; border-radius: 999px; background: #e3f2fd; color: #1565c0; font-weight: 600;" data-i18n="piloto.badge">
-          📋 PROPOSAL UNDER REVIEW - DISTRITO FEDERAL 2026
+          📋 PROPOSTA EM ANÁLISE - DISTRITO FEDERAL 2026
         </div>
         <p style="margin-top:0.7rem;font-size:0.95rem;" data-i18n="piloto.descricao">
-          The proposal includes selection of reference schools, team training, implementation of digital IEP,
-          assistive technology, support classrooms by need level and monthly monitoring of indicators.
+          A proposta prevê a seleção de escolas referência, formação de equipes, implantação do PEI digital,
+          tecnologia assistiva, salas de suporte por nível de necessidade e acompanhamento mensal dos indicadores.
         </p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 1rem; margin-top: 1rem;">
           <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
-            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa1.numero">Stage 1</div>
-            <strong data-i18n="piloto.etapa1.titulo">Selection of Schools and Hub Centers.</strong>
-            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa1.descricao">Strategic schools in different administrative regions.</p>
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa1.numero">Etapa 1</div>
+            <strong data-i18n="piloto.etapa1.titulo">Seleção de Escolas e Centros-polo.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa1.descricao">Escolas estratégicas em diferentes regiões administrativas.</p>
           </div>
           <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
-            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa2.numero">Stage 2</div>
-            <strong data-i18n="piloto.etapa2.titulo">Team Training.</strong>
-            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa2.descricao">Teachers, managers and support teams trained in IEP, AAC and inclusion.</p>
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa2.numero">Etapa 2</div>
+            <strong data-i18n="piloto.etapa2.titulo">Formação das Equipes.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa2.descricao">Professores, gestores e equipes de apoio formados em PEI, AAC e inclusão.</p>
           </div>
           <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
-            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa3.numero">Stage 3</div>
-            <strong data-i18n="piloto.etapa3.titulo">Digital IEP + Assistive Technology.</strong>
-            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa3.descricao">Implementation of digital IEP system, tablets and communicators in hub schools.</p>
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa3.numero">Etapa 3</div>
+            <strong data-i18n="piloto.etapa3.titulo">PEI Digital + Tecnologia Assistiva.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa3.descricao">Implantação de sistema digital de PEI, tablets e comunicadores nas escolas-polo.</p>
           </div>
           <div style="background: #fff; border-radius: var(--radius-card); padding: 0.95rem 1rem; border: 1px solid #e5e9f5; position: relative; overflow: hidden;">
-            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa4.numero">Stage 4</div>
-            <strong data-i18n="piloto.etapa4.titulo">Monitoring and Indicators.</strong>
-            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa4.descricao">Semester reports focusing on access, participation, communication and learning.</p>
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2156c9; margin-bottom: 0.3rem;" data-i18n="piloto.etapa4.numero">Etapa 4</div>
+            <strong data-i18n="piloto.etapa4.titulo">Monitoramento e Indicadores.</strong>
+            <p style="font-size:0.9rem;margin-top:0.2rem;" data-i18n="piloto.etapa4.descricao">Relatórios semestrais com foco em acesso, participação, comunicação e aprendizagem.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ COM TRADUÇÃO -->
+  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="faq.kicker">FAQ</div>
-        <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">Perguntas Frequentes</h2>
       </div>    
       <div class="card">
-        <h3 data-i18n="faq.q1">❓ Does this project replace AEE (Specialized Educational Assistance)?</h3>
-        <p data-i18n="faq.a1"><strong>No</strong>, the project strengthens and structures AEE with resources, continuous training, technology and clear standards of practice. AEE is the foundation, and this model brings the necessary structure.</p>   
+        <h3>❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?</h3>
+        <p><strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação continuada, tecnologia 
+        e padrões claros de atuação. O AEE é a base, e este modelo traz a estruturação necessária.</p>   
         
-        <h3 data-i18n="faq.q2">❓ How can families actively participate?</h3>
-        <p data-i18n="faq.a2">Through regular IEP meetings, training in assistive technology, progress monitoring and participation in decisions about their children's educational plan.</p>
+        <h3>❓ Como as famílias podem participar ativamente?</h3>
+        <p>Através de reuniões regulares de PEI, formação em tecnologia assistiva, acompanhamento do progresso 
+        e participação nas decisões sobre o plano educacional de seus filhos.</p>
         
-        <h3 data-i18n="faq.q3">❓ What is the current status of the proposal?</h3>
-        <p data-i18n="faq.a3">The proposal is <strong>under review by competent authorities</strong> (MEC, Distrito Federal Government, Parliamentary Front). This website serves to publicize the proposal and seek support for its implementation.</p>
+        <h3>❓ Qual o status atual da proposta?</h3>
+        <p>A proposta está <strong>em análise pelos órgãos competentes</strong> (MEC, Governo do DF, Frente Parlamentar). 
+        Este site serve para divulgar a proposta e buscar apoio para sua implementação.</p>
 
-        <h3 data-i18n="faq.q4">❓ Why start with Distrito Federal?</h3>
-        <p data-i18n="faq.a4">DF has ideal characteristics for a pilot: socioeconomic diversity, unified management structure and potential for replication to other states.</p>
+        <h3>❓ Por que começar pelo Distrito Federal?</h3>
+        <p>O DF reúne características ideais para um piloto: diversidade socioeconômica, estrutura de 
+        gestão unificada e potencial de replicação para outros estados.</p>
 
-        <h3 data-i18n="faq.q5">❓ How to ensure project continuity?</h3>
-        <p data-i18n="faq.a5">Through institutionalization via law, formation of permanent teams, digital systems and total transparency in results - making the model part of the educational structure.</p>
+        <h3>❓ Como garantir a continuidade do projeto?</h3>
+        <p>Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais 
+        e transparência total nos resultados - tornando o modelo parte da estrutura educacional.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO COM TRADUÇÃO -->
+  <!-- CONTATO -->
   <section id="contato" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="contato.kicker">Contact</div>
-        <h2 class="section-title" data-i18n="contato.title">Contact the Inclusive Education with Results Project</h2>
-        <p class="section-sub" data-i18n="contato.subtitle">
-          This website is a support point for families, schools, public networks and parliamentarians
-          interested in building an evidence-based inclusive education model.
+        <div class="section-kicker">Contato</div>
+        <h2 class="section-title">Fale com o projeto Educação Inclusiva com Resultado</h2>
+        <p class="section-sub">
+          Este site é um ponto de apoio para famílias, escolas, redes públicas e parlamentares
+          interessados em construir um modelo de educação inclusiva com base em evidências.
         </p>
       </div>  
       <div class="contact-grid">  
         <div>
-          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;" data-i18n="contato.canais.title">
-            Official Channels
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+            Canais oficiais
           </h3>  
           <ul class="contact-list">
             <li>
-              <span class="contact-label" data-i18n="contato.canais.email">Institutional email:</span><br />
+              <span class="contact-label">E-mail institucional:</span><br />
               <a href="mailto:contato@educacaoinclusiva.com">contato@educacaoinclusiva.com</a>
             </li>
             <li>
-              <span class="contact-label" data-i18n="contato.canais.localizacao">Current Location:</span><br />
-              <span data-i18n="contato.canais.localizacao.desc">Salt Lake City, Utah (USA) · Project focused on Distrito Federal and national expansion.</span>
+              <span class="contact-label">Localização Atual:</span><br />
+              Salt Lake City, Utah (EUA) · Projeto com foco no Distrito Federal e expansão nacional.
             </li>
             <li>
-              <span class="contact-label" data-i18n="contato.canais.idealizadora">Founder:</span><br />
-              <span data-i18n="contato.canais.idealizadora.desc">Thaianne da Silva, MS Cybersecurity.<br>Above all, mother of a special boy who transformed my worldview.</span>
+              <span class="contact-label">Idealizadora:</span><br />
+              Thaianne da Silva, MS Cybersecurity.<br>
+              Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.
             </li>
           </ul>
         </div>
         <div class="form-card">
-          <h3 style="margin-top:0;color:var(--azul-escuro);" data-i18n="contato.form.title">SEND A MESSAGE</h3>
-          <p class="form-note" data-i18n="contato.form.note">
-            Your message will be sent directly to our institutional email.
+          <h3 style="margin-top:0;color:var(--azul-escuro);">ENVIE UMA MENSAGEM</h3>
+          <p class="form-note">
+            Sua mensagem será enviada diretamente para nosso e-mail institucional.
           </p>  
           <form id="contactForm">
             <div class="form-row">
-              <label for="nome" data-i18n="contato.form.nome">Name *</label>
-              <input id="nome" name="nome" type="text" data-i18n-placeholder="contato.form.nome.placeholder" placeholder="Your full name" required />
+              <label for="nome">Nome *</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
             </div>
             <div class="form-row">
-              <label for="email" data-i18n="contato.form.email">Email *</label>
-              <input id="email" name="email" type="email" data-i18n-placeholder="contato.form.email.placeholder" placeholder="your@email.com" required />
+              <label for="email">E-mail *</label>
+              <input id="email" name="email" type="email" placeholder="seu@email.com" required />
             </div>
             <div class="form-row">
-              <label for="tipo" data-i18n="contato.form.tipo">You are</label>
+              <label for="tipo">Você é</label>
               <select id="tipo" name="tipo">
-                <option value="" data-i18n="contato.form.tipo.op0">Select...</option>
-                <option value="Família" data-i18n="contato.form.tipo.op1">Family</option>
-                <option value="Educador" data-i18n="contato.form.tipo.op2">Educator/Teacher</option>
-                <option value="Gestor" data-i18n="contato.form.tipo.op3">School Manager</option>
-                <option value="Parlamentar" data-i18n="contato.form.tipo.op4">Parliamentarian</option>
-                <option value="Outro" data-i18n="contato.form.tipo.op5">Other</option>
+                <option value="">Selecione...</option>
+                <option value="Família">Família</option>
+                <option value="Educador">Educador/Professor</option>
+                <option value="Gestor">Gestor Escolar</option>
+                <option value="Parlamentar">Parlamentar</option>
+                <option value="Outro">Outro</option>
               </select>
             </div>
             <div class="form-row">
-              <label for="mensagem" data-i18n="contato.form.mensagem">Message *</label>
-              <textarea id="mensagem" name="mensagem" data-i18n-placeholder="contato.form.mensagem.placeholder" placeholder="Tell us about your demand or interest." required></textarea>
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse." required></textarea>
             </div>
-            <button type="submit" class="btn-primary" id="submitBtn" data-i18n="contato.form.botao">
-              Send message
+            <button type="submit" class="btn-primary" id="submitBtn">
+              Enviar mensagem
             </button>
             <div id="formMessage" style="margin-top: 1rem; display: none; padding: 12px; border-radius: 8px;"></div>
           </form>
@@ -1480,15 +1481,15 @@
     </div>
   </section>
 
-  <!-- Seção Apoie esta Causa COM TRADUÇÃO -->
+  <!-- Seção Apoie esta Causa -->
   <section id="apoio" class="section" style="background: linear-gradient(135deg, #f8fbff 0%, #f0f4ff 100%);">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="apoio.kicker">Support & Contribution</div>
-        <h2 class="section-title" data-i18n="apoio.title">Support This Cause</h2>
-        <p class="section-sub" data-i18n="apoio.subtitle">
-          This is an independent project developed with personal resources while I complete my master's degree. 
-          Every support helps maintain and expand this initiative for truly inclusive education.
+        <div class="section-kicker">Apoio & Contribuição</div>
+        <h2 class="section-title">Apoie esta Causa</h2>
+        <p class="section-sub">
+          Este é um projeto independente desenvolvido com recursos próprios enquanto realizo meu mestrado. 
+          Todo apoio ajuda a manter e expandir esta iniciativa por uma educação inclusiva de verdade.
         </p>
       </div>
   
@@ -1497,10 +1498,10 @@
         <!-- Card 1 - Divulgação -->
         <div class="card" style="text-align: center; transition: all 0.3s ease;">
           <div style="font-size: 3rem; margin-bottom: 1.5rem;">📢</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card1.title">Awareness</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card1.desc">
-            Share this proposal with public managers, educators, 
-            families and everyone who can benefit from or support this cause.
+          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;">Divulgação</h3>
+          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
+            Compartilhe esta proposta com gestores públicos, educadores, 
+            famílias e todos que possam se beneficiar ou apoiar esta causa.
           </p>
           <div style="background: #e8f4ff; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
             <p style="margin: 0; font-size: 0.9rem; color: #1565c0;">
@@ -1512,42 +1513,41 @@
         <!-- Card 2 - Contribuição Técnica -->
         <div class="card" style="text-align: center; transition: all 0.3s ease;">
           <div style="font-size: 3rem; margin-bottom: 1.5rem;">💡</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card2.title">Technical Contribution</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card2.desc">
-            Your expertise in education, public policies, law or 
-            technology can make a difference in this project.
+          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;">Contribuição Técnica</h3>
+          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
+            Sua expertise em educação, políticas públicas, direito ou 
+            tecnologia pode fazer a diferença neste projeto.
           </p>
           <a href="mailto:contato@educacaoinclusiva.com?subject=Contribuição Técnica - Educação Inclusiva" 
              class="btn-secondary" 
-             style="margin-top: 1rem;"
-             data-i18n="apoio.card2.botao">
-            Offer Expertise
+             style="margin-top: 1rem;">
+            Oferecer Expertise
           </a>
         </div>
   
         <!-- Card 3 - Apoio Financeiro (Destaque suave) -->
         <div class="card" style="text-align: center; border: 2px solid var(--spectrum); background: linear-gradient(135deg, #fff, #f8fbff); position: relative; transition: all 0.3s ease;">
           <!-- Badge sutil -->
-          <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--spectrum); color: white; padding: 0.3rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600;" data-i18n="apoio.card3.badge">
-            Personal Resources
+          <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--spectrum); color: white; padding: 0.3rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600;">
+            Recursos Próprios
           </div>
           
           <div style="font-size: 3rem; margin-bottom: 1.5rem;">❤️</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card3.title">Financial Support</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card3.desc">
-            Help with domain, hosting, development and 
-            project expansion costs while I complete my master's degree.
+          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;">Apoio Financeiro</h3>
+          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">
+            Ajude com custos de domínio, hospedagem, desenvolvimento e 
+            expansão do projeto enquanto realizo meu mestrado.
           </p>
           
           <div style="background: #fff8e1; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
             <p style="margin: 0; font-size: 0.85rem; color: #8d6e00;">
-              <strong data-i18n="apoio.card3.nota1">🎓 Developed during master's degree</strong><br>
-              <span style="font-size: 0.8rem;" data-i18n="apoio.card3.nota2">All support is reinvested in the project</span>
+              <strong>🎓 Desenvolvido durante mestrado</strong><br>
+              <span style="font-size: 0.8rem;">Todo apoio é reinvestido no projeto</span>
             </p>
           </div>
   
-          <a href="#contato" class="btn-primary" style="margin-top: 0.5rem;" data-i18n="apoio.card3.botao">
-            Talk About Support
+          <a href="#contato" class="btn-primary" style="margin-top: 0.5rem;">
+            Conversar sobre Apoio
           </a>
         </div>
   
@@ -1555,25 +1555,25 @@
   
       <!-- Mensagem de transparência -->
       <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: var(--radius-card); box-shadow: var(--shadow-card);">
-        <h4 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.transparencia.title">💎 Total Transparency</h4>
-        <p style="color: #666; max-width: 600px; margin: 0 auto; line-height: 1.6;" data-i18n="apoio.transparencia.desc">
-          I believe that <strong>quality inclusive education is a fundamental right</strong>. 
-          Every resource received is applied directly to the development and expansion of this project, 
-          with transparent accountability to all supporters.
+        <h4 style="color: var(--azul-escuro); margin-bottom: 1rem;">💎 Transparência Total</h4>
+        <p style="color: #666; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+          Acredito que <strong>educação inclusiva de qualidade é um direito fundamental</strong>. 
+          Todo recurso recebido é aplicado diretamente no desenvolvimento e expansão deste projeto, 
+          com prestação de contas transparente para todos os apoiadores.
         </p>
       </div>
     </div>
   </section>
   
-  <!-- FOOTER COM TRADUÇÃO -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <small data-i18n="footer.direitos">
-        © <span id="ano"></span> Inclusive Education with Results - A public policy proposal
-        for inclusive, technological special education with real results.
+      <small>
+        © <span id="ano"></span> Educação Inclusiva com Resultado - Uma proposta de política pública
+        para uma educação especial inclusiva, tecnológica e com resultados reais.
       </small>
-      <small data-i18n="footer.citacao">
-        "Inclusion is not presence. It is participation, learning and results."
+      <small>
+        "Inclusão não é presença. É participação, aprendizagem e resultado."
       </small>
     </div>
   </footer>
@@ -1600,7 +1600,7 @@
       submitBtn.innerHTML = `
         <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
           <div class="spinner" style="border-top-color: white;"></div>
-          <span data-i18n="contato.form.enviando">Sending...</span>
+          Enviando...
         </span>
       `;
       submitBtn.disabled = true;
@@ -1624,9 +1624,9 @@
           formMessage.innerHTML = `
             <div style="text-align: center;">
               <div style="font-size: 2rem; margin-bottom: 10px;">✅</div>
-              <strong style="font-size: 1.1em;" data-i18n="contato.form.sucesso.titulo">Message sent successfully!</strong><br>
-              <span data-i18n="contato.form.sucesso.mensagem">Thank you for your interest in the Inclusive Education project.</span><br>
-              <span style="font-size: 0.9em; color: #555;" data-i18n="contato.form.sucesso.retorno">We will return within 48 hours.</span>
+              <strong style="font-size: 1.1em;">Mensagem enviada com sucesso!</strong><br>
+              Obrigado pelo seu interesse no projeto Educação Inclusiva.<br>
+              <span style="font-size: 0.9em; color: #555;">Retornaremos em até 48 horas.</span>
             </div>
           `;
           formMessage.style.display = 'block';
@@ -1643,9 +1643,9 @@
         formMessage.innerHTML = `
           <div style="text-align: center;">
             <div style="font-size: 2rem; margin-bottom: 10px;">❌</div>
-            <strong style="font-size: 1.1em;" data-i18n="contato.form.erro.titulo">Error sending message</strong><br>
+            <strong style="font-size: 1.1em;">Erro ao enviar mensagem</strong><br>
             <span style="font-size: 0.9em; color: #555;">
-              <span data-i18n="contato.form.erro.mensagem">Try again or send directly to:</span><br>
+              Tente novamente ou envie diretamente para:<br>
               <a href="mailto:contato@educacaoinclusiva.com" style="color: red;">contato@educacaoinclusiva.com</a>
             </span>
           </div>
@@ -1714,8 +1714,6 @@
     const translations = {
       pt: {
         // Navbar
-        "nav.brand1": "Educação Inclusiva",
-        "nav.brand2": "com Resultado", 
         "nav.inicio": "Início",
         "nav.sobre": "Minha História", 
         "nav.dados": "Dados & Urgência",
@@ -1726,9 +1724,6 @@
         "nav.contato": "Contato",
         "nav.faleconosco": "✉ Fale Conosco",
         
-        // Skip link
-        "skip.link": "Pular para conteúdo principal",
-        
         // Hero
         "hero.status": "📋 STATUS: PROPOSTA EM ANÁLISE",
         "hero.badge": "💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO",
@@ -1738,7 +1733,7 @@
         "hero.piloto": "Piloto DF 2026",
         "hero.nota": "Proposta em análise pelos órgãos competentes • Foco inicial no <strong>Distrito Federal</strong>",
         
-        // Hero Chips
+        // Hero Chips (NOVO!)
         "hero.chip1": "PEI Obrigatório e Vivo",
         "hero.chip2": "Tecnologia Assistiva e AAC", 
         "hero.chip3": "Família como Parceira",
@@ -1746,7 +1741,7 @@
         "hero.chip5": "Equipes multiprofissionais",
         "hero.chip6": "Dados, Transparência e Resultado",
         
-        // Urgência
+        // Urgência (NOVO!)
         "urgencia.title": "⚡ Por que a Urgência?",
         "urgencia.cenario": "📈 Cenário Atual:",
         "urgencia.dado1": "de matrículas na educação especial",
@@ -1757,7 +1752,7 @@
         "urgencia.chip2": "Evidências", 
         "urgencia.chip3": "Solução Prática",
 
-        // Minha História
+        // NOVO: Minha História
         "sobre.kicker": "Minha História",
         "sobre.title": "Da Vivência Pessoal à Proposta de Política Pública", 
         "sobre.subtitle": "A trajetória que transformou minha experiência como mãe em uma proposta concreta para a educação inclusiva brasileira.",
@@ -1775,7 +1770,7 @@
         "sobre.card2.li4": "Com <strong>tecnologia assistiva integrada ao currículo</strong>",
         "sobre.card2.li5": "E <strong>monitoramento real do progresso</strong> dos estudantes",
 
-        // Dados & Urgência
+        // NOVO: Dados & Urgência
         "dados.kicker": "Dados & Urgência",
         "dados.title": "O Cenário que Exige Ação Imediata", 
         "dados.subtitle": "Dados concretos mostram a dimensão do desafio e a necessidade urgente de um modelo estruturado para a educação inclusiva no Brasil.",
@@ -1804,7 +1799,7 @@
         "dados.marco.li7": "Capacitação descontínua",
         "dados.marco.li8": "Monitoramento ineficaz",
 
-        // Pilares
+        // NOVO: Pilares
         "pilares.kicker": "Estrutura do Modelo",
         "pilares.title": "Os 5 pilares da Educação Inclusiva com Resultado",
         
@@ -1843,43 +1838,7 @@
         "pilares.pilar5.tag1": "Indicadores",
         "pilares.pilar5.tag2": "Política Baseada em Evidências",
 
-        // Visualize o Modelo
-        "visualize.kicker": "Visualize o Modelo",
-        "visualize.title": "Como os 5 Pilares se Conectam",
-        "visualize.subtitle": "Entenda visualmente como cada componente do modelo trabalha em conjunto para resultados reais.",
-        "visualize.result": "⬇️ RESULTADO: Inclusão Real com Dados Mensuráveis",
-        
-        "visualize.pilar1.title": "PEI Digital",
-        "visualize.pilar1.subtitle": "Base de Tudo",
-        "visualize.pilar1.li1": "Metas mensuráveis",
-        "visualize.pilar1.li2": "Acesso em tempo real", 
-        "visualize.pilar1.li3": "Participação familiar",
-        
-        "visualize.pilar2.title": "Equipes + AEE",
-        "visualize.pilar2.subtitle": "Suporte Humano",
-        "visualize.pilar2.li1": "Multiprofissionais",
-        "visualize.pilar2.li2": "Co-teaching",
-        "visualize.pilar2.li3": "Centros-polo",
-        
-        "visualize.pilar3.title": "Tecnologia",
-        "visualize.pilar3.subtitle": "Ferramentas",
-        "visualize.pilar3.li1": "AAC e tablets",
-        "visualize.pilar3.li2": "Comunicação",
-        "visualize.pilar3.li3": "Acesso ao currículo",
-        
-        "visualize.pilar4.title": "Ambiente",
-        "visualize.pilar4.subtitle": "Inclusão Estruturada", 
-        "visualize.pilar4.li1": "Transição segura",
-        "visualize.pilar4.li2": "Salas especializadas",
-        "visualize.pilar4.li3": "Ambiente menos restritivo",
-        
-        "visualize.pilar5.title": "Dados",
-        "visualize.pilar5.subtitle": "Transparência",
-        "visualize.pilar5.li1": "Indicadores públicos",
-        "visualize.pilar5.li2": "Monitoramento",
-        "visualize.pilar5.li3": "Evidências",
-
-        // Tecnologia Assistiva
+        // NOVO: Tecnologia Assistiva
         "tecnologia.kicker": "Recursos",
         "tecnologia.title": "Tecnologia Assistiva na Prática", 
         "tecnologia.subtitle": "Ferramentas e recursos que fazem a diferença no dia a dia dos estudantes com necessidades especiais.",
@@ -1908,7 +1867,7 @@
         "tecnologia.card4.tag1": "Personalização", 
         "tecnologia.card4.tag2": "Adaptações",
 
-        // Piloto DF 2026
+        // NOVO: Piloto DF 2026
         "piloto.kicker": "Projeto piloto",
         "piloto.title": "Proposta de Piloto - Distrito Federal 2026", 
         "piloto.subtitle": "<strong>Proposta em análise</strong> para implementação na rede pública do Distrito Federal, com possibilidade de expansão nacional a partir de resultados mensuráveis e comprovados.",
@@ -1931,95 +1890,12 @@
         "piloto.etapa4.numero": "Etapa 4",
         "piloto.etapa4.titulo": "Monitoramento e Indicadores.",
         "piloto.etapa4.descricao": "Relatórios semestrais com foco em acesso, participação, comunicação e aprendizagem.",
-
-        // FAQ
-        "faq.kicker": "FAQ",
-        "faq.title": "Perguntas Frequentes",
-        
-        "faq.q1": "❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?",
-        "faq.a1": "<strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação continuada, tecnologia e padrões claros de atuação. O AEE é a base, e este modelo traz a estruturação necessária.",
-        
-        "faq.q2": "❓ Como as famílias podem participar ativamente?",
-        "faq.a2": "Através de reuniões regulares de PEI, formação em tecnologia assistiva, acompanhamento do progresso e participação nas decisões sobre o plano educacional de seus filhos.",
-        
-        "faq.q3": "❓ Qual o status atual da proposta?",
-        "faq.a3": "A proposta está <strong>em análise pelos órgãos competentes</strong> (MEC, Governo do DF, Frente Parlamentar). Este site serve para divulgar a proposta e buscar apoio para sua implementação.",
-
-        "faq.q4": "❓ Por que começar pelo Distrito Federal?",
-        "faq.a4": "O DF reúne características ideais para um piloto: diversidade socioeconômica, estrutura de gestão unificada e potencial de replicação para outros estados.",
-
-        "faq.q5": "❓ Como garantir a continuidade do projeto?",
-        "faq.a5": "Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais e transparência total nos resultados - tornando o modelo parte da estrutura educacional.",
-
-        // Contato
-        "contato.kicker": "Contato",
-        "contato.title": "Fale com o projeto Educação Inclusiva com Resultado",
-        "contato.subtitle": "Este site é um ponto de apoio para famílias, escolas, redes públicas e parlamentares interessados em construir um modelo de educação inclusiva com base em evidências.",
-        
-        "contato.canais.title": "Canais oficiais",
-        "contato.canais.email": "E-mail institucional:",
-        "contato.canais.localizacao": "Localização Atual:",
-        "contato.canais.localizacao.desc": "Salt Lake City, Utah (EUA) · Projeto com foco no Distrito Federal e expansão nacional.",
-        "contato.canais.idealizadora": "Idealizadora:",
-        "contato.canais.idealizadora.desc": "Thaianne da Silva, MS Cybersecurity.<br>Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.",
-        
-        "contato.form.title": "ENVIE UMA MENSAGEM",
-        "contato.form.note": "Sua mensagem será enviada diretamente para nosso e-mail institucional.",
-        "contato.form.nome": "Nome *",
-        "contato.form.nome.placeholder": "Seu nome completo",
-        "contato.form.email": "E-mail *", 
-        "contato.form.email.placeholder": "seu@email.com",
-        "contato.form.tipo": "Você é",
-        "contato.form.tipo.op0": "Selecione...",
-        "contato.form.tipo.op1": "Família",
-        "contato.form.tipo.op2": "Educador/Professor",
-        "contato.form.tipo.op3": "Gestor Escolar",
-        "contato.form.tipo.op4": "Parlamentar",
-        "contato.form.tipo.op5": "Outro",
-        "contato.form.mensagem": "Mensagem *",
-        "contato.form.mensagem.placeholder": "Conte um pouco sobre sua demanda ou interesse.",
-        "contato.form.botao": "Enviar mensagem",
-        "contato.form.enviando": "Enviando...",
-        
-        "contato.form.sucesso.titulo": "Mensagem enviada com sucesso!",
-        "contato.form.sucesso.mensagem": "Obrigado pelo seu interesse no projeto Educação Inclusiva.",
-        "contato.form.sucesso.retorno": "Retornaremos em até 48 horas.",
-        
-        "contato.form.erro.titulo": "Erro ao enviar mensagem",
-        "contato.form.erro.mensagem": "Tente novamente ou envie diretamente para:",
-
-        // Apoio
-        "apoio.kicker": "Apoio & Contribuição",
-        "apoio.title": "Apoie esta Causa",
-        "apoio.subtitle": "Este é um projeto independente desenvolvido com recursos próprios enquanto realizo meu mestrado. Todo apoio ajuda a manter e expandir esta iniciativa por uma educação inclusiva de verdade.",
-        
-        "apoio.card1.title": "Divulgação",
-        "apoio.card1.desc": "Compartilhe esta proposta com gestores públicos, educadores, famílias e todos que possam se beneficiar ou apoiar esta causa.",
-        
-        "apoio.card2.title": "Contribuição Técnica",
-        "apoio.card2.desc": "Sua expertise em educação, políticas públicas, direito ou tecnologia pode fazer a diferença neste projeto.",
-        "apoio.card2.botao": "Oferecer Expertise",
-        
-        "apoio.card3.badge": "Recursos Próprios",
-        "apoio.card3.title": "Apoio Financeiro", 
-        "apoio.card3.desc": "Ajude com custos de domínio, hospedagem, desenvolvimento e expansão do projeto enquanto realizo meu mestrado.",
-        "apoio.card3.nota1": "🎓 Desenvolvido durante mestrado",
-        "apoio.card3.nota2": "Todo apoio é reinvestido no projeto",
-        "apoio.card3.botao": "Conversar sobre Apoio",
-        
-        "apoio.transparencia.title": "💎 Transparência Total",
-        "apoio.transparencia.desc": "Acredito que <strong>educação inclusiva de qualidade é um direito fundamental</strong>. Todo recurso recebido é aplicado diretamente no desenvolvimento e expansão deste projeto, com prestação de contas transparente para todos os apoiadores.",
-
-        // Footer
-        "footer.direitos": "© <span id='ano'></span> Educação Inclusiva com Resultado - Uma proposta de política pública para uma educação especial inclusiva, tecnológica e com resultados reais.",
-        "footer.citacao": "\"Inclusão não é presença. É participação, aprendizagem e resultado.\""
+    
       
       },
       
       en: {
         // Navbar  
-        "nav.brand1": "Inclusive Education",
-        "nav.brand2": "with Results",
         "nav.inicio": "Home",
         "nav.sobre": "My Story",
         "nav.dados": "Data & Urgency",
@@ -2030,9 +1906,6 @@
         "nav.contato": "Contact",
         "nav.faleconosco": "✉ Contact Us",
         
-        // Skip link
-        "skip.link": "Skip to main content",
-        
         // Hero
         "hero.status": "📋 STATUS: PROPOSAL UNDER REVIEW",
         "hero.badge": "💙 INCLUSIVE EDUCATION - TECHNOLOGY - RESULTS",
@@ -2042,7 +1915,7 @@
         "hero.piloto": "Pilot DF 2026",
         "hero.nota": "Proposal under review by competent authorities • Initial focus on <strong>Distrito Federal</strong>",
         
-        // Hero Chips
+        // Hero Chips (NOVO!)
         "hero.chip1": "Mandatory Living IEP",
         "hero.chip2": "Assistive Technology & AAC",
         "hero.chip3": "Family as Partner", 
@@ -2050,7 +1923,7 @@
         "hero.chip5": "Multidisciplinary Teams",
         "hero.chip6": "Data, Transparency & Results",
         
-        // Urgência
+        // Urgência (NOVO!)
         "urgencia.title": "⚡ Why the Urgency?",
         "urgencia.cenario": "📈 Current Scenario:",
         "urgencia.dado1": "special education enrollments",
@@ -2061,7 +1934,7 @@
         "urgencia.chip2": "Evidence",
         "urgencia.chip3": "Practical Solution",
 
-        // Minha História (inglês)
+        // NOVO: Minha História (inglês)
         "sobre.kicker": "My Story",
         "sobre.title": "From Personal Experience to Public Policy Proposal",
         "sobre.subtitle": "The journey that transformed my experience as a mother into a concrete proposal for Brazilian inclusive education.",
@@ -2079,7 +1952,7 @@
         "sobre.card2.li4": "With <strong>assistive technology integrated into the curriculum</strong>",
         "sobre.card2.li5": "And <strong>real monitoring of student progress</strong>",
 
-        // Dados & Urgência (inglês)
+            // NOVO: Dados & Urgência (inglês)
         "dados.kicker": "Data & Urgency",
         "dados.title": "The Scenario That Demands Immediate Action",
         "dados.subtitle": "Concrete data shows the dimension of the challenge and the urgent need for a structured model for inclusive education in Brazil.",
@@ -2108,7 +1981,7 @@
         "dados.marco.li7": "Discontinuous training",
         "dados.marco.li8": "Ineffective monitoring",
 
-        // Pilares (inglês)
+        // NOVO: Pilares (inglês)
         "pilares.kicker": "Model Structure",
         "pilares.title": "The 5 Pillars of Inclusive Education with Results",
         
@@ -2147,43 +2020,7 @@
         "pilares.pilar5.tag1": "Indicators",
         "pilares.pilar5.tag2": "Evidence-Based Policy",
 
-        // Visualize o Modelo (inglês)
-        "visualize.kicker": "Visualize the Model",
-        "visualize.title": "How the 5 Pillars Connect",
-        "visualize.subtitle": "Understand visually how each component of the model works together for real results.",
-        "visualize.result": "⬇️ RESULT: Real Inclusion with Measurable Data",
-        
-        "visualize.pilar1.title": "Digital IEP",
-        "visualize.pilar1.subtitle": "Foundation of Everything",
-        "visualize.pilar1.li1": "Measurable goals",
-        "visualize.pilar1.li2": "Real-time access",
-        "visualize.pilar1.li3": "Family participation",
-        
-        "visualize.pilar2.title": "Teams + AEE",
-        "visualize.pilar2.subtitle": "Human Support",
-        "visualize.pilar2.li1": "Multiprofessionals",
-        "visualize.pilar2.li2": "Co-teaching",
-        "visualize.pilar2.li3": "Hub centers",
-        
-        "visualize.pilar3.title": "Technology",
-        "visualize.pilar3.subtitle": "Tools",
-        "visualize.pilar3.li1": "AAC and tablets",
-        "visualize.pilar3.li2": "Communication",
-        "visualize.pilar3.li3": "Curriculum access",
-        
-        "visualize.pilar4.title": "Environment",
-        "visualize.pilar4.subtitle": "Structured Inclusion",
-        "visualize.pilar4.li1": "Safe transition",
-        "visualize.pilar4.li2": "Specialized classrooms",
-        "visualize.pilar4.li3": "Least restrictive environment",
-        
-        "visualize.pilar5.title": "Data",
-        "visualize.pilar5.subtitle": "Transparency",
-        "visualize.pilar5.li1": "Public indicators",
-        "visualize.pilar5.li2": "Monitoring",
-        "visualize.pilar5.li3": "Evidence",
-
-        // Tecnologia Assistiva (inglês)
+        // NOVO: Tecnologia Assistiva (inglês)
         "tecnologia.kicker": "Resources",
         "tecnologia.title": "Assistive Technology in Practice",
         "tecnologia.subtitle": "Tools and resources that make a difference in the daily lives of students with special needs.",
@@ -2212,7 +2049,7 @@
         "tecnologia.card4.tag1": "Personalization",
         "tecnologia.card4.tag2": "Adaptations",
 
-        // Piloto DF 2026 (inglês)
+        // NOVO: Piloto DF 2026 (inglês)
         "piloto.kicker": "Pilot project",
         "piloto.title": "Pilot Proposal - Distrito Federal 2026",
         "piloto.subtitle": "<strong>Proposal under review</strong> for implementation in the Distrito Federal public network, with possibility of national expansion based on measurable and proven results.",
@@ -2236,88 +2073,6 @@
         "piloto.etapa4.titulo": "Monitoring and Indicators.",
         "piloto.etapa4.descricao": "Semester reports focusing on access, participation, communication and learning.",
 
-        // FAQ (inglês)
-        "faq.kicker": "FAQ",
-        "faq.title": "Frequently Asked Questions",
-        
-        "faq.q1": "❓ Does this project replace AEE (Specialized Educational Assistance)?",
-        "faq.a1": "<strong>No</strong>, the project strengthens and structures AEE with resources, continuous training, technology and clear standards of practice. AEE is the foundation, and this model brings the necessary structure.",
-        
-        "faq.q2": "❓ How can families actively participate?",
-        "faq.a2": "Through regular IEP meetings, training in assistive technology, progress monitoring and participation in decisions about their children's educational plan.",
-        
-        "faq.q3": "❓ What is the current status of the proposal?",
-        "faq.a3": "The proposal is <strong>under review by competent authorities</strong> (MEC, Distrito Federal Government, Parliamentary Front). This website serves to publicize the proposal and seek support for its implementation.",
-
-        "faq.q4": "❓ Why start with Distrito Federal?",
-        "faq.a4": "DF has ideal characteristics for a pilot: socioeconomic diversity, unified management structure and potential for replication to other states.",
-
-        "faq.q5": "❓ How to ensure project continuity?",
-        "faq.a5": "Through institutionalization via law, formation of permanent teams, digital systems and total transparency in results - making the model part of the educational structure.",
-
-        // Contato (inglês)
-        "contato.kicker": "Contact",
-        "contato.title": "Contact the Inclusive Education with Results Project",
-        "contato.subtitle": "This website is a support point for families, schools, public networks and parliamentarians interested in building an evidence-based inclusive education model.",
-        
-        "contato.canais.title": "Official Channels",
-        "contato.canais.email": "Institutional email:",
-        "contato.canais.localizacao": "Current Location:",
-        "contato.canais.localizacao.desc": "Salt Lake City, Utah (USA) · Project focused on Distrito Federal and national expansion.",
-        "contato.canais.idealizadora": "Founder:",
-        "contato.canais.idealizadora.desc": "Thaianne da Silva, MS Cybersecurity.<br>Above all, mother of a special boy who transformed my worldview.",
-        
-        "contato.form.title": "SEND A MESSAGE",
-        "contato.form.note": "Your message will be sent directly to our institutional email.",
-        "contato.form.nome": "Name *",
-        "contato.form.nome.placeholder": "Your full name",
-        "contato.form.email": "Email *",
-        "contato.form.email.placeholder": "your@email.com",
-        "contato.form.tipo": "You are",
-        "contato.form.tipo.op0": "Select...",
-        "contato.form.tipo.op1": "Family",
-        "contato.form.tipo.op2": "Educator/Teacher",
-        "contato.form.tipo.op3": "School Manager",
-        "contato.form.tipo.op4": "Parliamentarian",
-        "contato.form.tipo.op5": "Other",
-        "contato.form.mensagem": "Message *",
-        "contato.form.mensagem.placeholder": "Tell us about your demand or interest.",
-        "contato.form.botao": "Send message",
-        "contato.form.enviando": "Sending...",
-        
-        "contato.form.sucesso.titulo": "Message sent successfully!",
-        "contato.form.sucesso.mensagem": "Thank you for your interest in the Inclusive Education project.",
-        "contato.form.sucesso.retorno": "We will return within 48 hours.",
-        
-        "contato.form.erro.titulo": "Error sending message",
-        "contato.form.erro.mensagem": "Try again or send directly to:",
-
-        // Apoio (inglês)
-        "apoio.kicker": "Support & Contribution",
-        "apoio.title": "Support This Cause",
-        "apoio.subtitle": "This is an independent project developed with personal resources while I complete my master's degree. Every support helps maintain and expand this initiative for truly inclusive education.",
-        
-        "apoio.card1.title": "Awareness",
-        "apoio.card1.desc": "Share this proposal with public managers, educators, families and everyone who can benefit from or support this cause.",
-        
-        "apoio.card2.title": "Technical Contribution",
-        "apoio.card2.desc": "Your expertise in education, public policies, law or technology can make a difference in this project.",
-        "apoio.card2.botao": "Offer Expertise",
-        
-        "apoio.card3.badge": "Personal Resources",
-        "apoio.card3.title": "Financial Support",
-        "apoio.card3.desc": "Help with domain, hosting, development and project expansion costs while I complete my master's degree.",
-        "apoio.card3.nota1": "🎓 Developed during master's degree",
-        "apoio.card3.nota2": "All support is reinvested in the project",
-        "apoio.card3.botao": "Talk About Support",
-        
-        "apoio.transparencia.title": "💎 Total Transparency",
-        "apoio.transparencia.desc": "I believe that <strong>quality inclusive education is a fundamental right</strong>. Every resource received is applied directly to the development and expansion of this project, with transparent accountability to all supporters.",
-
-        // Footer (inglês)
-        "footer.direitos": "© <span id='ano'></span> Inclusive Education with Results - A public policy proposal for inclusive, technological special education with real results.",
-        "footer.citacao": "\"Inclusion is not presence. It is participation, learning and results.\""
-
       }
     };
     
@@ -2340,27 +2095,8 @@
         }
       });
       
-      // Aplica placeholders
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-        const key = element.getAttribute('data-i18n-placeholder');
-        if (translations[lang][key]) {
-          element.placeholder = translations[lang][key];
-        }
-      });
-      
-      // Atualiza opções do select
-      document.querySelectorAll('select option').forEach(option => {
-        const key = option.getAttribute('data-i18n');
-        if (key && translations[lang][key]) {
-          option.textContent = translations[lang][key];
-        }
-      });
-      
       // Salva preferência
       localStorage.setItem('preferred-language', lang);
-      
-      // Atualiza o lang do HTML
-      document.documentElement.lang = lang;
     }
     
     // Detecta idioma do navegador ou preferência salva
