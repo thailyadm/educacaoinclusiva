@@ -856,6 +856,43 @@
         height: 35px;
       }
     }
+      /* SELETOR DE IDIOMA */
+    .language-switcher {
+      display: flex;
+      gap: 0.3rem;
+      margin: 0 1rem;
+    }
+    
+    .lang-btn {
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 0.4rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .lang-btn:hover {
+      transform: scale(1.1);
+      border-color: #e5e9f5;
+    }
+    
+    .lang-btn.active {
+      border-color: var(--spectrum);
+      background: var(--spectrum-soft);
+    }
+    
+    /* Mobile */
+    @media (max-width: 720px) {
+      .language-switcher {
+        margin: 0.5rem 0;
+        justify-content: center;
+      }
+    }
     
   </style>
 </head>
@@ -867,7 +904,7 @@
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
   
-  <!-- NAVBAR COM LOGO -->
+  <!-- NAVBAR COM LOGO E BANDEIRAS -->
   <header class="navbar">
     <div class="navbar-inner">
       <!-- Logo + Nome -->
@@ -894,6 +931,17 @@
         <a href="#piloto">Piloto DF 2026</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
+        
+        <!-- Seletor de Idioma -->
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="pt" aria-label="Português">
+            🇧🇷
+          </button>
+          <button class="lang-btn" data-lang="en" aria-label="English">
+            🇺🇸
+          </button>
+        </div>
+        
         <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">✉ Fale Conosco</a>
       </nav>
     </div>
@@ -1661,6 +1709,106 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+      // Sistema de Internacionalização
+    const translations = {
+      pt: {
+        // Navbar
+        "nav.inicio": "Início",
+        "nav.sobre": "Minha História", 
+        "nav.dados": "Dados & Urgência",
+        "nav.pilares": "Pilares",
+        "nav.tecnologia": "Tecnologia",
+        "nav.piloto": "Piloto DF 2026",
+        "nav.faq": "FAQ",
+        "nav.contato": "Contato",
+        "nav.faleconosco": "✉ Fale Conosco",
+        
+        // Hero
+        "hero.status": "📋 STATUS: PROPOSTA EM ANÁLISE",
+        "hero.badge": "💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO",
+        "hero.title": "Proposta de Modelo Estruturado para Educação Inclusiva no Brasil",
+        "hero.subtitle": "Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. Baseada na vivência do sistema americano e adaptada à realidade brasileira, esta proposta busca implementar um modelo sustentável de educação especial com foco em resultados mensuráveis.",
+        "hero.verproposta": "Ver Proposta Completa",
+        "hero.piloto": "Piloto DF 2026",
+        "hero.nota": "Proposta em análise pelos órgãos competentes • Foco inicial no <strong>Distrito Federal</strong>",
+        
+        // Urgência
+        "urgencia.title": "⚡ Por que a Urgência?",
+        "urgencia.cenario": "📈 Cenário Atual:",
+        "urgencia.solucao": "💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, tecnologia assistiva e dados transparentes"
+      },
+      
+      en: {
+        // Navbar
+        "nav.inicio": "Home",
+        "nav.sobre": "My Story",
+        "nav.dados": "Data & Urgency", 
+        "nav.pilares": "Pillars",
+        "nav.tecnologia": "Technology",
+        "nav.piloto": "Pilot DF 2026",
+        "nav.faq": "FAQ",
+        "nav.contato": "Contact",
+        "nav.faleconosco": "✉ Contact Us",
+        
+        // Hero
+        "hero.status": "📋 STATUS: PROPOSAL UNDER REVIEW",
+        "hero.badge": "💙 INCLUSIVE EDUCATION - TECHNOLOGY - RESULTS",
+        "hero.title": "Structured Model Proposal for Inclusive Education in Brazil",
+        "hero.subtitle": "Proposal created by <strong>Thaianne da Silva</strong>, mother of a non-verbal autistic boy. Based on experience with the American system and adapted to Brazilian reality, this proposal aims to implement a sustainable special education model focused on measurable results.",
+        "hero.verproposta": "See Full Proposal", 
+        "hero.piloto": "Pilot DF 2026",
+        "hero.nota": "Proposal under review by competent authorities • Initial focus on <strong>Distrito Federal</strong>",
+        
+        // Urgência
+        "urgencia.title": "⚡ Why the Urgency?",
+        "urgencia.cenario": "📈 Current Scenario:",
+        "urgencia.solucao": "💡 <strong>Proposed Solution:</strong> Evidence-based model with mandatory IEP, assistive technology and transparent data"
+      }
+    };
+    
+    // Função para trocar idioma
+    function changeLanguage(lang) {
+      // Atualiza botões ativos
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      // Aplica traduções
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translations[lang][key];
+          } else {
+            element.innerHTML = translations[lang][key];
+          }
+        }
+      });
+      
+      // Salva preferência
+      localStorage.setItem('preferred-language', lang);
+    }
+    
+    // Detecta idioma do navegador ou preferência salva
+    function detectLanguage() {
+      const savedLang = localStorage.getItem('preferred-language');
+      const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+      return savedLang || browserLang;
+    }
+    
+    // Inicializa
+    document.addEventListener('DOMContentLoaded', function() {
+      const initialLang = detectLanguage();
+      changeLanguage(initialLang);
+      
+      // Event listeners para os botões de idioma
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          changeLanguage(this.dataset.lang);
+        });
+      });
+    });
+    
   </script>
 </body>
 </html>
