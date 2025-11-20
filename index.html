@@ -663,14 +663,15 @@
       max-width: 1120px;
       margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.8rem;
+      flex-direction: column; /* MUDANÇA: coluna em vez de linha */
+      gap: 0.5rem; /* MUDANÇA: gap menor entre as linhas */
       align-items: center;
+      text-align: center; /* MUDANÇA: texto centralizado */
     }
     
     .footer small {
       opacity: 0.9;
+      display: block; /* MUDANÇA: garante que cada small seja um bloco */
     }
     
     /* ANIMAÇÕES */
