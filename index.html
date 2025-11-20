@@ -892,7 +892,11 @@
         margin: 0.5rem 0;
         justify-content: center;
       }
-    }
+      .nav-cta {
+      align-self: center;    /* ← ADICIONE ESTA LINHA */
+      margin-top: 0.5rem;    /* ← E ESTA LINHA */
+      }
+  }
     
   </style>
 </head>
@@ -942,7 +946,7 @@
           </button>
         </div>
         
-        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com" data-i18n="nav.faleconosco">✉ Contact Us</a>
+        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com" data-i18n="nav.faleconosco"><span class="nav-cta-text">✉ Contact</span></a>
       </nav>
     </div>
   </header>
