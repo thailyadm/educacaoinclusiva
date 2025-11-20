@@ -916,22 +916,22 @@
              width="40" 
              height="40">
         <div class="brand-name">
-          Educação Inclusiva<br>
-          <span class="brand-subtitle">com Resultado</span>
+          <span data-i18n="nav.brand.line1">Educação Inclusiva</span><br>
+          <span class="brand-subtitle" data-i18n="nav.brand.line2">com Resultado</span>
         </div>
       </div>
   
       <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
       
       <nav class="nav-links" id="navLinks">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Minha História</a>
-        <a href="#dados">Dados & Urgência</a>
-        <a href="#pilares">Pilares</a>
-        <a href="#tecnologia">Tecnologia</a>
-        <a href="#piloto">Piloto DF 2026</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contato">Contato</a>
+        <a href="#inicio" data-i18n="nav.inicio">Início</a>
+        <a href="#sobre" data-i18n="nav.sobre">Minha História</a>
+        <a href="#dados" data-i18n="nav.dados">Dados & Urgência</a>
+        <a href="#pilares" data-i18n="nav.pilares">Pilares</a>
+        <a href="#tecnologia" data-i18n="nav.tecnologia">Tecnologia</a>
+        <a href="#piloto" data-i18n="nav.piloto">Piloto DF 2026</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contato" data-i18n="nav.contato">Contato</a>
         
         <!-- Seletor de Idioma -->
         <div class="language-switcher">
@@ -943,7 +943,7 @@
           </button>
         </div>
         
-        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com">✉ Fale Conosco</a>
+        <a class="nav-cta" href="mailto:contato@educacaoinclusiva.com" data-i18n="nav.faleconosco">✉ Fale Conosco</a>
       </nav>
     </div>
   </header>
@@ -1710,7 +1710,9 @@
       // Sistema de Internacionalização
     const translations = {
       pt: {
-        // Navbar
+        // === NOVAS TRADUÇÕES DA NAVBAR ===
+        "nav.brand.line1": "Educação Inclusiva",
+        "nav.brand.line2": "com Resultado",
         "nav.inicio": "Início",
         "nav.sobre": "Minha História", 
         "nav.dados": "Dados & Urgência",
@@ -2010,7 +2012,9 @@
       },
       
       en: {
-        // Navbar  
+        // === NOVAS TRADUÇÕES DA NAVBAR ===
+        "nav.brand.line1": "Inclusive Education",
+        "nav.brand.line2": "with Results", 
         "nav.inicio": "Home",
         "nav.sobre": "My Story",
         "nav.dados": "Data & Urgency",
