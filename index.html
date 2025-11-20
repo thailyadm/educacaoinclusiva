@@ -947,84 +947,86 @@
     </div>
   </header>
 
-  <!-- HERO - LAYOUT COMPACTO -->
+  <!-- HERO - COM TRADUÇÃO -->
   <main id="main" class="hero">
     <div class="hero-inner">
-      <!-- COLUNA DA ESQUERDA - Conteúdo principal -->
       <div class="hero-content">
         <div class="hero-logo-block">
           <img src="heart-puzzle.png" 
-             alt="Logo Educação Inclusiva - quebra-cabeça com coração representando inclusão"
-             loading="lazy"
-             width="120" 
-             height="120"
-             class="hero-logo">
-
-          <!-- STATUS CORRETO DO PROJETO -->
-          <div class="status-badge">
+               alt="Educação Inclusiva com Resultado" 
+               class="hero-logo"
+               width="120" 
+               height="120">
+  
+          <!-- STATUS com tradução -->
+          <div class="status-badge" data-i18n="hero.status">
             📋 STATUS: PROPOSTA EM ANÁLISE
           </div>
-
-          <div class="hero-badge">
+  
+          <div class="hero-badge" data-i18n="hero.badge">
             💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO
           </div>
-
-          <h1 class="hero-title">
+  
+          <h1 class="hero-title" data-i18n="hero.title">
             Proposta de Modelo Estruturado para Educação Inclusiva no Brasil
           </h1>
-
+  
           <div class="hero-sub">
-            <p>
+            <p data-i18n="hero.subtitle">
               Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. 
               Baseada na vivência do sistema americano e adaptada à realidade brasileira, esta proposta 
               busca implementar um modelo sustentável de educação especial com foco em resultados mensuráveis.
             </p>
           </div>
-
+  
           <div class="hero-grid">
-            <div class="hero-chip"><span>🧩</span><span>PEI Obrigatório e Vivo</span></div>
-            <div class="hero-chip"><span>📱</span><span>Tecnologia Assistiva e AAC</span></div>
-            <div class="hero-chip"><span>🤝</span><span>Família como Parceira</span></div>
-            <div class="hero-chip"><span>📚</span><span>Salas de Educação Especial</span></div>
-            <div class="hero-chip"><span>🧩</span><span>Equipes multiprofissionais nas escolas</span></div>
-            <div class="hero-chip"><span>📊</span><span>Dados, Transparência e Resultado</span></div>
+            <div class="hero-chip"><span>🧩</span><span data-i18n="hero.chip1">PEI Obrigatório e Vivo</span></div>
+            <div class="hero-chip"><span>📱</span><span data-i18n="hero.chip2">Tecnologia Assistiva e AAC</span></div>
+            <div class="hero-chip"><span>🤝</span><span data-i18n="hero.chip3">Família como Parceira</span></div>
+            <div class="hero-chip"><span>📚</span><span data-i18n="hero.chip4">Salas de Educação Especial</span></div>
+            <div class="hero-chip"><span>👥</span><span data-i18n="hero.chip5">Equipes multiprofissionais</span></div>
+            <div class="hero-chip"><span>📊</span><span data-i18n="hero.chip6">Dados, Transparência e Resultado</span></div>
           </div>
-
+  
           <div class="hero-actions">
-            <a class="btn-primary" href="#dados">Ver Proposta Completa</a>
-            <a class="btn-secondary" href="#piloto">Piloto DF 2026</a>
+            <a class="btn-primary" href="#dados" data-i18n="hero.verproposta">
+              Ver Proposta Completa
+            </a>
+            <a class="btn-secondary" href="#piloto" data-i18n="hero.piloto">
+              Piloto DF 2026
+            </a>
           </div>
-
-          <div class="hero-note">
+  
+          <div class="hero-note" data-i18n="hero.nota">
             Proposta em análise pelos órgãos competentes • Foco inicial no <strong>Distrito Federal</strong>
           </div>
         </div>
       </div>
-
-      <!-- COLUNA DA DIREITA - Card compacto como no print -->
+  
+      <!-- CARD DE URGÊNCIA COM TRADUÇÃO -->
       <div class="hero-urgent-card">
-        <h3>⚡ Por que a Urgência?</h3>
+        <h3 data-i18n="urgencia.title">⚡ Por que a Urgência?</h3>
         
         <div class="urgent-section">
-          <h4>📈 Cenário Atual:</h4>
+          <h4 data-i18n="urgencia.cenario">📈 Cenário Atual:</h4>
           <ul>
-            <li><strong>1,3 milhão</strong> de matrículas na educação especial</li>
-            <li><strong>33% de crescimento</strong> em autismo (5 anos)</li>
-            <li><strong>Falta de dados</strong> sobre evasão e progresso</li>
+            <li><strong>1,3 milhão</strong> <span data-i18n="urgencia.dado1">de matrículas na educação especial</span></li>
+            <li><strong>33% de crescimento</strong> <span data-i18n="urgencia.dado2">em autismo (5 anos)</span></li>
+            <li data-i18n="urgencia.dado3"><strong>Falta de dados</strong> sobre evasão e progresso</li>
           </ul>
         </div>
       
         <div class="solution-box">
-          <p>
+          <p data-i18n="urgencia.solucao">
             💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, 
             tecnologia assistiva e dados transparentes
           </p>
         </div>
       
         <div class="chip-list">
-          <span class="chip">Dados Reais</span>
-          <span class="chip">Evidências</span>
-          <span class="chip">Solução Prática</span>
+          <span class="chip" data-i18n="urgencia.chip1">Dados Reais</span>
+          <span class="chip" data-i18n="urgencia.chip2">Evidências</span>
+          <span class="chip" data-i18n="urgencia.chip3">Solução Prática</span>
         </div>
       </div>
     </div>
@@ -1732,17 +1734,31 @@
         "hero.piloto": "Piloto DF 2026",
         "hero.nota": "Proposta em análise pelos órgãos competentes • Foco inicial no <strong>Distrito Federal</strong>",
         
-        // Urgência
+        // Hero Chips (NOVO!)
+        "hero.chip1": "PEI Obrigatório e Vivo",
+        "hero.chip2": "Tecnologia Assistiva e AAC", 
+        "hero.chip3": "Família como Parceira",
+        "hero.chip4": "Salas de Educação Especial",
+        "hero.chip5": "Equipes multiprofissionais",
+        "hero.chip6": "Dados, Transparência e Resultado",
+        
+        // Urgência (NOVO!)
         "urgencia.title": "⚡ Por que a Urgência?",
         "urgencia.cenario": "📈 Cenário Atual:",
-        "urgencia.solucao": "💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, tecnologia assistiva e dados transparentes"
+        "urgencia.dado1": "de matrículas na educação especial",
+        "urgencia.dado2": "em autismo (5 anos)",
+        "urgencia.dado3": "<strong>Falta de dados</strong> sobre evasão e progresso",
+        "urgencia.solucao": "💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, tecnologia assistiva e dados transparentes",
+        "urgencia.chip1": "Dados Reais",
+        "urgencia.chip2": "Evidências", 
+        "urgencia.chip3": "Solução Prática"
       },
       
       en: {
-        // Navbar
+        // Navbar  
         "nav.inicio": "Home",
         "nav.sobre": "My Story",
-        "nav.dados": "Data & Urgency", 
+        "nav.dados": "Data & Urgency",
         "nav.pilares": "Pillars",
         "nav.tecnologia": "Technology",
         "nav.piloto": "Pilot DF 2026",
@@ -1759,10 +1775,24 @@
         "hero.piloto": "Pilot DF 2026",
         "hero.nota": "Proposal under review by competent authorities • Initial focus on <strong>Distrito Federal</strong>",
         
-        // Urgência
+        // Hero Chips (NOVO!)
+        "hero.chip1": "Mandatory Living IEP",
+        "hero.chip2": "Assistive Technology & AAC",
+        "hero.chip3": "Family as Partner", 
+        "hero.chip4": "Special Education Classrooms",
+        "hero.chip5": "Multidisciplinary Teams",
+        "hero.chip6": "Data, Transparency & Results",
+        
+        // Urgência (NOVO!)
         "urgencia.title": "⚡ Why the Urgency?",
         "urgencia.cenario": "📈 Current Scenario:",
-        "urgencia.solucao": "💡 <strong>Proposed Solution:</strong> Evidence-based model with mandatory IEP, assistive technology and transparent data"
+        "urgencia.dado1": "special education enrollments",
+        "urgencia.dado2": "autism growth (5 years)",
+        "urgencia.dado3": "<strong>Lack of data</strong> on dropout and progress",
+        "urgencia.solucao": "💡 <strong>Proposed Solution:</strong> Evidence-based model with mandatory IEP, assistive technology and transparent data",
+        "urgencia.chip1": "Real Data",
+        "urgencia.chip2": "Evidence",
+        "urgencia.chip3": "Practical Solution"
       }
     };
     
