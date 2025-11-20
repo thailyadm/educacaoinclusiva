@@ -1405,68 +1405,67 @@
     </div>
   </section>
 
-  <!-- CONTATO -->
+  <!-- CONTATO COM TRADUÇÃO -->
   <section id="contato" class="section">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker">Contato</div>
-        <h2 class="section-title">Fale com o projeto Educação Inclusiva com Resultado</h2>
-        <p class="section-sub">
+        <div class="section-kicker" data-i18n="contato.kicker">Contato</div>
+        <h2 class="section-title" data-i18n="contato.title">Fale com o projeto Educação Inclusiva com Resultado</h2>
+        <p class="section-sub" data-i18n="contato.subtitle">
           Este site é um ponto de apoio para famílias, escolas, redes públicas e parlamentares
           interessados em construir um modelo de educação inclusiva com base em evidências.
         </p>
       </div>  
       <div class="contact-grid">  
         <div>
-          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;">
+          <h3 style="background:var(--spectrum);-webkit-background-clip:text;color:transparent;" data-i18n="contato.canais.title">
             Canais oficiais
           </h3>  
           <ul class="contact-list">
             <li>
-              <span class="contact-label">E-mail institucional:</span><br />
+              <span class="contact-label" data-i18n="contato.canais.email">E-mail institucional:</span><br />
               <a href="mailto:contato@educacaoinclusiva.com">contato@educacaoinclusiva.com</a>
             </li>
             <li>
-              <span class="contact-label">Localização Atual:</span><br />
-              Salt Lake City, Utah (EUA) · Projeto com foco no Distrito Federal e expansão nacional.
+              <span class="contact-label" data-i18n="contato.canais.localizacao">Localização Atual:</span><br />
+              <span data-i18n="contato.canais.localizacao.desc">Salt Lake City, Utah (EUA) · Projeto com foco no Distrito Federal e expansão nacional.</span>
             </li>
             <li>
-              <span class="contact-label">Idealizadora:</span><br />
-              Thaianne da Silva, MS Cybersecurity.<br>
-              Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.
+              <span class="contact-label" data-i18n="contato.canais.idealizadora">Idealizadora:</span><br />
+              <span data-i18n="contato.canais.idealizadora.desc">Thaianne da Silva, MS Cybersecurity.<br>Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.</span>
             </li>
           </ul>
         </div>
         <div class="form-card">
-          <h3 style="margin-top:0;color:var(--azul-escuro);">ENVIE UMA MENSAGEM</h3>
-          <p class="form-note">
+          <h3 style="margin-top:0;color:var(--azul-escuro);" data-i18n="contato.form.title">ENVIE UMA MENSAGEM</h3>
+          <p class="form-note" data-i18n="contato.form.note">
             Sua mensagem será enviada diretamente para nosso e-mail institucional.
           </p>  
           <form id="contactForm">
             <div class="form-row">
-              <label for="nome">Nome *</label>
-              <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
+              <label for="nome" data-i18n="contato.form.nome">Nome *</label>
+              <input id="nome" name="nome" type="text" data-i18n-placeholder="contato.form.nome.placeholder" placeholder="Seu nome completo" required />
             </div>
             <div class="form-row">
-              <label for="email">E-mail *</label>
-              <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+              <label for="email" data-i18n="contato.form.email">E-mail *</label>
+              <input id="email" name="email" type="email" data-i18n-placeholder="contato.form.email.placeholder" placeholder="seu@email.com" required />
             </div>
             <div class="form-row">
-              <label for="tipo">Você é</label>
+              <label for="tipo" data-i18n="contato.form.tipo">Você é</label>
               <select id="tipo" name="tipo">
-                <option value="">Selecione...</option>
-                <option value="Família">Família</option>
-                <option value="Educador">Educador/Professor</option>
-                <option value="Gestor">Gestor Escolar</option>
-                <option value="Parlamentar">Parlamentar</option>
-                <option value="Outro">Outro</option>
+                <option value="" data-i18n="contato.form.tipo.op0">Selecione...</option>
+                <option value="Família" data-i18n="contato.form.tipo.op1">Família</option>
+                <option value="Educador" data-i18n="contato.form.tipo.op2">Educador/Professor</option>
+                <option value="Gestor" data-i18n="contato.form.tipo.op3">Gestor Escolar</option>
+                <option value="Parlamentar" data-i18n="contato.form.tipo.op4">Parlamentar</option>
+                <option value="Outro" data-i18n="contato.form.tipo.op5">Outro</option>
               </select>
             </div>
             <div class="form-row">
-              <label for="mensagem">Mensagem *</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre sua demanda ou interesse." required></textarea>
+              <label for="mensagem" data-i18n="contato.form.mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" data-i18n-placeholder="contato.form.mensagem.placeholder" placeholder="Conte um pouco sobre sua demanda ou interesse." required></textarea>
             </div>
-            <button type="submit" class="btn-primary" id="submitBtn">
+            <button type="submit" class="btn-primary" id="submitBtn" data-i18n="contato.form.botao">
               Enviar mensagem
             </button>
             <div id="formMessage" style="margin-top: 1rem; display: none; padding: 12px; border-radius: 8px;"></div>
@@ -1904,7 +1903,43 @@
     
         "faq.q5": "❓ Como garantir a continuidade do projeto?",
         "faq.a5": "Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais e transparência total nos resultados - tornando o modelo parte da estrutura educacional.",
-    
+
+        // NOVO: Contato
+        "contato.kicker": "Contato",
+        "contato.title": "Fale com o projeto Educação Inclusiva com Resultado",
+        "contato.subtitle": "Este site é um ponto de apoio para famílias, escolas, redes públicas e parlamentares interessados em construir um modelo de educação inclusiva com base em evidências.",
+        
+        "contato.canais.title": "Canais oficiais",
+        "contato.canais.email": "E-mail institucional:",
+        "contato.canais.localizacao": "Localização Atual:",
+        "contato.canais.localizacao.desc": "Salt Lake City, Utah (EUA) · Projeto com foco no Distrito Federal e expansão nacional.",
+        "contato.canais.idealizadora": "Idealizadora:",
+        "contato.canais.idealizadora.desc": "Thaianne da Silva, MS Cybersecurity.<br>Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.",
+        
+        "contato.form.title": "ENVIE UMA MENSAGEM",
+        "contato.form.note": "Sua mensagem será enviada diretamente para nosso e-mail institucional.",
+        "contato.form.nome": "Nome *",
+        "contato.form.nome.placeholder": "Seu nome completo",
+        "contato.form.email": "E-mail *", 
+        "contato.form.email.placeholder": "seu@email.com",
+        "contato.form.tipo": "Você é",
+        "contato.form.tipo.op0": "Selecione...",
+        "contato.form.tipo.op1": "Família",
+        "contato.form.tipo.op2": "Educador/Professor",
+        "contato.form.tipo.op3": "Gestor Escolar",
+        "contato.form.tipo.op4": "Parlamentar",
+        "contato.form.tipo.op5": "Outro",
+        "contato.form.mensagem": "Mensagem *",
+        "contato.form.mensagem.placeholder": "Conte um pouco sobre sua demanda ou interesse.",
+        "contato.form.botao": "Enviar mensagem",
+        "contato.form.enviando": "Enviando...",
+        
+        "contato.form.sucesso.titulo": "Mensagem enviada com sucesso!",
+        "contato.form.sucesso.mensagem": "Obrigado pelo seu interesse no projeto Educação Inclusiva.",
+        "contato.form.sucesso.retorno": "Retornaremos em até 48 horas.",
+        
+        "contato.form.erro.titulo": "Erro ao enviar mensagem",
+        "contato.form.erro.mensagem": "Tente novamente ou envie diretamente para:",
       
       },
       
@@ -2106,6 +2141,42 @@
         "faq.q5": "❓ How to ensure project continuity?",
         "faq.a5": "Through institutionalization via law, formation of permanent teams, digital systems and total transparency in results - making the model part of the educational structure.",
 
+        // NOVO: Contato (inglês)
+        "contato.kicker": "Contact",
+        "contato.title": "Contact the Inclusive Education with Results Project",
+        "contato.subtitle": "This website is a support point for families, schools, public networks and parliamentarians interested in building an evidence-based inclusive education model.",
+        
+        "contato.canais.title": "Official Channels",
+        "contato.canais.email": "Institutional email:",
+        "contato.canais.localizacao": "Current Location:",
+        "contato.canais.localizacao.desc": "Salt Lake City, Utah (USA) · Project focused on Distrito Federal and national expansion.",
+        "contato.canais.idealizadora": "Founder:",
+        "contato.canais.idealizadora.desc": "Thaianne da Silva, MS Cybersecurity.<br>Above all, mother of a special boy who transformed my worldview.",
+        
+        "contato.form.title": "SEND A MESSAGE",
+        "contato.form.note": "Your message will be sent directly to our institutional email.",
+        "contato.form.nome": "Name *",
+        "contato.form.nome.placeholder": "Your full name",
+        "contato.form.email": "Email *",
+        "contato.form.email.placeholder": "your@email.com",
+        "contato.form.tipo": "You are",
+        "contato.form.tipo.op0": "Select...",
+        "contato.form.tipo.op1": "Family",
+        "contato.form.tipo.op2": "Educator/Teacher",
+        "contato.form.tipo.op3": "School Manager",
+        "contato.form.tipo.op4": "Parliamentarian",
+        "contato.form.tipo.op5": "Other",
+        "contato.form.mensagem": "Message *",
+        "contato.form.mensagem.placeholder": "Tell us about your demand or interest.",
+        "contato.form.botao": "Send message",
+        "contato.form.enviando": "Sending...",
+        
+        "contato.form.sucesso.titulo": "Message sent successfully!",
+        "contato.form.sucesso.mensagem": "Thank you for your interest in the Inclusive Education project.",
+        "contato.form.sucesso.retorno": "We will return within 48 hours.",
+        
+        "contato.form.erro.titulo": "Error sending message",
+        "contato.form.erro.mensagem": "Try again or send directly to:",
       }
     };
     
