@@ -114,7 +114,7 @@
     }
     
     .nav-cta {
-      padding: 0.45rem 1rem;
+      padding: 0.8rem 1rem;
       border-radius: 999px;
       background: var(--spectrum);
       color: #fff;
@@ -123,6 +123,32 @@
       align-items: center;
       gap: 0.4rem;
       box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+    }
+    
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: white;
+        padding: 0.75rem 1.25rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #e2e6f0;
+        display: none;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
     }
     
     /* HERO - LAYOUT COMPACTO */
@@ -868,31 +894,20 @@
         justify-content: center;
       }
     }
-    /* ========== MENU MOBILE CORRIGIDO ========== */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: var(--azul-escuro);
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1002;
-    }
-    
+    /* BOTÃO FECHAR MENU MOBILE */
     .nav-close {
       display: none;
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 15px;
+      right: 15px;
       background: none;
       border: none;
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--azul-escuro);
       cursor: pointer;
       z-index: 1001;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
@@ -903,27 +918,7 @@
       background: var(--spectrum-soft);
     }
     
-    .menu-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 998;
-    }
-    
-    .menu-overlay.active {
-      display: block;
-    }
-    
-    /* MENU MOBILE - LAYOUT COMPLETO */
     @media (max-width: 720px) {
-      .nav-toggle {
-        display: block;
-      }
-      
       .nav-close {
         display: flex;
       }
@@ -935,52 +930,16 @@
         right: 0;
         bottom: 0;
         background: white;
-        padding: 5rem 2rem 2rem;
+        padding: 4rem 1.25rem 2rem;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        z-index: 999;
+        align-items: flex-start;
+        z-index: 1000;
         overflow-y: auto;
         display: none;
-        gap: 0;
       }
       
       .nav-links.open {
         display: flex;
-      }
-      
-      .nav-links a {
-        font-size: 1.2rem;
-        padding: 1.2rem 2rem;
-        width: 100%;
-        text-align: center;
-        border-bottom: 2px solid #f0f0f0;
-        justify-content: center;
-        font-weight: 600;
-        color: var(--azul-escuro);
-      }
-      
-      .nav-links a:last-child {
-        border-bottom: none;
-      }
-      
-      .nav-links a:hover {
-        background: var(--spectrum-soft);
-      }
-      
-      .nav-cta {
-        margin-top: 2rem;
-        width: 100%;
-        justify-content: center;
-        font-size: 1.1rem;
-        padding: 1.2rem 2rem;
-        order: 999;
-      }
-      
-      .language-switcher {
-        margin: 2rem 0 1rem;
-        justify-content: center;
-        order: 998;
       }
     }
     
@@ -1011,10 +970,10 @@
       </div>
   
       <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
-              <!-- BOTÃO FECHAR - COLE AQUI -->
-      <button class="nav-close" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
       
       <nav class="nav-links" id="navLinks">
+        <!-- BOTÃO FECHAR - COLE AQUI -->
+        <button class="nav-close" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
         <a href="#inicio" data-i18n="nav.inicio">Início</a>
         <a href="#sobre" data-i18n="nav.sobre">Minha História</a>
         <a href="#dados" data-i18n="nav.dados">Dados & Urgência</a>
@@ -1038,8 +997,7 @@
       </nav>
     </div>
   </header>
-  <!-- 🔽 ADICIONE ESTE OVERLAY AQUI 🔽 -->
-  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
   <!-- HERO - COM TRADUÇÃO -->
   <main id="main" class="hero">
     <div class="hero-inner">
@@ -1671,53 +1629,11 @@
     // Ano atual no footer
     document.getElementById('ano').textContent = new Date().getFullYear();
 
-    // Menu Mobile - Versão Final
+    // Menu mobile
     function toggleMenu() {
       const navLinks = document.getElementById('navLinks');
-      const overlay = document.getElementById('menuOverlay');
-      
-      const isOpening = !navLinks.classList.contains('open');
-      
       navLinks.classList.toggle('open');
-      
-      if (overlay) {
-        overlay.classList.toggle('active');
-      }
-      
-      // Previne scroll do body quando menu aberto
-      document.body.style.overflow = isOpening ? 'hidden' : '';
     }
-    
-    // Fechar menu ao clicar em links
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 720) { // Só no mobile
-          e.preventDefault();
-          const target = link.getAttribute('href');
-          toggleMenu();
-          
-          // Scroll suave após fechar menu
-          setTimeout(() => {
-            if (target && target.startsWith('#')) {
-              const element = document.querySelector(target);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }
-          }, 300);
-        }
-      });
-    });
-    
-    // Fechar menu com ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const navLinks = document.getElementById('navLinks');
-        if (navLinks.classList.contains('open')) {
-          toggleMenu();
-        }
-      }
-    });
 
     // Form submission
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
