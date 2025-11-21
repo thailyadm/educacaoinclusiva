@@ -894,6 +894,54 @@
         justify-content: center;
       }
     }
+    /* BOTÃO FECHAR MENU MOBILE */
+    .nav-close {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--azul-escuro);
+      cursor: pointer;
+      z-index: 1001;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-close:hover {
+      background: var(--spectrum-soft);
+    }
+    
+    @media (max-width: 720px) {
+      .nav-close {
+        display: flex;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        padding: 4rem 1.25rem 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1000;
+        overflow-y: auto;
+        display: none;
+      }
+      
+      .nav-links.open {
+        display: flex;
+      }
+    }
     
   </style>
 </head>
@@ -924,6 +972,8 @@
       <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
       
       <nav class="nav-links" id="navLinks">
+        <!-- BOTÃO FECHAR - COLE AQUI -->
+        <button class="nav-close" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
         <a href="#inicio" data-i18n="nav.inicio">Início</a>
         <a href="#sobre" data-i18n="nav.sobre">Minha História</a>
         <a href="#dados" data-i18n="nav.dados">Dados & Urgência</a>
