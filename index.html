@@ -1431,58 +1431,77 @@
 
   <!-- RECURSOS COM TRADUÇÃO -->
   <section id="recursos" class="section">
-    <div class="section-inner">  
+    <div class="section-inner">
       <div class="section-header">
-        <div class="section-kicker" data-i18n="recursos.kicker">Recursos Gratuitos</div>
-        <h2 class="section-title" data-i18n="recursos.title">Materiais e Referências sobre Autismo e Inclusão</h2>
+        <div class="section-kicker" data-i18n="recursos.kicker">Recursos</div>
+        <h2 class="section-title" data-i18n="recursos.title">
+          Curadoria em Autismo e Inclusão
+        </h2>
         <p class="section-sub" data-i18n="recursos.subtitle">
-          Uma curadoria de materiais confiáveis para educadores e famílias: guias, livros, artigos e ferramentas práticas.
+          Seleção objetiva de materiais confiáveis para educadores e famílias.
         </p>
       </div>  
-      <div class="pillar-grid">  
-        <!-- PDF -->
-        <div class="pillar-item">
-          <h3>📄 <span data-i18n="recursos.pdf.title">Guias Práticos</span></h3>
-          <p data-i18n="recursos.pdf.desc">
-            Materiais desenvolvidos com base em vivência real e práticas aplicáveis.
-          </p>
-          <a href="/guia_inclusao_final.pdf" class="btn-secondary" download>
-            <span data-i18n="recursos.pdf.botao">Baixar Guia</span>
-          </a>
-        </div> 
-        <!-- LIVROS -->
-        <div class="pillar-item">
-          <h3>📚 <span data-i18n="recursos.livros.title">Livros Recomendados</span></h3>
-          <p data-i18n="recursos.livros.desc">
-            Leituras essenciais sobre autismo, inclusão e desenvolvimento infantil.
-          </p>
+      <div class="two-cols">  
+        <!-- PROFISSIONAIS -->
+        <div class="card">
+          <h3 data-i18n="recursos.profissionais">Para profissionais</h3>  
           <ul>
-            <li>Uniquely Human – Barry Prizant</li>
-            <li>The Reason I Jump – Naoki Higashida</li>
+            <li>
+              <strong>Uniquely Human – Barry Prizant</strong><br>
+              <span data-i18n="recursos.p1">
+                Comportamento como comunicação
+              </span>
+            </li>  
+            <li>
+              <strong>The Verbal Behavior Approach – Mary Barbera</strong><br>
+              <span data-i18n="recursos.p2">
+                Estrutura prática para linguagem
+              </span>
+            </li>  
+            <li>
+              <strong>Proloquo2Go</strong><br>
+              <span data-i18n="recursos.p3">
+                Comunicação alternativa (AAC)
+              </span>
+            </li>
+            <li>
+              <strong>Time Timer</strong><br>
+              <span data-i18n="recursos.p4">
+                Visualização concreta do tempo
+              </span>
+            </li>
           </ul>
-        </div>  
-        <!-- ARTIGOS -->
-        <div class="pillar-item">
-          <h3>🧠 <span data-i18n="recursos.artigos.title">Artigos Científicos</span></h3>
-          <p data-i18n="recursos.artigos.desc">
-            Estudos e evidências sobre educação inclusiva e desenvolvimento.
-          </p>
+        </div>
+        <!-- FAMÍLIAS -->
+        <div class="card">
+          <h3 data-i18n="recursos.familias">Para famílias</h3>
           <ul>
-            <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a></li>
-            <li><a href="https://scholar.google.com" target="_blank">Google Scholar</a></li>
+            <li>
+              <strong>The Reason I Jump – Naoki Higashida</strong><br>
+              <span data-i18n="recursos.f1">
+                Perspectiva de pessoa autista
+              </span>
+            </li>
+            <li>
+              <strong>Ten Things Every Child with Autism Wishes You Knew</strong><br>
+              <span data-i18n="recursos.f2">
+                Explicação simples do comportamento
+              </span>
+            </li>
+            <li>
+              <strong data-i18n="recursos.f3t">Rotina visual</strong><br>
+              <span data-i18n="recursos.f3">
+                Organização e previsibilidade
+              </span>
+            </li>
+            <li>
+              <strong data-i18n="recursos.f4t">Cronômetro</strong><br>
+              <span data-i18n="recursos.f4">
+                Ajuda em transições e reduz crises
+              </span>
+            </li>
           </ul>
-        </div>  
-        <!-- FERRAMENTAS -->
-        <div class="pillar-item">
-          <h3>🧩 <span data-i18n="recursos.tools.title">Ferramentas</span></h3>
-          <p data-i18n="recursos.tools.desc">
-            Recursos práticos para comunicação, rotina e apoio em sala.
-          </p>
-          <ul>
-            <li>Visual schedules</li>
-            <li>AAC apps</li>
-          </ul>
-        </div> 
+        </div>
       </div>
     </div>
   </section>
@@ -2027,18 +2046,25 @@ const translations = {
 
         //Recursos
         "nav.recursos": "Recursos",
-        "recursos.kicker": "Recursos Gratuitos",
-        "recursos.title": "Materiais e Referências sobre Autismo e Inclusão",
-        "recursos.subtitle": "Uma curadoria de materiais confiáveis para educadores e famílias.",
-        "recursos.pdf.title": "Guias Práticos",
-        "recursos.pdf.desc": "Materiais baseados em prática real.",
-        "recursos.pdf.botao": "Baixar Guia",
-        "recursos.livros.title": "Livros Recomendados",
-        "recursos.livros.desc": "Leituras essenciais.",
-        "recursos.artigos.title": "Artigos Científicos",
-        "recursos.artigos.desc": "Baseados em evidências.",
-        "recursos.tools.title": "Ferramentas",
-        "recursos.tools.desc": "Recursos práticos para uso diário",
+
+        "recursos.kicker": "Recursos",
+        "recursos.title": "Curadoria em Autismo e Inclusão",
+        "recursos.subtitle": "Seleção objetiva de materiais confiáveis para educadores e famílias.",
+        
+        "recursos.profissionais": "Para profissionais",
+        "recursos.familias": "Para famílias",
+        
+        "recursos.p1": "Comportamento como comunicação",
+        "recursos.p2": "Estrutura prática para linguagem",
+        "recursos.p3": "Comunicação alternativa (AAC)",
+        "recursos.p4": "Visualização concreta do tempo",
+        
+        "recursos.f1": "Perspectiva de pessoa autista",
+        "recursos.f2": "Explicação simples do comportamento",
+        "recursos.f3t": "Rotina visual",
+        "recursos.f3": "Organização e previsibilidade",
+        "recursos.f4t": "Cronômetro",
+        "recursos.f4": "Ajuda em transições e reduz crises",
         
         // Contato
         "contato.kicker": "Contato",
@@ -2329,18 +2355,25 @@ const translations = {
 
         // === Resources - NATURAL ===
         "nav.recursos": "Resources",
-        "recursos.kicker": "Free Resources",
-        "recursos.title": "Autism & Inclusion Resources",
-        "recursos.subtitle": "A curated collection of trusted materials for educators and families.",
-        "recursos.pdf.title": "Practical Guides",
-        "recursos.pdf.desc": "Materials based on real-life experience.",
-        "recursos.pdf.botao": "Download Guide",
-        "recursos.livros.title": "Recommended Books",
-        "recursos.livros.desc": "Essential readings.",
-        "recursos.artigos.title": "Research Articles",
-        "recursos.artigos.desc": "Evidence-based resources.",
-        "recursos.tools.title": "Tools",
-        "recursos.tools.desc": "Practical daily-use tools",
+
+        "recursos.kicker": "Resources",
+        "recursos.title": "Autism & Inclusion Curation",
+        "recursos.subtitle": "A concise selection of trusted materials for educators and families.",
+        
+        "recursos.profissionais": "For professionals",
+        "recursos.familias": "For families",
+        
+        "recursos.p1": "Behavior as communication",
+        "recursos.p2": "Practical language structure",
+        "recursos.p3": "AAC communication tool",
+        "recursos.p4": "Visual time support",
+        
+        "recursos.f1": "Autistic perspective",
+        "recursos.f2": "Simple behavior understanding",
+        "recursos.f3t": "Visual routine",
+        "recursos.f3": "Structure and predictability",
+        "recursos.f4t": "Timer",
+        "recursos.f4": "Supports transitions and reduces meltdowns",
         
         // === CONTACT - NATURAL ===
         "contato.kicker": "Contact",
