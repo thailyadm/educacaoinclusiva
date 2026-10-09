@@ -958,6 +958,8 @@
     }
   
 .eicr-support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2rem}.eicr-support-card{background:white;border:1px solid #dce6f3;border-radius:18px;padding:1.8rem;box-shadow:0 8px 22px rgba(21,48,100,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.85rem}.eicr-support-card h3{margin:0;color:#153064}.eicr-support-card p{line-height:1.65;flex:1;margin:0}.eicr-support-icon{font-size:2rem}.eicr-pix-note{background:#f2f6fc;padding:.85rem;border-radius:10px;color:#314968;font-size:.88rem}.eicr-support-disclaimer{max-width:850px;text-align:center;margin:2rem auto 0;line-height:1.7;font-size:.9rem}.eicr-support-card a:focus-visible{outline:3px solid #2156c9;outline-offset:4px}@media(max-width:800px){.eicr-support-grid{grid-template-columns:1fr}}
+
+.eicr-audience{background:#f6f9fd}.eicr-library{background:#fff}.eicr-audience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}.eicr-audience-card{background:#fff;border:1px solid #e0e8f4;border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(25,50,92,.055);display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;transition:transform .2s,box-shadow .2s}.eicr-audience-card:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(25,50,92,.1)}.eicr-audience-card h3{color:#183b70;margin:0;font-size:1.25rem}.eicr-audience-card p{margin:0;line-height:1.7;color:#50627b;flex:1}.eicr-audience-card a{color:#2056a0;font-weight:700;text-underline-offset:4px}.eicr-audience-card a:focus-visible{outline:3px solid #2156c9;outline-offset:4px}.eicr-audience-emoji{font-size:2.2rem;color:#275da8}.eicr-library-label{display:inline-block;border-radius:30px;background:#eaf1fb;padding:.4rem .8rem;color:#244b81;font-size:.78rem;font-weight:700}@media(max-width:800px){.eicr-audience-grid{grid-template-columns:1fr}.eicr-audience-card{padding:1.5rem}}
 </style>
 </head>
 <body>
@@ -991,12 +993,14 @@
         <!-- BOTÃO FECHAR - COLE AQUI -->
         <button class="nav-close" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
         <a href="#main" data-i18n="nav.inicio">Início</a>
+        <a href="#para-voce" data-i18n="novo.nav">Para você</a>
         <a href="#sobre" data-i18n="nav.sobre">Minha História</a>
         <a href="#dados" data-i18n="nav.dados">Dados & Urgência</a>
         <a href="#pilares" data-i18n="nav.pilares">Pilares</a>
         <a href="#tecnologia" data-i18n="nav.tecnologia">Tecnologia</a>
         <a href="#piloto" data-i18n="nav.piloto">Piloto DF 2026</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#biblioteca" data-i18n="novo.nav.bib">Biblioteca</a>
         <a href="#recursos" data-i18n="nav.recursos">Recursos</a>
         <a href="#contato" data-i18n="nav.contato">Contato</a>
         
@@ -1100,6 +1104,22 @@
     </div>
   </main>
 
+
+  <section id="para-voce" class="section eicr-audience"><div class="section-inner">
+    <div class="section-header"><div class="section-kicker" data-i18n="novo.kicker">UM PROJETO, DIFERENTES CAMINHOS</div><h2 class="section-title" data-i18n="novo.title">Como podemos ajudar você?</h2><p class="section-sub" data-i18n="novo.subtitle">Acesse informações e referências conforme sua participação na educação inclusiva.</p></div>
+    <div class="eicr-audience-grid">
+      <article class="eicr-audience-card"><span aria-hidden="true" class="eicr-audience-emoji">♡</span><h3 data-i18n="novo.familias">Para famílias</h3><p data-i18n="novo.familias.desc">Entenda os pilares do planejamento individualizado, comunicação alternativa e participação familiar.</p><a href="#faq" data-i18n="novo.familias.link">Ver orientações →</a></article>
+      <article class="eicr-audience-card"><span aria-hidden="true" class="eicr-audience-emoji">▤</span><h3 data-i18n="novo.professores">Para professores</h3><p data-i18n="novo.professores.desc">Explore práticas, tecnologia assistiva e referências para planejar apoios pedagógicos.</p><a href="#recursos" data-i18n="novo.professores.link">Explorar recursos →</a></article>
+      <article class="eicr-audience-card"><span aria-hidden="true" class="eicr-audience-emoji">⌂</span><h3 data-i18n="novo.gestores">Para gestores</h3><p data-i18n="novo.gestores.desc">Conheça os cinco pilares, a proposta de piloto no Distrito Federal e o acompanhamento de resultados.</p><a href="#piloto" data-i18n="novo.gestores.link">Conhecer o piloto →</a></article>
+    </div>
+  </div></section>
+  <section id="biblioteca" class="section eicr-library"><div class="section-inner"><div class="section-header"><div class="section-kicker" data-i18n="novo.bib.kicker">CONHECIMENTO ACESSÍVEL</div><h2 class="section-title" data-i18n="novo.bib.title">Biblioteca inclusiva</h2><p class="section-sub" data-i18n="novo.bib.subtitle">Referências para começar. As recomendações não substituem avaliação pedagógica individualizada.</p></div>
+    <div class="eicr-audience-grid">
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3>CAST — Universal Design for Learning</h3><p data-i18n="novo.bib.cast">Diretrizes para ampliar as formas de participação, aprendizagem e expressão.</p><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3>UNICEF — Inclusive Education</h3><p data-i18n="novo.bib.unicef">Materiais de orientação para cuidadores e comunidades escolares.</p><a href="https://www.unicef.org/innocenti/reports/caregivers-guide-inclusive-education" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.livro">Livro de referência</span><h3>Uniquely Human — Barry M. Prizant</h3><p data-i18n="novo.bib.prizant">Uma perspectiva sobre autismo centrada na compreensão e no apoio individualizado.</p><a href="#recursos" data-i18n="novo.bib.outros">Ver mais recursos →</a></article>
+    </div>
+  </div></section>
   <!-- MINHA HISTÓRIA COM TRADUÇÃO -->
   <section id="sobre" class="section">
     <div class="section-inner">
@@ -1624,7 +1644,31 @@
   <!-- Participação e colaboração -->
   <section id="apoio" class="section" style="background:#eef4fd">
     <div class="section-inner">
-      <div class="section-header"><div class="section-kicker" data-i18n="apoio.kicker">Participação e colaboração</div><h2 class="section-title" data-i18n="apoio.title">Faça parte dessa transformação</h2><p class="section-sub" data-i18n="apoio.subtitle">Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.</p></div>
+      <div class="section-header"><div class="section-kicker" data-i18n=        "novo.nav": "Para você",
+        "novo.nav.bib": "Biblioteca",
+        "novo.kicker": "UM PROJETO, DIFERENTES CAMINHOS",
+        "novo.title": "Como podemos ajudar você?",
+        "novo.subtitle": "Acesse informações e referências conforme sua participação na educação inclusiva.",
+        "novo.familias": "Para famílias",
+        "novo.familias.desc": "Entenda os pilares do planejamento individualizado, comunicação alternativa e participação familiar.",
+        "novo.familias.link": "Ver orientações →",
+        "novo.professores": "Para professores",
+        "novo.professores.desc": "Explore práticas, tecnologia assistiva e referências para planejar apoios pedagógicos.",
+        "novo.professores.link": "Explorar recursos →",
+        "novo.gestores": "Para gestores",
+        "novo.gestores.desc": "Conheça os cinco pilares, a proposta de piloto no Distrito Federal e o acompanhamento de resultados.",
+        "novo.gestores.link": "Conhecer o piloto →",
+        "novo.bib.kicker": "CONHECIMENTO ACESSÍVEL",
+        "novo.bib.title": "Biblioteca inclusiva",
+        "novo.bib.subtitle": "Referências para começar. As recomendações não substituem avaliação pedagógica individualizada.",
+        "novo.bib.guia": "Guia gratuito",
+        "novo.bib.livro": "Livro de referência",
+        "novo.bib.cast": "Diretrizes para ampliar as formas de participação, aprendizagem e expressão.",
+        "novo.bib.unicef": "Materiais de orientação para cuidadores e comunidades escolares.",
+        "novo.bib.prizant": "Uma perspectiva sobre autismo centrada na compreensão e no apoio individualizado.",
+        "novo.bib.abrir": "Consultar fonte →",
+        "novo.bib.outros": "Ver mais recursos →",
+        "apoio.kicker">Participação e colaboração</div><h2 class="section-title" data-i18n="apoio.title">Faça parte dessa transformação</h2><p class="section-sub" data-i18n="apoio.subtitle">Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.</p></div>
       <div class="eicr-support-grid">
         <article class="eicr-support-card"><div class="eicr-support-icon" aria-hidden="true">📣</div><h3 data-i18n="apoio.card1.title">Compartilhe a proposta</h3><p data-i18n="apoio.card1.desc">Ajude famílias, educadores e gestores a conhecer a iniciativa.</p><a href="https://educacaoinclusiva.com" class="btn-secondary">educacaoinclusiva.com</a></article>
         <article class="eicr-support-card"><div class="eicr-support-icon" aria-hidden="true">🤝</div><h3 data-i18n="apoio.card2.title">Colabore com conhecimento</h3><p data-i18n="apoio.card2.desc">Sua experiência em educação, tecnologia ou políticas públicas pode contribuir.</p><a href="mailto:contato@educacaoinclusiva.com?subject=Colaboracao%20tecnica" class="btn-secondary" data-i18n="apoio.card2.botao">Quero colaborar</a></article>
@@ -2046,6 +2090,30 @@ const translations = {
         "contato.form.botao": "Enviar mensagem",
     
         // Apoio
+                "novo.nav": "For you",
+        "novo.nav.bib": "Library",
+        "novo.kicker": "ONE PROJECT, DIFFERENT PATHS",
+        "novo.title": "How can we help you?",
+        "novo.subtitle": "Find information and references tailored to your role in inclusive education.",
+        "novo.familias": "For families",
+        "novo.familias.desc": "Explore individualized education planning, alternative communication and family participation.",
+        "novo.familias.link": "Read guidance →",
+        "novo.professores": "For teachers",
+        "novo.professores.desc": "Explore practices, assistive technology and references to plan educational support.",
+        "novo.professores.link": "Explore resources →",
+        "novo.gestores": "For leaders",
+        "novo.gestores.desc": "Discover the five pillars, the Federal District pilot proposal and outcome monitoring.",
+        "novo.gestores.link": "Discover the pilot →",
+        "novo.bib.kicker": "ACCESSIBLE KNOWLEDGE",
+        "novo.bib.title": "Inclusive library",
+        "novo.bib.subtitle": "A starting collection. Recommendations do not replace individualized educational assessment.",
+        "novo.bib.guia": "Free guide",
+        "novo.bib.livro": "Reference book",
+        "novo.bib.cast": "Guidelines for flexible participation, learning and expression.",
+        "novo.bib.unicef": "Guidance materials for caregivers and school communities.",
+        "novo.bib.prizant": "A perspective on autism focused on understanding and individualized support.",
+        "novo.bib.abrir": "View source →",
+        "novo.bib.outros": "More resources →",
         "apoio.kicker": "Participação e colaboração",
         "apoio.title": "Faça parte dessa transformação",
         "apoio.subtitle": "Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.",
