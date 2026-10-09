@@ -960,6 +960,23 @@
 .eicr-support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2rem}.eicr-support-card{background:white;border:1px solid #dce6f3;border-radius:18px;padding:1.8rem;box-shadow:0 8px 22px rgba(21,48,100,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.85rem}.eicr-support-card h3{margin:0;color:#153064}.eicr-support-card p{line-height:1.65;flex:1;margin:0}.eicr-support-icon{font-size:2rem}.eicr-pix-note{background:#f2f6fc;padding:.85rem;border-radius:10px;color:#314968;font-size:.88rem}.eicr-support-disclaimer{max-width:850px;text-align:center;margin:2rem auto 0;line-height:1.7;font-size:.9rem}.eicr-support-card a:focus-visible{outline:3px solid #2156c9;outline-offset:4px}@media(max-width:800px){.eicr-support-grid{grid-template-columns:1fr}}
 
 .eicr-audience{background:#f6f9fd}.eicr-library{background:#fff}.eicr-audience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}.eicr-audience-card{background:#fff;border:1px solid #e0e8f4;border-radius:20px;padding:2rem;box-shadow:0 10px 30px rgba(25,50,92,.055);display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;transition:transform .2s,box-shadow .2s}.eicr-audience-card:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(25,50,92,.1)}.eicr-audience-card h3{color:#183b70;margin:0;font-size:1.25rem}.eicr-audience-card p{margin:0;line-height:1.7;color:#50627b;flex:1}.eicr-audience-card a{color:#2056a0;font-weight:700;text-underline-offset:4px}.eicr-audience-card a:focus-visible{outline:3px solid #2156c9;outline-offset:4px}.eicr-audience-emoji{font-size:2.2rem;color:#275da8}.eicr-library-label{display:inline-block;border-radius:30px;background:#eaf1fb;padding:.4rem .8rem;color:#244b81;font-size:.78rem;font-weight:700}@media(max-width:800px){.eicr-audience-grid{grid-template-columns:1fr}.eicr-audience-card{padding:1.5rem}}
+
+/* Identidade visual royal-blue glass */
+:root{--azul-escuro:#245bc1;--cinza-fundo:#eaf3ff;--shadow-card:0 18px 48px rgba(40,91,175,.12)}
+html{background:#eaf3ff}body{background:radial-gradient(circle at 8% 8%,rgba(112,183,255,.26),transparent 36%),radial-gradient(circle at 90% 36%,rgba(132,190,255,.22),transparent 33%),linear-gradient(135deg,#e8f3ff 0%,#f5faff 46%,#e8f1ff 100%);background-attachment:fixed;color:#334862}
+.navbar{background:rgba(242,249,255,.77)!important;backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);box-shadow:0 7px 25px rgba(39,92,183,.09)}
+.section:not(.eicr-library):not(.eicr-audience),.eicr-audience,.eicr-library{background:transparent!important}
+.card,.eicr-audience-card,.eicr-support-card,.form-card,.hero-urgent-card{background:rgba(255,255,255,.69)!important;border:1px solid rgba(255,255,255,.84)!important;backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);box-shadow:0 14px 38px rgba(48,101,190,.10),inset 0 1px 0 rgba(255,255,255,.85)!important}
+.eicr-audience-card:hover,.eicr-support-card:hover,.card:hover{box-shadow:0 18px 42px rgba(49,108,209,.19),inset 0 1px 0 #fff!important;transform:translateY(-4px)}
+.section-title,.eicr-audience-card h3,.eicr-support-card h3{color:#245bc1!important}
+.hero{background:linear-gradient(125deg,rgba(222,238,255,.92),rgba(242,249,255,.88),rgba(208,230,255,.85))!important}
+.hero-title{color:#245bc1!important;text-shadow:0 3px 18px rgba(75,141,255,.14)}
+#apoio{background:transparent!important}
+a:not(.btn-primary):not(.btn-secondary):not(.nav-cta),.section-title,.hero-title,h3,h4{transition:color .25s ease,text-shadow .25s ease,filter .25s ease}
+a:not(.btn-primary):not(.btn-secondary):not(.nav-cta):hover,h3:hover,h4:hover,.section-title:hover{color:#286fe9!important;text-shadow:0 0 14px rgba(85,151,255,.25)}
+.btn-primary,.nav-cta{background:linear-gradient(115deg,#245bc1,#438bff)!important;box-shadow:0 7px 24px rgba(47,110,225,.22)}
+.btn-primary:hover,.nav-cta:hover{filter:brightness(1.08);box-shadow:0 10px 28px rgba(47,110,225,.33)}
+@media(prefers-reduced-motion:reduce){.eicr-audience-card,.eicr-support-card,.card{transition:none!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -2469,13 +2486,14 @@ en: {
         }
       });    
       localStorage.setItem('preferred-language', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
     }
 
     // Detecta idioma do navegador ou preferência salva
     function detectLanguage() {
       const savedLang = localStorage.getItem('preferred-language');
       const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-      return savedLang || browserLang;
+      return savedLang === 'en' ? 'en' : 'pt';
     }
     
     // Inicializa
