@@ -1017,6 +1017,16 @@ body{color:#554f4a;background:radial-gradient(circle at 8% 12%,rgba(167,207,245,
 .hero-sub,.section-sub,.eicr-audience-card p,.eicr-support-card p{color:#605b57!important}
 .nav-links a::after{background:linear-gradient(90deg,#b6a89a,#245bc1)!important}
 @media(max-width:720px){.nav-links{background:rgba(247,244,239,.97)!important}}
+
+/* Hero: wider urgency panel aligned with the status row */
+@media(min-width:881px){
+ .hero-inner{max-width:1240px;grid-template-columns:minmax(0,1.45fr) minmax(365px,.95fr);gap:clamp(2rem,4vw,4rem);align-items:start}
+ .hero-urgent-card{width:100%;max-width:none;margin-left:0;margin-top:5.5rem;padding:2rem 2.1rem;top:95px;align-self:start}
+ .hero-urgent-card h3{font-size:1.2rem}
+ .hero-urgent-card li{line-height:1.7}
+}
+@media(min-width:881px) and (max-width:1050px){.hero-inner{grid-template-columns:minmax(0,1.35fr) minmax(330px,.95fr);gap:1.6rem}.hero-urgent-card{margin-top:5rem;padding:1.55rem}}
+@media(max-width:880px){.hero-urgent-card{width:100%;max-width:100%;margin-top:1.25rem;position:relative;top:auto}}
 </style>
 </head>
 <body>
