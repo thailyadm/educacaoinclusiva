@@ -956,7 +956,9 @@
         padding: 0.42rem 0.8rem;
       }
     }
-  </style>
+  
+.eicr-support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2rem}.eicr-support-card{background:white;border:1px solid #dce6f3;border-radius:18px;padding:1.8rem;box-shadow:0 8px 22px rgba(21,48,100,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.85rem}.eicr-support-card h3{margin:0;color:#153064}.eicr-support-card p{line-height:1.65;flex:1;margin:0}.eicr-support-icon{font-size:2rem}.eicr-pix-note{background:#f2f6fc;padding:.85rem;border-radius:10px;color:#314968;font-size:.88rem}.eicr-support-disclaimer{max-width:850px;text-align:center;margin:2rem auto 0;line-height:1.7;font-size:.9rem}.eicr-support-card a:focus-visible{outline:3px solid #2156c9;outline-offset:4px}@media(max-width:800px){.eicr-support-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <!-- Botão Voltar ao Topo -->
@@ -1619,88 +1621,16 @@
     </div>
   </section>
 
-  <!-- Seção Apoie esta Causa COM TRADUÇÃO -->
-  <section id="apoio" class="section" style="background: linear-gradient(135deg, #f8fbff 0%, #f0f4ff 100%);">
+  <!-- Participação e colaboração -->
+  <section id="apoio" class="section" style="background:#eef4fd">
     <div class="section-inner">
-      <div class="section-header">
-        <div class="section-kicker" data-i18n="apoio.kicker">Apoio & Contribuição</div>
-        <h2 class="section-title" data-i18n="apoio.title">Apoie esta Causa</h2>
-        <p class="section-sub" data-i18n="apoio.subtitle">
-          Este é um projeto independente desenvolvido com recursos próprios enquanto realizo meu mestrado. 
-          Todo apoio ajuda a manter e expandir esta iniciativa por uma educação inclusiva de verdade.
-        </p>
+      <div class="section-header"><div class="section-kicker" data-i18n="apoio.kicker">Participação e colaboração</div><h2 class="section-title" data-i18n="apoio.title">Faça parte dessa transformação</h2><p class="section-sub" data-i18n="apoio.subtitle">Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.</p></div>
+      <div class="eicr-support-grid">
+        <article class="eicr-support-card"><div class="eicr-support-icon" aria-hidden="true">📣</div><h3 data-i18n="apoio.card1.title">Compartilhe a proposta</h3><p data-i18n="apoio.card1.desc">Ajude famílias, educadores e gestores a conhecer a iniciativa.</p><a href="https://educacaoinclusiva.com" class="btn-secondary">educacaoinclusiva.com</a></article>
+        <article class="eicr-support-card"><div class="eicr-support-icon" aria-hidden="true">🤝</div><h3 data-i18n="apoio.card2.title">Colabore com conhecimento</h3><p data-i18n="apoio.card2.desc">Sua experiência em educação, tecnologia ou políticas públicas pode contribuir.</p><a href="mailto:contato@educacaoinclusiva.com?subject=Colaboracao%20tecnica" class="btn-secondary" data-i18n="apoio.card2.botao">Quero colaborar</a></article>
+        <article class="eicr-support-card"><div class="eicr-support-icon" aria-hidden="true">♡</div><h3 data-i18n="apoio.card3.title">Contribuição voluntária</h3><p data-i18n="apoio.card3.desc">Apoie a produção de materiais e a manutenção da iniciativa.</p><div class="eicr-pix-note" data-i18n="apoio.card3.nota2">Pix: chave ainda não disponibilizada; dados de recebimento serão confirmados antes da publicação.</div><a href="mailto:contato@educacaoinclusiva.com?subject=Apoio%20voluntario" class="btn-secondary" data-i18n="apoio.card3.botao">Falar sobre apoio</a></article>
       </div>
-  
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-  
-        <!-- Card 1 - Divulgação -->
-        <div class="card" style="text-align: center; transition: all 0.3s ease;">
-          <div style="font-size: 3rem; margin-bottom: 1.5rem;">📢</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card1.title">Divulgação</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card1.desc">
-            Compartilhe esta proposta com gestores públicos, educadores, 
-            famílias e todos que possam se beneficiar ou apoiar esta causa.
-          </p>
-          <div style="background: #e8f4ff; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-            <p style="margin: 0; font-size: 0.9rem; color: #1565c0;">
-              <strong>🔗 educacaoinclusiva.com</strong>
-            </p>
-          </div>
-        </div>
-  
-        <!-- Card 2 - Contribuição Técnica -->
-        <div class="card" style="text-align: center; transition: all 0.3s ease;">
-          <div style="font-size: 3rem; margin-bottom: 1.5rem;">💡</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card2.title">Contribuição Técnica</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card2.desc">
-            Sua expertise em educação, políticas públicas, direito ou 
-            tecnologia pode fazer a diferença neste projeto.
-          </p>
-          <a href="mailto:contato@educacaoinclusiva.com?subject=Contribuição Técnica - Educação Inclusiva" 
-             class="btn-secondary" 
-             style="margin-top: 1rem;"
-             data-i18n="apoio.card2.botao">
-            Oferecer Expertise
-          </a>
-        </div>
-  
-        <!-- Card 3 - Apoio Financeiro (Destaque suave) -->
-        <div class="card" style="text-align: center; border: 2px solid var(--spectrum); background: linear-gradient(135deg, #fff, #f8fbff); position: relative; transition: all 0.3s ease;">
-          <!-- Badge sutil -->
-          <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--spectrum); color: white; padding: 0.3rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600;" data-i18n="apoio.card3.badge">
-            Recursos Próprios
-          </div>
-          
-          <div style="font-size: 3rem; margin-bottom: 1.5rem;">❤️</div>
-          <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.card3.title">Apoio Financeiro</h3>
-          <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="apoio.card3.desc">
-            Ajude com custos de domínio, hospedagem, desenvolvimento e 
-            expansão do projeto enquanto realizo meu mestrado.
-          </p>
-          
-          <div style="background: #fff8e1; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
-            <p style="margin: 0; font-size: 0.85rem; color: #8d6e00;">
-              <strong data-i18n="apoio.card3.nota1">🎓 Desenvolvido durante mestrado</strong><br>
-              <span style="font-size: 0.8rem;" data-i18n="apoio.card3.nota2">Todo apoio é reinvestido no projeto</span>
-            </p>
-          </div>
-  
-          <a href="#contato" class="btn-primary" style="margin-top: 0.5rem;" data-i18n="apoio.card3.botao">
-            Conversar sobre Apoio
-          </a>
-        </div>
-  
-      </div>
-  
-      <!-- Mensagem de transparência -->
-      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: var(--radius-card); box-shadow: var(--shadow-card);">
-        <h4 style="color: var(--azul-escuro); margin-bottom: 1rem;" data-i18n="apoio.transparencia.title">💎 Transparência Total</h4>
-        <p style="color: #666; max-width: 600px; margin: 0 auto; line-height: 1.6;" data-i18n="apoio.transparencia.desc">
-          Acredito que <strong>educação inclusiva de qualidade é um direito fundamental</strong>. 
-          Todo recurso recebido é aplicado diretamente no desenvolvimento e expansão deste projeto, 
-          com prestação de contas transparente para todos os apoiadores.
-        </p>
-      </div>
+      <p class="eicr-support-disclaimer" data-i18n="apoio.transparencia.desc">Apoiar é opcional e não condiciona o acesso aos materiais. Esta é uma iniciativa independente, sem arrecadação em nome de órgãos públicos. O uso dos recursos deverá ser apresentado com transparência.</p>
     </div>
   </section>
   
@@ -2116,26 +2046,26 @@ const translations = {
         "contato.form.botao": "Enviar mensagem",
     
         // Apoio
-        "apoio.kicker": "Apoio & Contribuição",
-        "apoio.title": "Apoie esta Causa",
-        "apoio.subtitle": "Este é um projeto independente desenvolvido com recursos próprios enquanto realizo meu mestrado. Todo apoio ajuda a manter e expandir esta iniciativa por uma educação inclusiva de verdade.",
+        "apoio.kicker": "Participação e colaboração",
+        "apoio.title": "Faça parte dessa transformação",
+        "apoio.subtitle": "Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.",
         
-        "apoio.card1.title": "Divulgação",
-        "apoio.card1.desc": "Compartilhe esta proposta com gestores públicos, educadores, famílias e todos que possam se beneficiar ou apoiar esta causa.",
+        "apoio.card1.title": "Compartilhe a proposta",
+        "apoio.card1.desc": "Ajude famílias, educadores e gestores a conhecer a iniciativa.",
         
-        "apoio.card2.title": "Contribuição Técnica",
-        "apoio.card2.desc": "Sua expertise em educação, políticas públicas, direito ou tecnologia pode fazer a diferença neste projeto.",
-        "apoio.card2.botao": "Oferecer Expertise",
+        "apoio.card2.title": "Colabore com conhecimento",
+        "apoio.card2.desc": "Sua experiência em educação, tecnologia ou políticas públicas pode contribuir.",
+        "apoio.card2.botao": "Quero colaborar",
         
         "apoio.card3.badge": "Recursos Próprios",
-        "apoio.card3.title": "Apoio Financeiro", 
-        "apoio.card3.desc": "Ajude com custos de domínio, hospedagem, desenvolvimento e expansão do projeto enquanto realizo meu mestrado.",
+        "apoio.card3.title": "Contribuição voluntária", 
+        "apoio.card3.desc": "Apoie a produção de materiais e a manutenção da iniciativa.",
         "apoio.card3.nota1": "🎓 Desenvolvido durante mestrado",
-        "apoio.card3.nota2": "Todo apoio é reinvestido no projeto",
-        "apoio.card3.botao": "Conversar sobre Apoio",
+        "apoio.card3.nota2": "Pix: chave ainda não disponibilizada; dados de recebimento serão confirmados antes da publicação.",
+        "apoio.card3.botao": "Falar sobre apoio",
         
         "apoio.transparencia.title": "💎 Transparência Total",
-        "apoio.transparencia.desc": "Acredito que <strong>educação inclusiva de qualidade é um direito fundamental</strong>. Todo recurso recebido é aplicado diretamente no desenvolvimento e expansão deste projeto, com prestação de contas transparente para todos os apoiadores.",
+        "apoio.transparencia.desc": "Apoiar é opcional e não condiciona o acesso aos materiais. Esta é uma iniciativa independente, sem arrecadação em nome de órgãos públicos. O uso dos recursos deverá ser apresentado com transparência.",
     
         // Footer
         "footer.direitos": "© <span id='ano'></span> Educação Inclusiva com Resultado - Uma proposta de política pública para uma educação especial inclusiva, tecnológica e com resultados reais.",
@@ -2425,26 +2355,26 @@ const translations = {
         "contato.form.botao": "Send Message",
     
         // === SUPPORT - NATURAL ===
-        "apoio.kicker": "Support & Engagement",
-        "apoio.title": "Help Build This Movement",
-        "apoio.subtitle": "This independent project grows through community support while I complete my master's degree. Every contribution moves us closer to meaningful change.",
+        "apoio.kicker": "Participation and collaboration",
+        "apoio.title": "Be part of this transformation",
+        "apoio.subtitle": "Share the proposal, contribute expertise or offer voluntary support. Resources remain free.",
         
-        "apoio.card1.title": "Spread the Word",
-        "apoio.card1.desc": "Share this vision with educators, families, and leaders who care about inclusive education.",
+        "apoio.card1.title": "Share the proposal",
+        "apoio.card1.desc": "Help families, educators and decision-makers discover this initiative.",
         
-        "apoio.card2.title": "Share Expertise",
-        "apoio.card2.desc": "Your knowledge in education, policy, or technology can help shape this initiative.",
-        "apoio.card2.botao": "Offer Help",
+        "apoio.card2.title": "Contribute expertise",
+        "apoio.card2.desc": "Your experience in education, technology or public policy can make a difference.",
+        "apoio.card2.botao": "Get involved",
         
         "apoio.card3.badge": "Community Supported",
-        "apoio.card3.title": "Financial Support", 
-        "apoio.card3.desc": "Help cover operational costs and expansion while this project develops alongside my graduate studies.",
+        "apoio.card3.title": "Voluntary contribution", 
+        "apoio.card3.desc": "Support the development of educational resources and project maintenance.",
         "apoio.card3.nota1": "🎓 Graduate Project",
-        "apoio.card3.nota2": "Every dollar supports the mission",
-        "apoio.card3.botao": "Discuss Support",
+        "apoio.card3.nota2": "Pix: no payment key has been published; payment details must be confirmed first.",
+        "apoio.card3.botao": "Ask about support",
         
         "apoio.transparencia.title": "💎 Complete Transparency",
-        "apoio.transparencia.desc": "I believe <strong>quality inclusive education is every child's right</strong>. All resources directly support project development, with full accountability to our supporters.",
+        "apoio.transparencia.desc": "Support is optional and never required to access resources. This is an independent initiative and does not fundraise on behalf of public agencies. The use of funds should be transparently reported.",
     
         // === FOOTER - NATURAL ===
         "footer.direitos": "© <span id='ano'></span> Inclusive Education That Delivers - A practical framework for special education with technology and measurable outcomes.",
