@@ -1150,11 +1150,16 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
 .back-to-top{background:linear-gradient(140deg,#f9f8f4,#dce5da)!important}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-logo{width:min(100%,380px)!important}.hero-urgent-card{max-width:100%!important}}
 @media(max-width:600px){.hero{padding:40px 16px!important}.hero-title{font-size:clamp(2.3rem,10vw,3.4rem)!important}.hero-grid{grid-template-columns:1fr!important}.hero-urgent-card{padding:22px!important}#apoio::before,#sobre::after{opacity:.14}}
+
+/* Preserve original proportions of the approved new emblem */
+.hero-logo{aspect-ratio:auto!important;width:min(100%,460px)!important;height:auto!important;max-width:460px!important;object-fit:contain!important;clip-path:none!important;border-radius:0!important}
+.navbar-logo{object-fit:contain!important;object-position:center!important;clip-path:none!important;border-radius:12px!important;background:#f8f6f1}
+.back-to-top-logo{object-fit:contain!important;clip-path:none!important;border-radius:50%!important}
 </style>
 </head>
 <body>
   <!-- Botão Voltar ao Topo -->
-  <button class="back-to-top" id="backToTopBtn" aria-label="Voltar ao topo" title="Voltar ao topo"><img src="Inclusive%20Education%20Emblem.png" alt="" class="back-to-top-logo" aria-hidden="true"></button>
+  <button class="back-to-top" id="backToTopBtn" aria-label="Voltar ao topo" title="Voltar ao topo"><img src="a_clean_elegant_vector_3d_styled_illustration_log.png" alt="" class="back-to-top-logo" aria-hidden="true"></button>
 <body>
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
@@ -1164,7 +1169,7 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
     <div class="navbar-inner">
       <!-- Logo + Nome -->
       <div class="brand-container">
-        <img src="Inclusive%20Education%20Emblem.png" 
+        <img src="a_clean_elegant_vector_3d_styled_illustration_log.png" 
              alt="Educação Inclusiva com Resultado" 
              class="navbar-logo"
              width="40" 
@@ -1212,7 +1217,7 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-logo-block">
-          <img src="Inclusive%20Education%20Emblem.png" 
+          <img src="a_clean_elegant_vector_3d_styled_illustration_log.png" 
                alt="Educação Inclusiva com Resultado" 
                class="hero-logo"
                width="120" 
@@ -1270,12 +1275,13 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
         <div class="urgent-section">
           <h4 data-i18n="urgencia.cenario">📈 Cenário Atual:</h4>
           <ul>
-            <li>Mais de <strong>1,7 milhão</strong> <span data-i18n="urgencia.dado1"> de matrículas na Educação Especial (Censo Escolar 2023 – INEP/MEC)</span></li>
+            <li>Mais de <strong>2,5 milhões</strong> <span data-i18n="urgencia.dado1"> de matrículas na Educação Especial (Censo Escolar 2025 – Inep/MEC)</span></li>
             <li>Matrículas de estudantes com autismo cresceram <strong>44,4% entre 2023 e 2024</strong> <span data-i18n="urgencia.dado2"> (Censo Escolar – MEC)</span></li>
             <li data-i18n="urgencia.dado3">Persistem <strong>falhas na coleta de dados sobre evasão e progresso real,</strong> segundo análises do Instituto Rodrigo Mendes</li>
           </ul>
         </div>
       
+<p class="eicr-census-source" style="margin-top:1rem;font-size:.84rem;color:#57695e;line-height:1.6">Fontes: <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/censo-escolar/brasil-atingiu-maior-percentual-de-estudantes-em-tempo-integral" target="_blank" rel="noopener noreferrer">Inep — Censo Escolar 2025</a> e <a href="https://agenciagov.ebc.com.br/noticias/202504/crescem-matriculas-de-alunos-com-transtorno-do-espectro-autista" target="_blank" rel="noopener noreferrer">MEC — matrículas de estudantes com TEA (2023–2024)</a>.</p>
         <div class="solution-box">
           <p data-i18n="urgencia.solucao">
             💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, 
@@ -1369,7 +1375,7 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
         <div class="card">
           <h3 data-i18n="dados.card1.title">📊 Dados do Censo Escolar</h3>
           <ul>
-            <li data-i18n="dados.card1.li1">Mais de<strong> 1,7 milhão</strong> de matrículas na educação especial(Censo Escolar 2023 - INEP/MEC)</li>
+            <li data-i18n="dados.card1.li1">Mais de<strong> 2,5 milhões</strong> de matrículas na educação especial(Censo Escolar 2025 – Inep/MEC)</li>
             <li data-i18n="dados.card1.li2">Matrículas de estudantes com autismo cresceram<strong> 44,4% entre 2023 e 2024</strong> (Censo Escolar - MEC)</li>
             <li data-i18n="dados.card1.li3">Persistem <strong> falhas na coleta de dados sobre evasão e progresso real, </strong> segundo análises do Instituto Rodrigo Mendes</li>
           </ul>
@@ -1830,7 +1836,7 @@ body{font-family:'DM Sans',sans-serif!important;background:#f8f6f1!important;col
   </section>
 
   <!-- Participação e colaboração -->
-  <section id="apoio" class="section" style="background:#eef4fd">
+  <section id="apoio" class="section" style="background:#e7ede6">
     <div class="section-inner">
       <div class="section-header"><div class="section-kicker" data-i18n="apoio.kicker">Participação e colaboração</div><h2 class="section-title" data-i18n="apoio.title">Faça parte dessa transformação</h2><p class="section-sub" data-i18n="apoio.subtitle">Compartilhe a proposta, colabore com conhecimento ou contribua voluntariamente. Os materiais continuam gratuitos.</p></div>
       <div class="eicr-support-grid">
@@ -2032,8 +2038,8 @@ const translations = {
         "dados.subtitle": "Dados concretos mostram a dimensão do desafio e a necessidade urgente de um modelo estruturado para a educação inclusiva no Brasil.",
         
         "dados.card1.title": "📊 Dados do Censo Escolar",
-        "dados.card1.li1": "Mais de <strong>1,7 milhão</strong> de matrículas na Educação Especial (Censo Escolar 2023 – INEP/MEC)",
-        "dados.card1.li2": "Matrículas de estudantes com autismo cresceram <strong>44% entre 2023 e 2024</strong> (Censo Escolar – MEC)", 
+        "dados.card1.li1": "Mais de <strong>2,5 milhões</strong> de matrículas na Educação Especial (Censo Escolar 2025 – Inep/MEC)",
+        "dados.card1.li2": "Matrículas de estudantes com autismo cresceram <strong>44,4% entre 2023 e 2024</strong> (Censo Escolar – MEC)", 
         "dados.card1.li3": "Persistem <strong>falhas na coleta de dados sobre evasão e progresso real,</strong> segundo análises do Instituto Rodrigo Mendes",
         
         "dados.card2.title": "⚡ Problemas Identificados",
@@ -2395,7 +2401,7 @@ en: {
         "dados.subtitle": "The data shows both the scale of need and the opportunity for meaningful change in special education.",
         
         "dados.card1.title": "📊 By the Numbers",
-        "dados.card1.li1": "More than <strong>1.7 million students</strong> in Special Education (2023 School Census – INEP/MEC)",
+        "dados.card1.li1": "More than <strong>2.5 million enrollments</strong> in Special Education (2025 School Census – Inep/MEC)",
         "dados.card1.li2": "Enrollments of students with autism increased by <strong>44.4% between 2023 and 2024</strong> (School Census – MEC)", // ← CORRIGIDO
         "dados.card1.li3": "<strong>Significant gaps persist in data collection </strong>on student dropout and real learning progress, according to analyses from the Rodrigo Mendes Institute",
         
