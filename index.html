@@ -1174,6 +1174,14 @@ a:not(.btn-primary):not(.btn-secondary):not(.nav-cta):not(.btn-apoiar){accent-co
 button,.btn-primary,.btn-secondary,.nav-cta,.btn-apoiar{font-family:'DM Sans',sans-serif!important}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-content{grid-column:1!important;grid-row:1!important}.hero-art-panel{grid-column:1!important;grid-row:2!important;padding:0}.hero-art-image{max-width:480px}.hero-urgent-card{grid-column:1!important;grid-row:3!important}}
 @media(max-width:600px){.hero-art-image{max-width:340px}.hero-art-panel{margin:0 auto}}
+
+/* Integrated emblem — softly dissolve its ivory canvas into the hero */
+.hero{isolation:isolate}
+.hero-art-panel{position:relative;isolation:isolate;overflow:visible!important;padding:clamp(8px,2vw,25px)!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.hero-art-panel::before{content:"";position:absolute;z-index:-1;inset:8% -6%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(250,248,244,.95) 0%,rgba(250,248,244,.78) 38%,rgba(230,236,227,.38) 68%,transparent 82%);filter:blur(24px);pointer-events:none}
+.hero-art-image{position:relative;width:100%!important;max-width:620px!important;height:auto!important;mix-blend-mode:multiply;mask-image:radial-gradient(ellipse 70% 68% at 50% 49%,#000 52%,rgba(0,0,0,.96) 67%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 68% at 50% 49%,#000 52%,rgba(0,0,0,.96) 67%,transparent 100%);filter:drop-shadow(0 9px 12px rgba(90,104,92,.045))!important}
+@media(max-width:900px){.hero-art-panel::before{inset:6% 0}.hero-art-image{max-width:480px!important}}
+@media(max-width:600px){.hero-art-image{max-width:360px!important}}
 </style>
 </head>
 <body>
