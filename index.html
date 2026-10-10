@@ -1275,6 +1275,29 @@ a:not(.btn-primary):not(.btn-secondary):not(.nav-cta):not(.btn-apoiar):hover{col
 #faq .card,#faq .faq-item{background:linear-gradient(140deg,#fff,#e9f0f1 75%,#faf0eb)!important;border-color:#dce6e7!important}
 .footer a,.footer-inner a,a[href^="mailto:"]{color:#397f91!important}
 .footer a:hover,.footer-inner a:hover,a[href^="mailto:"]:hover{color:#a85e50!important}
+
+/* Desktop density fix: remove legacy 80vh hero and excessive whitespace */
+@media(min-width:901px){
+.hero{min-height:0!important;height:auto!important;display:block!important;align-items:initial!important;padding:28px 24px 30px!important}
+.hero-inner{max-width:1160px!important;grid-template-columns:minmax(0,1.13fr) minmax(300px,.87fr)!important;gap:24px!important;align-items:center!important}
+.hero-content,.hero-logo-block{margin-top:0!important;margin-bottom:0!important}
+.hero-title{font-size:clamp(1.85rem,2.55vw,2.65rem)!important;line-height:1.15!important;margin:8px 0 12px!important}
+.hero-sub{font-size:.9rem!important;line-height:1.58!important;margin-top:8px!important;margin-bottom:8px!important}
+.hero-mini-emblem{width:112px!important;height:61px!important;margin-bottom:0!important}
+.hero-grid{margin:12px 0!important;gap:7px!important}
+.hero-chip{padding:7px 10px!important;font-size:.73rem!important}
+.hero-actions{margin:12px 0 5px!important;gap:9px!important}
+.hero-urgent-card{padding:20px 22px!important}
+.hero-urgent-card h3{font-size:1.1rem!important}
+.section{padding-top:32px!important;padding-bottom:32px!important;min-height:0!important}
+.section-header{margin-bottom:16px!important}
+.section-inner{max-width:1160px!important}
+.section-title{font-size:clamp(1.4rem,1.9vw,1.85rem)!important;margin-top:6px!important;margin-bottom:10px!important}
+.section-sub{line-height:1.55!important}
+.pillar-grid,.eicr-audience-grid,.eicr-support-grid{gap:12px!important}
+.pillar-item,.eicr-audience-card,.eicr-support-card{padding:16px!important}
+}
+@media(min-width:901px) and (max-height:800px){.hero{padding-top:20px!important;padding-bottom:22px!important}.section{padding-top:26px!important;padding-bottom:26px!important}}
 </style>
 </head>
 <body>
