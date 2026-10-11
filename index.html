@@ -1445,6 +1445,28 @@ html,body{max-width:100%;overflow-x:clip}
 .nav-dropdown-toggle:focus-visible{outline:2px solid #a34e54;outline-offset:3px}
 @media(min-width:901px){.nav-dropdown-toggle{padding:8px 11px!important}.nav-dropdown-menu{max-height:70vh;overflow:auto}}
 @media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown-toggle{width:100%;padding:12px 16px!important;justify-content:space-between;text-align:left}.nav-dropdown-menu{position:static;min-width:0;width:100%;margin-top:5px;box-shadow:none;background:rgba(255,255,255,.62)}}
+
+/* Calm page-based navigation: distinct URLs, no anchor zigzag */
+.inner-page-toolbar{max-width:1250px;margin:0 auto;padding:24px clamp(20px,4vw,55px) 8px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.inner-page-toolbar[hidden],.pilot-page-links[hidden]{display:none!important}
+.inner-page-back{display:inline-flex;gap:8px;align-items:center;padding:10px 15px;border:1px solid rgba(163,78,84,.24);border-radius:999px;background:linear-gradient(125deg,rgba(255,255,255,.92),rgba(245,231,224,.82));color:#a34e54!important;font-weight:700;text-decoration:none;box-shadow:0 5px 18px rgba(100,77,72,.07)}
+.inner-page-back:hover{box-shadow:0 0 19px rgba(163,78,84,.15);border-color:rgba(163,78,84,.42)}
+.inner-page-crumb{font-size:.83rem;color:#8c786d;font-weight:650}
+.pilot-page-links{max-width:1150px;margin:12px auto 20px;padding:0 24px;display:flex;gap:12px;flex-wrap:wrap}
+.pilot-page-links a{padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(245,231,224,.84));border:1px solid rgba(163,78,84,.2);color:#a34e54;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(95,74,68,.08)}
+.pilot-page-links a:hover{box-shadow:0 0 20px rgba(163,78,84,.16);transform:translateY(-1px)}
+body[data-current-page]:not([data-current-page="inicio"]) main.hero{display:none!important}
+body[data-current-page]:not([data-current-page="inicio"]) section.section{display:none!important}
+body[data-current-page="historia"] #sobre,body[data-current-page="dados"] #dados,
+body[data-current-page="piloto"] #piloto,body[data-current-page="pilares"] #pilares,
+body[data-current-page="tecnologia"] #tecnologia,body[data-current-page="para-voce"] #para-voce,
+body[data-current-page="biblioteca"] #biblioteca,body[data-current-page="recursos"] #recursos,
+body[data-current-page="perguntas"] #faq,body[data-current-page="contato"] #contato{display:block!important}
+body[data-current-page]:not([data-current-page="inicio"]) section.section{padding-top:30px!important;min-height:55vh}
+body[data-current-page="inicio"] .nav-links>a[href="./"],body[data-current-page="historia"] .nav-links>a[href="?pagina=historia"],body[data-current-page="dados"] .nav-links>a[href="?pagina=dados"]{border-color:rgba(163,78,84,.5)!important}
+.nav-dropdown-chevron{font-size:0!important;width:8px;height:8px;border-right:1.8px solid currentColor;border-bottom:1.8px solid currentColor;transform:rotate(45deg);margin:-4px 3px 0 5px}
+.nav-dropdown.is-open .nav-dropdown-chevron{transform:rotate(225deg);margin-top:4px}
+@media(max-width:700px){.inner-page-toolbar{padding:18px 18px 6px}.inner-page-crumb{font-size:.73rem}.pilot-page-links{gap:8px}.pilot-page-links a{flex:1;text-align:center;min-width:95px}}
 </style>
 </head>
 <body>
@@ -1475,24 +1497,24 @@ html,body{max-width:100%;overflow-x:clip}
       <nav class="nav-links" id="navLinks">
         <!-- BOTÃO FECHAR - COLE AQUI -->
         <button class="nav-close" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
-        <a href="#main" data-i18n="nav.inicio">Início</a>
-        <a href="#sobre" data-i18n="nav.sobre">Minha História</a>
-        <a href="#dados" data-i18n="nav.dados">Dados e Urgência</a>
+        <a href="./" data-i18n="nav.inicio">Início</a>
+        <a href="?pagina=historia" data-i18n="nav.sobre">Minha História</a>
+        <a href="?pagina=dados" data-i18n="nav.dados">Dados e Urgência</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="navPilotSubmenu">
             <span data-i18n="nav.piloto">Piloto DF 2026</span><span class="nav-dropdown-chevron" aria-hidden="true">⌄</span>
           </button>
           <div class="nav-dropdown-menu" id="navPilotSubmenu">
-            <a href="#piloto" data-i18n="nav.piloto.overview">Visão geral do piloto</a>
-            <a href="#pilares" data-i18n="nav.pilares">Pilares</a>
-            <a href="#tecnologia" data-i18n="nav.tecnologia">Tecnologia</a>
-            <a href="#para-voce" data-i18n="novo.nav">Para você</a>
+            <a href="?pagina=piloto" data-i18n="nav.piloto.overview">Visão geral do piloto</a>
+            <a href="?pagina=pilares" data-i18n="nav.pilares">Pilares</a>
+            <a href="?pagina=tecnologia" data-i18n="nav.tecnologia">Tecnologia</a>
+            <a href="?pagina=para-voce" data-i18n="novo.nav">Para você</a>
           </div>
         </div>
-        <a href="#biblioteca" data-i18n="novo.nav.bib">Biblioteca</a>
-        <a href="#recursos" data-i18n="nav.recursos">Recursos</a>
-        <a href="#faq" data-i18n="nav.faq">Perguntas Frequentes</a>
-        <a href="#contato" data-i18n="nav.contato">Contato</a>
+        <a href="?pagina=biblioteca" data-i18n="novo.nav.bib">Biblioteca</a>
+        <a href="?pagina=recursos" data-i18n="nav.recursos">Recursos</a>
+        <a href="?pagina=perguntas" data-i18n="nav.faq">Perguntas Frequentes</a>
+        <a href="?pagina=contato" data-i18n="nav.contato">Contato</a>
         
         <!-- Seletor de Idioma -->
         <div class="language-switcher">
@@ -1509,6 +1531,15 @@ html,body{max-width:100%;overflow-x:clip}
     </div>
   </header>
 
+  <div class="inner-page-toolbar" id="innerPageToolbar" hidden>
+    <a href="./" class="inner-page-back"><span aria-hidden="true">←</span> <span data-i18n="page.back">Voltar ao início</span></a>
+    <span class="inner-page-crumb" id="innerPageCrumb"></span>
+  </div>
+  <div class="pilot-page-links" id="pilotPageLinks" hidden>
+    <a href="?pagina=pilares" data-i18n="nav.pilares">Pilares</a>
+    <a href="?pagina=tecnologia" data-i18n="nav.tecnologia">Tecnologia</a>
+    <a href="?pagina=para-voce" data-i18n="novo.nav">Para você</a>
+  </div>
   <!-- HERO - COM TRADUÇÃO -->
   <main id="main" class="hero">
     <div class="hero-inner">
@@ -3048,6 +3079,39 @@ en: {
   document.addEventListener('click',e=>{if(!drop.contains(e.target))setOpen(false)});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false);button.focus()}});
   drop.querySelectorAll('.nav-dropdown-menu a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+})();
+</script>
+<script>
+/* Page navigation reuses the existing translated content without duplicating documents. */
+(function(){
+  const pages={inicio:['main','Início','Home'],historia:['sobre','Minha História','My Story'],dados:['dados','Dados e Urgência','Data & Urgency'],piloto:['piloto','Piloto DF 2026','DF 2026 Pilot'],pilares:['pilares','Pilares','Pillars'],tecnologia:['tecnologia','Tecnologia','Technology'],'para-voce':['para-voce','Para você','For You'],biblioteca:['biblioteca','Biblioteca','Library'],recursos:['recursos','Recursos','Resources'],perguntas:['faq','Perguntas Frequentes','FAQ'],contato:['contato','Contato','Contact']};
+  const byId=Object.fromEntries(Object.entries(pages).map(([key,val])=>[val[0],key]));
+  const toolbar=document.getElementById('innerPageToolbar'),crumb=document.getElementById('innerPageCrumb'),pilotLinks=document.getElementById('pilotPageLinks');
+  function render(){
+    const params=new URLSearchParams(location.search),raw=params.get('pagina'),page=pages[raw]?raw:'inicio';
+    document.body.dataset.currentPage=page;
+    toolbar.hidden=page==='inicio';pilotLinks.hidden=page!=='piloto';
+    const en=document.documentElement.lang==='en',name=pages[page][en?2:1];
+    crumb.textContent=name;document.title=(page==='inicio'?'':name+' | ')+'Educação Inclusiva com Resultado';
+    document.querySelectorAll('.nav-links a[aria-current]').forEach(a=>a.removeAttribute('aria-current'));
+    const current=document.querySelector('.nav-links a[href="'+(page==='inicio'?'./':'?pagina='+page)+'"]');
+    if(current)current.setAttribute('aria-current','page');
+    document.getElementById('navLinks')?.classList.remove('open');
+  }
+  document.addEventListener('click',function(e){
+    const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||a.target==='_blank')return;
+    const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname!==location.pathname)return;
+    let page=u.searchParams.get('pagina');
+    if(!page&&u.hash&&byId[u.hash.slice(1)])page=byId[u.hash.slice(1)];
+    if(page&&!pages[page])return;
+    if(!page&&u.search&&u.search!=='?')return;
+    if(!page&&!u.hash&&a.getAttribute('href')!=='./')return;
+    e.preventDefault();const url=page&&page!=='inicio'?'?pagina='+page:'./';
+    if(location.search!== (page&&page!=='inicio'?'?pagina='+page:''))history.pushState({},'',url);
+    render();window.scrollTo({top:0,behavior:'instant'});
+  });
+  window.addEventListener('popstate',()=>{render();window.scrollTo(0,0)});
+  document.addEventListener('DOMContentLoaded',()=>{render();new MutationObserver(()=>{if(document.body.dataset.currentPage!=='inicio'){const page=document.body.dataset.currentPage;crumb.textContent=pages[page][document.documentElement.lang==='en'?2:1]}}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']})});
 })();
 </script>
 </body>
