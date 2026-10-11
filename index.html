@@ -1332,6 +1332,10 @@ html,body{max-width:100%;overflow-x:clip}
 /* Taupe metallic lettering for the top navigation capsules */
 .nav-links>a:not(.nav-cta){color:#887466!important;-webkit-text-fill-color:#887466!important;font-weight:700!important;text-shadow:0 1px 0 rgba(255,255,255,.95),0 0 7px rgba(205,186,166,.19)!important;background:linear-gradient(130deg,rgba(255,255,255,.93),rgba(239,231,222,.82),rgba(250,247,242,.91))!important;border-color:rgba(174,153,133,.36)!important;box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(170,149,131,.1),0 3px 9px rgba(107,93,81,.065)!important}
 .nav-links>a:not(.nav-cta):hover,.nav-links>a:not(.nav-cta):focus-visible{color:#735c4d!important;-webkit-text-fill-color:#735c4d!important;background:linear-gradient(115deg,#fff,#e5d6c7 50%,#f6f1e9)!important;border-color:#c8b19d!important;text-shadow:0 1px 0 #fff,0 0 9px rgba(198,175,151,.38)!important;box-shadow:inset 0 1px 0 #fff,0 5px 15px rgba(127,105,86,.13),0 0 12px rgba(236,221,205,.5)!important}
+
+/* Red FAQ question marks in both Portuguese and English */
+#faq h3[data-i18n^="faq.q"]{display:flex!important;align-items:flex-start;gap:11px}
+#faq h3[data-i18n^="faq.q"]::before{content:"?";display:inline-grid;place-items:center;flex:0 0 27px;width:27px;height:27px;border-radius:50%;font-family:Arial,sans-serif;font-size:16px;font-weight:800;line-height:1;color:#b9454b;-webkit-text-fill-color:#b9454b;background:linear-gradient(145deg,#fff4f1,#f9dedb);border:1px solid #e8b7b4;box-shadow:inset 0 1px 0 #fff,0 3px 9px rgba(167,70,75,.1)}
 </style>
 </head>
 <body>
@@ -1842,19 +1846,19 @@ html,body{max-width:100%;overflow-x:clip}
         <h2 class="section-title" data-i18n="faq.title">Perguntas Frequentes</h2>
       </div>    
       <div class="card">
-        <h3 data-i18n="faq.q1">❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?</h3>
+        <h3 data-i18n="faq.q1">Este projeto substitui o AEE (Atendimento Educacional Especializado)?</h3>
         <p data-i18n="faq.a1"><strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação continuada, tecnologia e padrões claros de atuação. O AEE é a base, e este modelo traz a estruturação necessária.</p>   
         
-        <h3 data-i18n="faq.q2">❓ Como as famílias podem participar ativamente?</h3>
+        <h3 data-i18n="faq.q2">Como as famílias podem participar ativamente?</h3>
         <p data-i18n="faq.a2">Através de reuniões regulares de PEI, formação em tecnologia assistiva, acompanhamento do progresso e participação nas decisões sobre o plano educacional de seus filhos.</p>
         
-        <h3 data-i18n="faq.q3">❓ Qual o status atual da proposta?</h3>
+        <h3 data-i18n="faq.q3">Qual o status atual da proposta?</h3>
         <p data-i18n="faq.a3">A proposta está <strong>em análise pelos órgãos competentes</strong> (MEC, Governo do DF, Frente Parlamentar). Este site serve para divulgar a proposta e buscar apoio para sua implementação.</p>
   
-        <h3 data-i18n="faq.q4">❓ Por que começar pelo Distrito Federal?</h3>
+        <h3 data-i18n="faq.q4">Por que começar pelo Distrito Federal?</h3>
         <p data-i18n="faq.a4">O DF reúne características ideais para um piloto: diversidade socioeconômica, estrutura de gestão unificada e potencial de replicação para outros estados.</p>
   
-        <h3 data-i18n="faq.q5">❓ Como garantir a continuidade do projeto?</h3>
+        <h3 data-i18n="faq.q5">Como garantir a continuidade do projeto?</h3>
         <p data-i18n="faq.a5">Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais e transparência total nos resultados - tornando o modelo parte da estrutura educacional.</p>
       </div>
     </div>
@@ -2365,19 +2369,19 @@ const translations = {
         "faq.kicker": "FAQ",
         "faq.title": "Perguntas Frequentes",
         
-        "faq.q1": "❓ Este projeto substitui o AEE (Atendimento Educacional Especializado)?",
+        "faq.q1": "Este projeto substitui o AEE (Atendimento Educacional Especializado)?",
         "faq.a1": "<strong>Não</strong>, o projeto fortalece e estrutura o AEE com recursos, formação continuada, tecnologia e padrões claros de atuação. O AEE é a base, e este modelo traz a estruturação necessária.",
         
-        "faq.q2": "❓ Como as famílias podem participar ativamente?",
+        "faq.q2": "Como as famílias podem participar ativamente?",
         "faq.a2": "Através de reuniões regulares de PEI, formação em tecnologia assistiva, acompanhamento do progresso e participação nas decisões sobre o plano educacional de seus filhos.",
         
-        "faq.q3": "❓ Qual o status atual da proposta?",
+        "faq.q3": "Qual o status atual da proposta?",
         "faq.a3": "A proposta está <strong>em análise pelos órgãos competentes</strong> (MEC, Governo do DF, Frente Parlamentar). Este site serve para divulgar a proposta e buscar apoio para sua implementação.",
     
-        "faq.q4": "❓ Por que começar pelo Distrito Federal?",
+        "faq.q4": "Por que começar pelo Distrito Federal?",
         "faq.a4": "O DF reúne características ideais para um piloto: diversidade socioeconômica, estrutura de gestão unificada e potencial de replicação para outros estados.",
     
-        "faq.q5": "❓ Como garantir a continuidade do projeto?",
+        "faq.q5": "Como garantir a continuidade do projeto?",
         "faq.a5": "Através de institutionalização via lei, formação de equipes permanentes, sistemas digitais e transparência total nos resultados - tornando o modelo parte da estrutura educacional.",
 
         //Recursos
@@ -2723,19 +2727,19 @@ en: {
         "faq.kicker": "FAQ",
         "faq.title": "Common Questions",
         
-        "faq.q1": "❓ How does this relate to existing AEE programs?",
+        "faq.q1": "How does this relate to existing AEE programs?",
         "faq.a1": "This framework <strong>strengthens and builds upon</strong> AEE by providing standardized processes, technology integration, and consistent implementation across schools.",
         
-        "faq.q2": "❓ What role do families play?",
+        "faq.q2": "What role do families play?",
         "faq.a2": "Families are essential partners participating in IEP meetings, learning to use assistive technology, and helping track their child's progress.",
         
-        "faq.q3": "❓ What's the current status?",
+        "faq.q3": "What's the current status?",
         "faq.a3": "The proposal is <strong>being reviewed by education authorities</strong>. This site shares the vision and builds support for implementation.",
         
-        "faq.q4": "❓ Why start with Brasília?",
+        "faq.q4": "Why start with Brasília?",
         "faq.a4": "Brasília offers an ideal testing ground with diverse communities and centralized administration, making it easier to scale successful approaches nationwide.",
         
-        "faq.q5": "❓ How will this be sustained long-term?",
+        "faq.q5": "How will this be sustained long-term?",
         "faq.a5": "Through legislation, trained permanent staff, digital systems, and transparent results that demonstrate the model's value to communities and policymakers.",
 
         // === Resources - NATURAL ===
