@@ -978,7 +978,7 @@ a:not(.btn-primary):not(.btn-secondary):not(.nav-cta):hover,h3:hover,h4:hover,.s
 .btn-primary:hover,.nav-cta:hover{filter:brightness(1.08);box-shadow:0 10px 28px rgba(47,110,225,.33)}
 @media(prefers-reduced-motion:reduce){.eicr-audience-card,.eicr-support-card,.card{transition:none!important;transform:none!important}}
 
-/* EICR — Royal Blue / Silver Glass design system */
+/* EICR: Royal Blue / Silver Glass design system */
 :root{--spectrum:linear-gradient(120deg,#1d4fb0,#3b7ce0 58%,#a6d6ff);--spectrum-soft:linear-gradient(120deg,rgba(39,102,207,.15),rgba(163,207,255,.28));--azul-escuro:#2559b4}
 body{font-family:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,sans-serif!important;font-weight:500;letter-spacing:-.012em}
 h1,h2,h3,h4,h5,h6,.brand-name,.section-title,.hero-title{font-family:"Plus Jakarta Sans","Manrope",sans-serif!important;letter-spacing:-.038em;line-height:1.23}
@@ -1000,7 +1000,7 @@ p,li,.hero-sub,.section-sub{line-height:1.8;letter-spacing:-.008em}
 @media(max-width:720px){.nav-links{background:rgba(239,247,255,.96)!important;backdrop-filter:blur(20px)}}
 @media(prefers-reduced-motion:reduce){.btn-primary::before,.btn-secondary::before,.nav-cta::before,.btn-apoiar::before,.hero-chip::after,.chip::after{display:none}.btn-primary,.btn-secondary,.nav-cta,.btn-apoiar,.hero-chip,.chip{transition:none!important}}
 
-/* EICR palette refinement — royal blue, airy blue, Fendi, greige, ivory */
+/* EICR palette refinement: royal blue, airy blue, Fendi, greige, ivory */
 :root{--azul-escuro:#245bc1;--cinza-fundo:#f7f4ef;--cinza-texto:#554f4a;--eicr-fendi:#b6a89a;--eicr-greige:#c5b8aa;--eicr-ivory:#f7f4ef;--eicr-airblue:#a7cff5}
 html{background:#f7f4ef}
 body{color:#554f4a;background:radial-gradient(circle at 8% 12%,rgba(167,207,245,.35),transparent 36%),radial-gradient(circle at 91% 30%,rgba(197,184,170,.31),transparent 34%),linear-gradient(135deg,#f7f4ef 0%,#f3f5f7 45%,#eaf3fc 100%);background-attachment:fixed}
@@ -1039,7 +1039,7 @@ body{color:#554f4a;background:radial-gradient(circle at 8% 12%,rgba(167,207,245,
 @media(max-width:720px){.navbar-logo{width:42px!important;height:42px!important}.hero-logo{width:138px!important;height:138px!important;max-width:138px!important}}
 
 
-/* Unified 2026 visual system — single authoritative theme */
+/* Unified 2026 visual system: single authoritative theme */
 :root{--spectrum:linear-gradient(120deg,#8fa79a,#b4c4b7,#c5b6a7);--azul-escuro:#52697a;--cinza-texto:#596460;--roxo:#8fa79a;--purple:#8fa79a;--violeta:#8fa79a;--eicr-ivory:#f8f7f3;--eicr-sage:#dce6dc;--eicr-taupe:#aa9585}
 html{scroll-behavior:smooth}
 body{font-family:'Manrope',Arial,sans-serif!important;color:#505c58!important;background:#f8f7f3!important}
@@ -1538,6 +1538,14 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
  body[data-current-page="piloto"] .pilot-page-links{flex-wrap:wrap!important;gap:6px!important}
  body[data-current-page="piloto"] .pilot-page-links a{font-size:.78rem!important;padding:7px 10px!important}
 }
+
+/* Keep the footer at the bottom of short internal pages, with breathing room for future illustrations. */
+html,body{min-height:100%}
+body{min-height:100vh;display:flex;flex-direction:column}
+body>.navbar,body>.inner-page-toolbar,body>main,body>section,body>footer{width:100%;flex-shrink:0}
+body>.footer{margin-top:auto}
+body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(65vh,calc(100vh - 260px))!important;padding-bottom:clamp(90px,13vh,180px)!important}
+@media(max-width:700px){body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(62vh,calc(100vh - 220px))!important;padding-bottom:100px!important}}
 </style>
 </head>
 <body>
@@ -1672,7 +1680,7 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
           </div>
           <p class="urgency-small-note" data-i18n="urgencia.stats.note">Dados do Censo Escolar 2025; o crescimento de matrículas de estudantes autistas refere-se a 2023–2024. Estar em classe comum não significa, por si só, receber todos os apoios necessários.</p>
           <h4 class="urgency-subhead" data-i18n="urgencia.invest.title">💰 Investimentos e estrutura</h4>
-          <p class="urgency-compact" data-i18n="urgencia.invest.text"><strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong> — previsão não equivale a execução.</p>
+          <p class="urgency-compact" data-i18n="urgencia.invest.text"><strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong>: previsão não equivale a execução.</p>
           <h4 class="urgency-subhead" data-i18n="urgencia.support.title">❤️ Apoios às famílias</h4>
           <p class="urgency-compact" data-i18n="urgencia.support.text"><strong>BPC/LOAS:</strong> benefício de um salário mínimo mensal para pessoas com deficiência de baixa renda, conforme critérios legais e avaliação. <strong>BPC na Escola:</strong> busca apoiar acesso e permanência escolar de beneficiários. <strong>SUS:</strong> UBS e, quando indicado, CER e outros serviços especializados. A disponibilidade e a elegibilidade variam.</p>
           <div class="urgency-sources"><span data-i18n="urgencia.sources.label">Fontes oficiais (consultadas em 11/10/2026):</span>
@@ -1710,9 +1718,9 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
   </div></section>
   <section id="biblioteca" class="section eicr-library"><div class="section-inner"><div class="section-header"><div class="section-kicker" data-i18n="novo.bib.kicker">CONHECIMENTO ACESSÍVEL</div><h2 class="section-title" data-i18n="novo.bib.title">Biblioteca inclusiva</h2><p class="section-sub" data-i18n="novo.bib.subtitle">Referências para começar. As recomendações não substituem avaliação pedagógica individualizada.</p></div>
     <div class="eicr-audience-grid">
-      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3>CAST — Universal Design for Learning</h3><p data-i18n="novo.bib.cast">Diretrizes para ampliar as formas de participação, aprendizagem e expressão.</p><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
-      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3>UNICEF — Inclusive Education</h3><p data-i18n="novo.bib.unicef">Materiais de orientação para cuidadores e comunidades escolares.</p><a href="https://www.unicef.org/innocenti/reports/caregivers-guide-inclusive-education" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
-      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.livro">Livro de referência</span><h3>Uniquely Human — Barry M. Prizant</h3><p data-i18n="novo.bib.prizant">Uma perspectiva sobre autismo centrada na compreensão e no apoio individualizado.</p><a href="#recursos" data-i18n="novo.bib.outros">Ver mais recursos →</a></article>
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3><span data-i18n="novo.bib.cast.title">CAST: Desenho Universal para Aprendizagem</span></h3><p data-i18n="novo.bib.cast">Diretrizes para ampliar as formas de participação, aprendizagem e expressão.</p><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.guia">Guia gratuito</span><h3><span data-i18n="novo.bib.unicef.title">UNICEF: Educação Inclusiva</span></h3><p data-i18n="novo.bib.unicef">Materiais de orientação para cuidadores e comunidades escolares.</p><a href="https://www.unicef.org/innocenti/reports/caregivers-guide-inclusive-education" target="_blank" rel="noopener noreferrer" data-i18n="novo.bib.abrir">Consultar fonte →</a></article>
+      <article class="eicr-audience-card"><span class="eicr-library-label" data-i18n="novo.bib.livro">Livro de referência</span><h3>Uniquely Human, de Barry M. Prizant</h3><p data-i18n="novo.bib.prizant">Uma perspectiva sobre autismo centrada na compreensão e no apoio individualizado.</p><a href="#recursos" data-i18n="novo.bib.outros">Ver mais recursos →</a></article>
     </div>
   </div></section>
   <!-- MINHA HISTÓRIA COM TRADUÇÃO -->
@@ -1776,7 +1784,7 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
         <div class="card">
           <h3 data-i18n="dados.card1.title">📊 Dados do Censo Escolar</h3>
           <ul>
-            <li data-i18n="dados.card1.li1">Mais de<strong> 2,5 milhões</strong> de matrículas na educação especial(Censo Escolar 2025 – Inep/MEC)</li>
+            <li data-i18n="dados.card1.li1">Mais de<strong> 2,5 milhões</strong> de matrículas na educação especial(Censo Escolar 2025, Inep/MEC)</li>
             <li data-i18n="dados.card1.li2">Matrículas de estudantes com autismo cresceram<strong> 44,4% entre 2023 e 2024</strong> (Censo Escolar - MEC)</li>
             <li data-i18n="dados.card1.li3">Persistem <strong> falhas na coleta de dados sobre evasão e progresso real, </strong> segundo análises do Instituto Rodrigo Mendes</li>
           </ul>
@@ -2107,13 +2115,13 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
           <h3 data-i18n="recursos.profissionais">Para profissionais</h3>  
           <ul>
             <li>
-              <strong>Uniquely Human – Barry Prizant</strong><br>
+              <strong>Uniquely Human, Barry Prizant</strong><br>
               <span data-i18n="recursos.p1">
                 Comportamento como comunicação
               </span>
             </li>  
             <li>
-              <strong>The Verbal Behavior Approach – Mary Barbera</strong><br>
+              <strong>The Verbal Behavior Approach, Mary Barbera</strong><br>
               <span data-i18n="recursos.p2">
                 Estrutura prática para linguagem
               </span>
@@ -2137,7 +2145,7 @@ body[data-current-page]:not([data-current-page="inicio"]) .inner-page-crumb{disp
           <h3 data-i18n="recursos.familias">Para famílias</h3>
           <ul>
             <li>
-              <strong>The Reason I Jump – Naoki Higashida</strong><br>
+              <strong>The Reason I Jump, Naoki Higashida</strong><br>
               <span data-i18n="recursos.f1">
                 Perspectiva de pessoa autista
               </span>
@@ -2411,7 +2419,7 @@ const translations = {
         "urgencia.stat.tea": "matrículas de estudantes autistas, 2023–2024",
         "urgencia.stats.note": "Dados do Censo Escolar 2025; o crescimento de matrículas de estudantes autistas refere-se a 2023–2024. Estar em classe comum não significa, por si só, receber todos os apoios necessários.",
         "urgencia.invest.title": "💰 Investimentos e estrutura",
-        "urgencia.invest.text": "<strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong> — previsão não equivale a execução.",
+        "urgencia.invest.text": "<strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong>: previsão não equivale a execução.",
         "urgencia.support.title": "❤️ Apoios às famílias",
         "urgencia.support.text": "<strong>BPC/LOAS:</strong> benefício de um salário mínimo mensal para pessoas com deficiência de baixa renda, conforme critérios legais e avaliação. <strong>BPC na Escola:</strong> busca apoiar acesso e permanência escolar de beneficiários. <strong>SUS:</strong> UBS e, quando indicado, CER e outros serviços especializados. A disponibilidade e a elegibilidade variam.",
         "urgencia.sources.label": "Fontes oficiais (consultadas em 11/10/2026):",
@@ -2450,8 +2458,8 @@ const translations = {
         "dados.subtitle": "Dados concretos mostram a dimensão do desafio e a necessidade urgente de um modelo estruturado para a educação inclusiva no Brasil.",
         
         "dados.card1.title": "📊 Dados do Censo Escolar",
-        "dados.card1.li1": "Mais de <strong>2,5 milhões</strong> de matrículas na Educação Especial (Censo Escolar 2025 – Inep/MEC)",
-        "dados.card1.li2": "Matrículas de estudantes com autismo cresceram <strong>44,4% entre 2023 e 2024</strong> (Censo Escolar – MEC)", 
+        "dados.card1.li1": "Mais de <strong>2,5 milhões</strong> de matrículas na Educação Especial (Censo Escolar 2025, Inep/MEC)",
+        "dados.card1.li2": "Matrículas de estudantes com autismo cresceram <strong>44,4% entre 2023 e 2024</strong> (Censo Escolar, MEC)", 
         "dados.card1.li3": "Persistem <strong>falhas na coleta de dados sobre evasão e progresso real,</strong> segundo análises do Instituto Rodrigo Mendes",
         
         "dados.card2.title": "⚡ Problemas Identificados",
@@ -2717,6 +2725,8 @@ const translations = {
         "novo.bib.subtitle": "Referências para começar. As recomendações não substituem avaliação pedagógica individualizada.",
         "novo.bib.guia": "Guia gratuito",
         "novo.bib.livro": "Livro de referência",
+        "novo.bib.cast.title": "CAST: Desenho Universal para Aprendizagem",
+        "novo.bib.unicef.title": "UNICEF: Educação Inclusiva",
         "novo.bib.cast": "Diretrizes para ampliar as formas de participação, aprendizagem e expressão.",
         "novo.bib.unicef": "Materiais de orientação para cuidadores e comunidades escolares.",
         "novo.bib.prizant": "Uma perspectiva sobre autismo centrada na compreensão e no apoio individualizado.",
@@ -2742,6 +2752,8 @@ en: {
         "novo.bib.subtitle": "A starting collection. Recommendations do not replace individualized educational assessment.",
         "novo.bib.guia": "Free guide",
         "novo.bib.livro": "Reference book",
+        "novo.bib.cast.title": "CAST: Universal Design for Learning",
+        "novo.bib.unicef.title": "UNICEF: Inclusive Education",
         "novo.bib.cast": "Guidelines for flexible participation, learning and expression.",
         "novo.bib.unicef": "Guidance materials for caregivers and school communities.",
         "novo.bib.prizant": "A perspective on autism focused on understanding and individualized support.",
@@ -2824,8 +2836,8 @@ en: {
         "dados.subtitle": "The data shows both the scale of need and the opportunity for meaningful change in special education.",
         
         "dados.card1.title": "📊 By the Numbers",
-        "dados.card1.li1": "More than <strong>2.5 million enrollments</strong> in Special Education (2025 School Census – Inep/MEC)",
-        "dados.card1.li2": "Enrollments of students with autism increased by <strong>44.4% between 2023 and 2024</strong> (School Census – MEC)", // ← CORRIGIDO
+        "dados.card1.li1": "More than <strong>2.5 million enrollments</strong> in Special Education (2025 School Census, Inep/MEC)",
+        "dados.card1.li2": "Enrollments of students with autism increased by <strong>44.4% between 2023 and 2024</strong> (School Census, MEC)", // ← CORRIGIDO
         "dados.card1.li3": "<strong>Significant gaps persist in data collection </strong>on student dropout and real learning progress, according to analyses from the Rodrigo Mendes Institute",
         
         "dados.card2.title": "⚡ Systemic Gaps",
