@@ -1416,6 +1416,22 @@ html,body{max-width:100%;overflow-x:clip}
 .hero-urgent-card .chip{font-size:.66rem!important;padding:5px 9px!important}
 @media(min-width:901px){.hero-inner{grid-template-columns:minmax(0,1fr) minmax(390px,.95fr)!important}.hero-urgent-card{width:100%!important}}
 @media(max-width:540px){.urgency-stat-grid{gap:7px}.urgency-stat{padding:9px}.urgency-stat strong{font-size:1.05rem}}
+
+/* Ruby-to-metallic-taupe editorial gradient for central topic labels */
+#piloto [data-i18n^="piloto.etapa"][data-i18n$=".numero"],
+#piloto [data-i18n^="piloto.etapa"][data-i18n$=".titulo"],
+#recursos .card h3,
+#contato [data-i18n="contato.canais.title"],
+#contato [data-i18n="contato.form.title"],
+#contato .contact-label{
+  background:linear-gradient(112deg,#a34e54 0%,#bd7979 24%,#8d7468 48%,#c2a994 70%,#8a6c61 100%)!important;
+  background-size:100% 100%!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  color:#a34e54!important;-webkit-text-fill-color:transparent!important;
+  font-weight:750!important;text-shadow:none!important;
+}
+#piloto [data-i18n^="piloto.etapa"][data-i18n$=".titulo"]{display:inline-block}
+#contato .contact-label{display:inline-block}
 </style>
 </head>
 <body>
