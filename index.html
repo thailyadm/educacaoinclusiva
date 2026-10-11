@@ -1379,6 +1379,22 @@ html,body{max-width:100%;overflow-x:clip}
 }
 @media(max-width:900px){.hero-urgent-card{transform:none!important;position:static!important}}
 @media(prefers-reduced-motion:reduce){.hero-urgent-card{will-change:auto!important}}
+
+/* Subtle ruby glass halo on the floating urgency card */
+.hero-urgent-card{
+  border:1px solid rgba(163,78,84,.23)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(248,240,237,.82) 52%,rgba(232,239,234,.79))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 15px 38px rgba(80,92,84,.10),0 0 0 1px rgba(163,78,84,.045)!important;
+  backdrop-filter:blur(15px) saturate(115%)!important;
+  -webkit-backdrop-filter:blur(15px) saturate(115%)!important;
+  transition:border-color .3s ease,box-shadow .3s ease,background .3s ease!important;
+}
+.hero-urgent-card:hover,.hero-urgent-card:focus-within{
+  border-color:rgba(163,78,84,.56)!important;
+  background:linear-gradient(140deg,rgba(255,255,255,.96),rgba(251,235,232,.88) 52%,rgba(239,243,238,.88))!important;
+  box-shadow:inset 0 1px 0 #fff,0 17px 42px rgba(103,77,79,.13),0 0 0 3px rgba(183,88,95,.075),0 0 25px rgba(163,78,84,.17)!important;
+}
+@media(prefers-reduced-motion:reduce){.hero-urgent-card{transition:none!important}}
 </style>
 </head>
 <body>
