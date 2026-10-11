@@ -1395,6 +1395,27 @@ html,body{max-width:100%;overflow-x:clip}
   box-shadow:inset 0 1px 0 #fff,0 17px 42px rgba(103,77,79,.13),0 0 0 3px rgba(183,88,95,.075),0 0 25px rgba(163,78,84,.17)!important;
 }
 @media(prefers-reduced-motion:reduce){.hero-urgent-card{transition:none!important}}
+
+/* Expanded, sourced urgency briefing without turning the floating card into a wall of text */
+.hero-urgent-card{padding:23px 25px!important}
+.urgency-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 11px}
+.urgency-stat{display:flex;flex-direction:column;gap:4px;min-width:0;padding:11px 12px;border-radius:12px;border:1px solid #e7dcd9;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(248,235,232,.67));box-shadow:inset 0 1px 0 #fff}
+.urgency-stat:nth-child(even){background:linear-gradient(135deg,#fff,rgba(225,237,241,.7));border-color:#d9e5e9}
+.urgency-stat strong{font-size:1.25rem;color:#a34e54;line-height:1.12;letter-spacing:-.025em}
+.urgency-stat:nth-child(even) strong{color:#397f91}
+.urgency-stat span{font-size:.71rem;line-height:1.38;color:#5b6464}
+.hero-urgent-card .urgency-small-note{font-size:.7rem!important;line-height:1.42!important;color:#68716d!important;margin:4px 0 11px!important;text-align:left!important}
+.hero-urgent-card .urgency-subhead{font-size:.89rem!important;line-height:1.35!important;margin:12px 0 5px!important;color:#8d4b52!important;background:none!important;-webkit-text-fill-color:#8d4b52!important}
+.hero-urgent-card .urgency-compact{font-size:.76rem!important;line-height:1.52!important;margin:0 0 8px!important;text-align:left!important;color:#53615d!important}
+.hero-urgent-card .urgency-compact strong{color:#556f79}
+.urgency-sources{font-size:.69rem;line-height:1.5;color:#70716c;margin:12px 0 8px;padding-top:9px;border-top:1px solid #e8deda}
+.urgency-sources a{font-size:inherit!important;color:#a34e54!important;text-decoration:underline;text-underline-offset:2px}
+.hero-urgent-card .solution-box{margin-top:10px!important;padding:10px 12px!important}
+.hero-urgent-card .solution-box p{font-size:.75rem!important;line-height:1.48!important}
+.hero-urgent-card .chip-list{gap:5px!important;margin-top:8px!important}
+.hero-urgent-card .chip{font-size:.66rem!important;padding:5px 9px!important}
+@media(min-width:901px){.hero-inner{grid-template-columns:minmax(0,1fr) minmax(390px,.95fr)!important}.hero-urgent-card{width:100%!important}}
+@media(max-width:540px){.urgency-stat-grid{gap:7px}.urgency-stat{padding:9px}.urgency-stat strong{font-size:1.05rem}}
 </style>
 </head>
 <body>
@@ -1504,15 +1525,26 @@ html,body{max-width:100%;overflow-x:clip}
         <h3 data-i18n="urgencia.title">⚡ Por que a Urgência?</h3>
         
         <div class="urgent-section">
-          <h4 data-i18n="urgencia.cenario">📈 Cenário Atual:</h4>
-          <ul>
-            <li>Mais de <strong>2,5 milhões</strong> <span data-i18n="urgencia.dado1"> de matrículas na Educação Especial (Censo Escolar 2025 – Inep/MEC)</span></li>
-            <li>Matrículas de estudantes com autismo cresceram <strong>44,4% entre 2023 e 2024</strong> <span data-i18n="urgencia.dado2"> (Censo Escolar – MEC)</span></li>
-            <li data-i18n="urgencia.dado3">Persistem <strong>falhas na coleta de dados sobre evasão e progresso real,</strong> segundo análises do Instituto Rodrigo Mendes</li>
-          </ul>
+          <h4 data-i18n="urgencia.cenario">📈 Educação inclusiva em números</h4>
+          <div class="urgency-stat-grid">
+            <div class="urgency-stat"><strong>2,5 milhões</strong><span data-i18n="urgencia.stat.enroll">matrículas na educação especial em 2025</span></div>
+            <div class="urgency-stat"><strong>96%</strong><span data-i18n="urgencia.stat.common">das matrículas de 4 a 17 anos em classes comuns</span></div>
+            <div class="urgency-stat"><strong>45,8%</strong><span data-i18n="urgencia.stat.aee">em classes comuns com AEE (4 a 17 anos)</span></div>
+            <div class="urgency-stat"><strong>+44,4%</strong><span data-i18n="urgencia.stat.tea">matrículas de estudantes autistas, 2023–2024</span></div>
+          </div>
+          <p class="urgency-small-note" data-i18n="urgencia.stats.note">Dados do Censo Escolar 2025; o crescimento de matrículas de estudantes autistas refere-se a 2023–2024. Estar em classe comum não significa, por si só, receber todos os apoios necessários.</p>
+          <h4 class="urgency-subhead" data-i18n="urgencia.invest.title">💰 Investimentos e estrutura</h4>
+          <p class="urgency-compact" data-i18n="urgencia.invest.text"><strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong> — previsão não equivale a execução.</p>
+          <h4 class="urgency-subhead" data-i18n="urgencia.support.title">❤️ Apoios às famílias</h4>
+          <p class="urgency-compact" data-i18n="urgencia.support.text"><strong>BPC/LOAS:</strong> benefício de um salário mínimo mensal para pessoas com deficiência de baixa renda, conforme critérios legais e avaliação. <strong>BPC na Escola:</strong> busca apoiar acesso e permanência escolar de beneficiários. <strong>SUS:</strong> UBS e, quando indicado, CER e outros serviços especializados. A disponibilidade e a elegibilidade variam.</p>
+          <div class="urgency-sources"><span data-i18n="urgencia.sources.label">Fontes oficiais (consultadas em 11/10/2026):</span>
+            <a href="https://download.inep.gov.br/censo_escolar/resultados/2025/apresentacao_coletiva.pdf" target="_blank" rel="noopener noreferrer">Inep 2025</a> ·
+            <a href="https://www.gov.br/mec/pt-br/assuntos/noticias/2026/maio/portaria-estrutura-rede-nacional-de-educacao-especial-inclusiva" target="_blank" rel="noopener noreferrer">MEC 2026</a> ·
+            <a href="https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-a-pessoa-com-deficiencia?id=5231&origem=servico" target="_blank" rel="noopener noreferrer">BPC</a> ·
+            <a href="https://www.gov.br/mds/pt-br/acoes-e-programas/suas/beneficios-assistenciais" target="_blank" rel="noopener noreferrer">BPC na Escola</a> ·
+            <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/autismo/atencao-especializada/atencao-especializada/" target="_blank" rel="noopener noreferrer">SUS</a>
+          </div>
         </div>
-      
-<p class="eicr-census-source" style="margin-top:1rem;font-size:.84rem;color:#57695e;line-height:1.6">Fontes: <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/censo-escolar/brasil-atingiu-maior-percentual-de-estudantes-em-tempo-integral" target="_blank" rel="noopener noreferrer">Inep — Censo Escolar 2025</a> e <a href="https://agenciagov.ebc.com.br/noticias/202504/crescem-matriculas-de-alunos-com-transtorno-do-espectro-autista" target="_blank" rel="noopener noreferrer">MEC — matrículas de estudantes com TEA (2023–2024)</a>.</p>
         <div class="solution-box">
           <p data-i18n="urgencia.solucao">
             💡 <strong>Proposta de Solução:</strong> Modelo baseado em evidências com PEI obrigatório, 
@@ -2235,6 +2267,17 @@ const translations = {
         "hero.chip6": "Dados, Transparência e Resultado",
         
         // Urgência
+        "urgencia.stat.enroll": "matrículas na educação especial em 2025",
+        "urgencia.stat.common": "das matrículas de 4 a 17 anos em classes comuns",
+        "urgencia.stat.aee": "em classes comuns com AEE (4 a 17 anos)",
+        "urgencia.stat.tea": "matrículas de estudantes autistas, 2023–2024",
+        "urgencia.stats.note": "Dados do Censo Escolar 2025; o crescimento de matrículas de estudantes autistas refere-se a 2023–2024. Estar em classe comum não significa, por si só, receber todos os apoios necessários.",
+        "urgencia.invest.title": "💰 Investimentos e estrutura",
+        "urgencia.invest.text": "<strong>R$ 2,3 bilhões</strong> destinados pelo MEC desde 2023 ao AEE e à formação de professores. Para salas de recursos multifuncionais, foram <strong>R$ 654,8 milhões transferidos de 2023 a 2025</strong>, com <strong>R$ 204 milhões previstos para 2026</strong> — previsão não equivale a execução.",
+        "urgencia.support.title": "❤️ Apoios às famílias",
+        "urgencia.support.text": "<strong>BPC/LOAS:</strong> benefício de um salário mínimo mensal para pessoas com deficiência de baixa renda, conforme critérios legais e avaliação. <strong>BPC na Escola:</strong> busca apoiar acesso e permanência escolar de beneficiários. <strong>SUS:</strong> UBS e, quando indicado, CER e outros serviços especializados. A disponibilidade e a elegibilidade variam.",
+        "urgencia.sources.label": "Fontes oficiais (consultadas em 11/10/2026):",
+
         "urgencia.title": "⚡ Por que a Urgência?",
         "urgencia.cenario": "📈 Cenário Atual:",
         "urgencia.dado1": "de matrículas na educação especial",
@@ -2598,6 +2641,17 @@ en: {
         "hero.chip6": "Data & Transparency",
         
         // === URGENCY - CORRIGIDO ===
+        "urgencia.stat.enroll": "special education enrollments in 2025",
+        "urgencia.stat.common": "of enrollments ages 4–17 in mainstream classes",
+        "urgencia.stat.aee": "in mainstream classes with specialized educational support (ages 4–17)",
+        "urgencia.stat.tea": "autistic student enrollments, 2023–2024",
+        "urgencia.stats.note": "2025 School Census figures; the autism enrollment growth refers to 2023–2024. Mainstream placement alone does not guarantee all necessary supports.",
+        "urgencia.invest.title": "💰 Funding and resources",
+        "urgencia.invest.text": "<strong>R$2.3 billion</strong> allocated by the Ministry of Education since 2023 for specialized educational support and teacher training. <strong>R$654.8 million transferred during 2023–2025</strong> for resource rooms, with <strong>R$204 million planned for 2026</strong>; planned funding is not the same as spending.",
+        "urgencia.support.title": "❤️ Support for families",
+        "urgencia.support.text": "<strong>BPC/LOAS:</strong> a monthly minimum-wage benefit for eligible low-income people with disabilities, subject to legal requirements and assessment. <strong>BPC na Escola:</strong> supports school access and retention for eligible beneficiaries. <strong>Public health system (SUS):</strong> primary care and, when appropriate, rehabilitation centers and other specialized services. Eligibility and availability vary.",
+        "urgencia.sources.label": "Official sources (checked Oct 11, 2026):",
+
         "urgencia.title": "⚡ Why This Matters Now",
         "urgencia.cenario": "📈 The Current Reality:",
         "urgencia.dado1": "special education students",
