@@ -1351,6 +1351,13 @@ html,body{max-width:100%;overflow-x:clip}
 .navbar .lang-btn:hover,.navbar .lang-btn:focus-visible{background:linear-gradient(125deg,#fff,#edc8c8,#f8e9e4)!important;border-color:#a34e54!important;box-shadow:inset 0 1px 0 #fff,0 5px 13px rgba(163,78,84,.18),0 0 10px rgba(218,164,164,.28)!important}
 .navbar .nav-cta{background:linear-gradient(120deg,#93454c,#b56268 58%,#d69a97)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid rgba(255,235,232,.7)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 7px 17px rgba(137,61,69,.18)!important}
 .navbar .nav-cta:hover,.navbar .nav-cta:focus-visible{background:linear-gradient(110deg,#863c45,#a34e54 45%,#c98385)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 11px 22px rgba(137,61,69,.24),0 0 0 3px rgba(242,213,211,.55)!important}
+
+/* Hero emblem: restore visual prominence and softly integrate its opaque background */
+.hero-logo-block{position:relative!important;isolation:isolate}
+.hero-mini-emblem{width:clamp(165px,14vw,225px)!important;height:clamp(100px,9vw,135px)!important;max-width:58vw!important;margin:-10px 0 0 -15px!important;overflow:visible!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;mix-blend-mode:multiply!important;mask-image:radial-gradient(ellipse 73% 66% at 50% 49%,#000 48%,rgba(0,0,0,.92) 60%,transparent 96%)!important;-webkit-mask-image:radial-gradient(ellipse 73% 66% at 50% 49%,#000 48%,rgba(0,0,0,.92) 60%,transparent 96%)!important}
+.hero-mini-emblem img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;max-width:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:saturate(.98) contrast(1.04)!important;mix-blend-mode:multiply!important;mask-image:none!important;-webkit-mask-image:none!important}
+@media(min-width:901px){.hero-mini-emblem{width:205px!important;height:120px!important;margin:-14px 0 -5px -20px!important}.hero-logo-block{margin:0!important}.hero{padding-top:20px!important}}
+@media(max-width:900px){.hero-mini-emblem{width:175px!important;height:106px!important;margin:-7px auto 0!important}.hero-logo-block{align-items:center!important}}
 </style>
 </head>
 <body>
