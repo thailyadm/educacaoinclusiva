@@ -1336,6 +1336,13 @@ html,body{max-width:100%;overflow-x:clip}
 /* Red FAQ question marks in both Portuguese and English */
 #faq h3[data-i18n^="faq.q"]{display:flex!important;align-items:flex-start;gap:11px}
 #faq h3[data-i18n^="faq.q"]::before{content:"?";display:inline-grid;place-items:center;flex:0 0 27px;width:27px;height:27px;border-radius:50%;font-family:Arial,sans-serif;font-size:16px;font-weight:800;line-height:1;color:#b9454b;-webkit-text-fill-color:#b9454b;background:linear-gradient(145deg,#fff4f1,#f9dedb);border:1px solid #e8b7b4;box-shadow:inset 0 1px 0 #fff,0 3px 9px rgba(167,70,75,.1)}
+
+/* Muted ruby-red section kickers and permanent red heart in hero */
+:root{--eicr-muted-ruby:#a34e54;--eicr-muted-ruby-dark:#904249}
+.section-kicker,.hero-badge{color:#a34e54!important;-webkit-text-fill-color:#a34e54!important;background-image:none!important;text-shadow:0 1px 0 rgba(255,255,255,.75)!important}
+.section-kicker:hover,.hero-badge:hover{color:#904249!important;-webkit-text-fill-color:#904249!important}
+.hero-badge{display:inline-flex;align-items:center;gap:7px}
+.hero-badge::before{content:"♥";color:#b7464f!important;-webkit-text-fill-color:#b7464f!important;font-size:1.15em;line-height:1;text-shadow:0 1px 4px rgba(183,70,79,.16)}
 </style>
 </head>
 <body>
@@ -1405,8 +1412,7 @@ html,body{max-width:100%;overflow-x:clip}
             📋 STATUS: PROPOSTA EM ANÁLISE
           </div>
   
-          <div class="hero-badge" data-i18n="hero.badge">
-            💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO
+          <div class="hero-badge" data-i18n="hero.badge">EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO
           </div>
   
           <h1 class="hero-title" data-i18n="hero.title">
@@ -2164,7 +2170,7 @@ const translations = {
         
         // Hero
         "hero.status": "📋 STATUS: PROPOSTA EM ANÁLISE",
-        "hero.badge": "💙 EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO",
+        "hero.badge": "EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO",
         "hero.title": "Proposta de Modelo Estruturado para Educação Inclusiva no Brasil",
         "hero.subtitle": "Proposta idealizada por <strong>Thaianne da Silva</strong>, mãe de um menino autista não verbal. Baseada na vivência do sistema americano e adaptada à realidade brasileira, esta proposta busca implementar um modelo sustentável de educação especial com foco em resultados mensuráveis.",
         "hero.verproposta": "Ver Proposta Completa",
@@ -2527,7 +2533,7 @@ en: {
     
         // === HERO - CORRIGIDO ===
         "hero.status": "📋 STATUS: PROPOSAL UNDER REVIEW",
-        "hero.badge": "💙 INCLUSIVE EDUCATION - TECHNOLOGY - MEASURABLE RESULTS",
+        "hero.badge": "INCLUSIVE EDUCATION - TECHNOLOGY - MEASURABLE RESULTS",
         "hero.title": "A New Framework for Special Education in Brazil",
         "hero.subtitle": "A mother's vision meets evidence-based practice. Created by <strong>Thaianne da Silva</strong>, mother of a non-verbal autistic boy, this proposal adapts successful strategies from the American system to create sustainable special education with real outcomes.",
         "hero.verproposta": "Explore the Framework",
