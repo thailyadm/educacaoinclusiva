@@ -1630,9 +1630,18 @@ body[data-current-page]:not([data-current-page="inicio"]) .section-inner{width:m
 .nav-links a:focus-visible,.lang-btn:focus-visible,.inner-page-back:focus-visible,.eicr-audience-card a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #577f79!important;outline-offset:3px}
 @media(max-width:720px){body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(65vh,calc(100dvh - 190px))!important;padding-bottom:100px!important}.section-inner{width:min(100% - 32px,1170px)}.section-title{line-height:1.28!important}.eicr-audience-grid,.eicr-support-grid,.pillar-grid{grid-template-columns:1fr!important}.footer-inner{gap:12px}.footer small{overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Page boot and keyboard/mobile navigation safeguards */
+html:not(.eicr-page-ready) body main.hero,html:not(.eicr-page-ready) body section.section{visibility:hidden}
+html.eicr-page-ready body main.hero,html.eicr-page-ready body section.section{visibility:visible}
+.nav-dropdown-toggle{font-family:inherit!important;font-size:inherit!important}
+.nav-dropdown-toggle:hover{border-color:rgba(163,78,84,.4)!important;box-shadow:0 0 12px rgba(163,78,84,.08)!important}
+.nav-dropdown-menu a:focus-visible{outline:2px solid #a34e54!important}
+@media(min-width:901px){.nav-dropdown-menu{left:auto!important;right:0!important}}
 </style>
 </head>
 <body>
+<script>(function(){var p=new URLSearchParams(location.search).get("pagina");var valid=["historia","dados","piloto","pilares","tecnologia","para-voce","biblioteca","recursos","perguntas","contato"];document.body.dataset.currentPage=valid.includes(p)?p:"inicio";document.documentElement.classList.add("eicr-page-ready")})();</script>
   <!-- Botão Voltar ao Topo -->
   <button class="back-to-top" id="backToTopBtn" aria-label="Voltar ao topo" title="Voltar ao topo"><img src="a_clean_elegant_vector_3d_styled_illustration_log.png" alt="" class="back-to-top-logo" aria-hidden="true"></button>
 <body>
@@ -2475,7 +2484,9 @@ const translations = {
         "nav.pilares": "Pilares",
         "nav.tecnologia": "Tecnologia",
         "nav.piloto": "Piloto DF 2026",
-        "nav.faq": "FAQ",
+        "nav.piloto.overview": "Visão geral do piloto",
+        "page.back": "Voltar ao início",
+        "nav.faq": "Perguntas Frequentes",
         "nav.contato": "Contato",
         "nav.faleconosco": "✉ Fale Conosco",
         
@@ -2852,8 +2863,10 @@ en: {
         "nav.dados": "The Challenge", 
         "nav.pilares": "The Framework",
         "nav.tecnologia": "Resources",
-        "nav.piloto": "Plan 2026",
-        "nav.faq": "FAQ",
+        "nav.piloto": "DF 2026 Pilot",
+        "nav.piloto.overview": "Pilot overview",
+        "page.back": "Back to home",
+        "nav.faq": "Frequently Asked Questions",
         "nav.contato": "Contact",
         "nav.faleconosco": "✉ Get Started",
     
@@ -3219,7 +3232,7 @@ en: {
   let ticking=false;
   function update(){
     ticking=false;
-    if(window.innerWidth<=900||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    if(document.body.dataset.currentPage!=='inicio'||window.innerWidth<=900||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       card.style.removeProperty('--urgency-float');return;
     }
     const y=window.scrollY;
@@ -3276,7 +3289,7 @@ en: {
     if(!page&&!u.hash&&a.getAttribute('href')!=='./')return;
     e.preventDefault();const url=page&&page!=='inicio'?'?pagina='+page:'./';
     if(location.search!== (page&&page!=='inicio'?'?pagina='+page:''))history.pushState({},'',url);
-    render();window.scrollTo({top:0,behavior:'instant'});
+    render();window.scrollTo({top:0,behavior:'auto'});
   });
   window.addEventListener('popstate',()=>{render();window.scrollTo(0,0)});
   document.addEventListener('DOMContentLoaded',()=>{render();new MutationObserver(()=>{if(document.body.dataset.currentPage!=='inicio'){const page=document.body.dataset.currentPage;crumb.textContent=pages[page][document.documentElement.lang==='en'?2:1]}}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']})});
