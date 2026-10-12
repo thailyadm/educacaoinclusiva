@@ -1726,6 +1726,32 @@ body{background:#FAF9F6!important}
 .section-inner :is(.card,.pillar-item):hover{transform:translateY(-2px)!important}
 .hero-logo-block>.hero-badge{font-size:.82rem!important}
 .navbar{border-image:none!important}
+
+/* OCT 2026 visual hotfix: prevent legacy text gradients from rendering as colored bars */
+body .section-inner h1,body .section-inner h2,body .section-inner h3,body .section-inner h4,
+body .section-inner .pillar-item h3,body .section-inner .card h3,
+body .section-inner .form-card h3,body .section-inner [class*="title"],
+body .urgency-card h3,body .urgency-card h4{
+ background-image:none!important;background:none!important;
+ -webkit-background-clip:border-box!important;background-clip:border-box!important;
+ -webkit-text-fill-color:currentColor!important;
+ text-shadow:none!important;filter:none!important
+}
+body .section-inner .pillar-item h3,body .section-inner .card h3,
+body .section-inner .form-card h3{color:#285E6B!important;font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:750!important;font-size:1.04rem!important;line-height:1.4!important}
+body .section-inner .section-title{color:#245D6C!important;font-size:clamp(1.8rem,3vw,2.7rem)!important;font-weight:800!important;line-height:1.18!important}
+body .section-inner .section-kicker{color:#914C55!important}
+body .section-inner .form-card h3{text-transform:none!important;font-size:1.22rem!important;letter-spacing:-.02em!important}
+body .section-inner .form-card{background:#FFF!important;border:1px solid #E2E6E2!important;border-radius:16px!important;box-shadow:0 7px 25px rgba(34,51,56,.05)!important}
+body .section-inner .card,body .section-inner .pillar-item{background:#FFF!important;border:1px solid #E2E6E2!important;border-radius:16px!important;box-shadow:0 7px 25px rgba(34,51,56,.05)!important}
+body .section-inner .pillar-item:before,body .section-inner .pillar-item:after{background-image:none!important}
+body .navbar .nav-links>a,body .navbar .nav-dropdown-toggle{background:transparent!important;background-image:none!important;border:1px solid transparent!important;border-radius:9px!important;color:#4A5960!important;box-shadow:none!important;font-size:.8rem!important;font-weight:700!important;padding:9px 11px!important}
+body .navbar .nav-links>a:hover,body .navbar .nav-dropdown-toggle:hover,body .navbar .nav-links>a[aria-current="page"]{background:#EDF3F1!important;border-color:#D8E5E0!important;color:#245D6C!important}
+body .navbar .nav-links>a[href*="contato"]{background:#246A7B!important;color:#FFF!important;border-color:#246A7B!important}
+body .navbar .nav-links>a[href*="contato"]:hover{background:#195867!important}
+body .navbar .language-switcher .lang-btn{border:1px solid transparent!important;background:transparent!important;box-shadow:none!important}
+body .navbar .language-switcher .lang-btn.active{border-color:#C7D7D2!important;background:#EDF3F1!important}
+body .navbar .nav-links>a,body .navbar .nav-dropdown-toggle,body .navbar .language-switcher{align-self:center!important}
 </style>
 </head>
 <body>
@@ -2387,7 +2413,7 @@ body{background:#FAF9F6!important}
           </ul>
         </div>
         <div class="form-card">
-          <h3 style="margin-top:0;color:var(--azul-escuro);" data-i18n="contato.form.title">ENVIE UMA MENSAGEM</h3>
+          <h3 style="margin-top:0;color:var(--azul-escuro);" data-i18n="contato.form.title">Envie uma mensagem</h3>
           <p class="form-note" data-i18n="contato.form.note">
             Sua mensagem será enviada diretamente para nosso e-mail institucional.
           </p>  
@@ -2845,7 +2871,7 @@ const translations = {
         "contato.canais.idealizadora": "Idealizadora:",
         "contato.canais.idealizadora.desc": "Thaianne da Silva, MS Cybersecurity.<br>Antes de tudo, mãe de um menino especial que transformou minha visão de mundo.",
         
-        "contato.form.title": "ENVIE UMA MENSAGEM",
+        "contato.form.title": "Envie uma mensagem",
         "contato.form.note": "Sua mensagem será enviada diretamente para nosso e-mail institucional.",
         "contato.form.nome": "Nome *",
         "contato.form.nome.placeholder": "Seu nome completo",
