@@ -1854,6 +1854,16 @@ body .section-inner [data-i18n^="tecnologia.card"][data-i18n$=".titulo"]{
 }
 body .section-inner .urgency-subhead{background:#FAF7F4!important;border-radius:12px!important}
 body .section-inner .resource-book-title{font-weight:750!important}
+
+/* Requested finishing on both pillar sections */
+#pilares .pillar-item .pillar-number{display:inline-block!important;width:max-content!important;max-width:100%!important;padding:0!important;border:0!important;background:none!important;background-image:none!important;box-shadow:none!important;color:#8B6570!important;-webkit-text-fill-color:#8B6570!important;letter-spacing:.1em!important;font-weight:800!important;font-size:.73rem!important}
+#pilares .pillar-item h3{background:none!important;background-image:none!important;border:0!important;box-shadow:none!important;padding:0!important;display:block!important;border-radius:0!important;color:#425661!important;-webkit-text-fill-color:#425661!important}
+#pilares .pillar-item .eicr-pillar-icon{box-shadow:none!important}
+.visual-pillar-heading{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;margin-bottom:18px!important;text-align:left!important}
+.visual-pillar-heading .visual-pillar-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:43px!important;height:43px!important;flex:0 0 43px!important;color:#637D89!important;background:rgba(255,255,255,.64)!important;border:1px solid rgba(119,133,133,.13)!important;border-radius:12px!important}
+.visual-pillar-heading .visual-pillar-icon svg{width:24px!important;height:24px!important}
+body .section-inner .visual-pillar-heading h3{display:block!important;background:none!important;background-image:none!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;border-radius:0!important;color:#465A65!important;-webkit-text-fill-color:#465A65!important;font-size:1.04rem!important;font-weight:800!important;text-align:left!important}
+@media(max-width:600px){.visual-pillar-heading{gap:10px!important}.visual-pillar-heading .visual-pillar-icon{width:38px!important;height:38px!important;flex-basis:38px!important}}
 </style>
 </head>
 <body>
@@ -2210,8 +2220,8 @@ body .section-inner .resource-book-title{font-weight:750!important}
   
           <!-- Pilar 1 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f5faff, #e9f4fc); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar1.title">PEI Digital</h3>
+            <div class="visual-pillar-heading"><span class="visual-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar1.title">PEI Digital</h3></div>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
             <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar1.subtitle">Base de Tudo</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
@@ -2223,8 +2233,8 @@ body .section-inner .resource-book-title{font-weight:750!important}
   
           <!-- Pilar 2 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f5faf5, #eaf5eb); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">👥</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar2.title">Equipes + AEE</h3>
+            <div class="visual-pillar-heading"><span class="visual-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20v-2a6 6 0 0 1 12 0v2M14 20v-2a4 4 0 0 1 8 0v2"/></svg></span>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar2.title">Equipes + AEE</h3></div>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
             <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar2.subtitle">Suporte Humano</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
@@ -2236,8 +2246,8 @@ body .section-inner .resource-book-title{font-weight:750!important}
   
           <!-- Pilar 3 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fbf5fc, #f3eafa); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar3.title">Tecnologia</h3>
+            <div class="visual-pillar-heading"><span class="visual-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h4M7 12h7"/></svg></span>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar3.title">Tecnologia</h3></div>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
             <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar3.subtitle">Ferramentas</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
@@ -2259,8 +2269,8 @@ body .section-inner .resource-book-title{font-weight:750!important}
   
           <!-- Pilar 4 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fffaf2, #fff0dd); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏫</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar4.title">Ambiente</h3>
+            <div class="visual-pillar-heading"><span class="visual-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg></span>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar4.title">Ambiente</h3></div>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
             <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar4.subtitle">Inclusão Estruturada</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
@@ -2272,8 +2282,8 @@ body .section-inner .resource-book-title{font-weight:750!important}
   
           <!-- Pilar 5 -->
           <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f3fbfa, #e5f5f2); border-radius: 12px;">
-            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
-            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar5.title">Dados</h3>
+            <div class="visual-pillar-heading"><span class="visual-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 2 5-6"/></svg></span>
+            <h3 style="color: var(--azul-escuro); margin-bottom: 0.5rem;" data-i18n="visualize.pilar5.title">Dados</h3></div>
             <div style="height: 4px; background: var(--spectrum); margin: 1rem 0;"></div>
             <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong data-i18n="visualize.pilar5.subtitle">Transparência</strong></p>
             <ul style="text-align: left; font-size: 0.8rem;">
