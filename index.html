@@ -1546,6 +1546,73 @@ body>.navbar,body>.inner-page-toolbar,body>main,body>section,body>footer{width:1
 body>.footer{margin-top:auto}
 body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(65vh,calc(100vh - 260px))!important;padding-bottom:clamp(90px,13vh,180px)!important}
 @media(max-width:700px){body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(62vh,calc(100vh - 220px))!important;padding-bottom:100px!important}}
+
+/* === Design-system polish: consistent spacing, readable typography and clean page hierarchy === */
+:root{--eicr-ivory:#f8f6f2;--eicr-ink:#40535a;--eicr-ruby:#a34e54;--eicr-taupe:#a99585;--eicr-blue:#397f91;--eicr-rail:1180px}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{overflow-x:hidden;background:var(--eicr-ivory)!important;color:var(--eicr-ink);-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+:where(a,button,input,textarea,select):focus-visible{outline:2px solid var(--eicr-ruby)!important;outline-offset:3px}
+:where(p,li){overflow-wrap:break-word}
+.navbar{background:rgba(250,248,244,.96)!important;box-shadow:0 2px 16px rgba(74,65,58,.045)!important}
+.navbar-inner{max-width:1540px!important;margin:auto!important;align-items:center!important}
+.brand-name{color:#4a6169!important;text-shadow:none!important}
+.nav-links>a,.nav-dropdown-toggle{font-weight:650!important;line-height:1.2!important}
+.nav-dropdown-toggle{padding:9px 13px!important;min-height:36px!important;color:#8d756b!important}
+.nav-dropdown-menu{border-radius:14px!important}
+.nav-links a[aria-current="page"]{background:rgba(163,78,84,.09)!important;border-color:rgba(163,78,84,.3)!important;color:#944b50!important}
+body[data-current-page]:not([data-current-page="inicio"]) .inner-page-toolbar,
+body[data-current-page="piloto"] .pilot-page-links,
+body[data-current-page]:not([data-current-page="inicio"]) section.section>.section-inner{
+  width:calc(100% - 2 * clamp(20px,4vw,64px))!important;
+  max-width:var(--eicr-rail)!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important
+}
+body[data-current-page]:not([data-current-page="inicio"]) .inner-page-toolbar{padding-top:24px!important;padding-bottom:0!important;display:flex!important;align-items:center!important}
+body[data-current-page]:not([data-current-page="inicio"]) .inner-page-toolbar[hidden]{display:none!important}
+body[data-current-page]:not([data-current-page="inicio"]) .inner-page-back{padding:9px 15px!important;font-size:.86rem!important;border-radius:999px!important;background:rgba(255,255,255,.82)!important;box-shadow:0 3px 12px rgba(84,73,67,.045)!important}
+body[data-current-page]:not([data-current-page="inicio"]) section.section{
+  padding:20px 0 65px!important;min-height:calc(100vh - 250px)!important
+}
+body[data-current-page]:not([data-current-page="inicio"]) section.section .section-header{margin-bottom:24px!important}
+body[data-current-page]:not([data-current-page="inicio"]) section.section .section-title{max-width:100%;line-height:1.15!important;letter-spacing:-.025em!important}
+body[data-current-page]:not([data-current-page="inicio"]) section.section .section-sub{max-width:780px!important;line-height:1.7!important}
+body[data-current-page="piloto"] .pilot-page-links{margin-top:10px!important;margin-bottom:0!important;gap:9px!important;align-items:center!important}
+body[data-current-page="piloto"] .pilot-page-links a{padding:9px 15px!important;border-radius:999px!important;background:rgba(255,255,255,.85)!important;border:1px solid rgba(163,78,84,.18)!important;font-size:.84rem!important}
+body[data-current-page="piloto"] .pilot-page-links a:hover{background:rgba(163,78,84,.08)!important}
+body[data-current-page]:not([data-current-page="inicio"]) .footer{margin-top:0!important}
+.footer{background:linear-gradient(120deg,#f4f0e9,#edf2ed)!important;border-top:1px solid rgba(163,78,84,.12)!important;color:#5d6a65!important}
+.footer .footer-inner{max-width:var(--eicr-rail)!important;margin:0 auto!important;text-align:center!important;padding:25px 20px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important}
+.footer small{display:block!important;text-align:center!important;line-height:1.55!important;max-width:850px!important}
+.hero-inner{max-width:1360px!important;margin:0 auto!important}
+.hero-logo-block>.hero-mini-emblem img{object-fit:contain!important}
+.hero-logo-block>.hero-title{line-height:1.13!important;letter-spacing:-.03em!important}
+.hero-sub p{line-height:1.7!important}
+.hero-urgent-card{border-radius:20px!important}
+.section-inner :is(.card,.pillar-item,.eicr-audience-card,.eicr-library-card){box-shadow:0 8px 28px rgba(71,83,79,.045)!important}
+.section-inner :is(.card,.pillar-item,.eicr-audience-card,.eicr-library-card):hover{box-shadow:0 13px 32px rgba(71,83,79,.085)!important}
+@media(min-width:901px){
+  .navbar-inner{padding:9px 26px!important}
+  .hero-inner{gap:clamp(24px,3vw,46px)!important}
+  .hero-logo-block>.hero-mini-emblem{width:clamp(300px,26vw,390px)!important;height:clamp(190px,17vw,235px)!important}
+}
+@media(max-width:900px){
+  .navbar-inner{align-items:center!important}
+  body[data-current-page]:not([data-current-page="inicio"]) section.section{padding-top:18px!important;padding-bottom:54px!important;min-height:calc(100vh - 230px)!important}
+  .hero-inner{grid-template-columns:1fr!important}
+  .hero-urgent-card{transform:none!important}
+}
+@media(max-width:600px){
+  body[data-current-page]:not([data-current-page="inicio"]) .inner-page-toolbar,
+  body[data-current-page="piloto"] .pilot-page-links,
+  body[data-current-page]:not([data-current-page="inicio"]) section.section>.section-inner{width:calc(100% - 36px)!important}
+  body[data-current-page="piloto"] .pilot-page-links{gap:7px!important}
+  body[data-current-page="piloto"] .pilot-page-links a{padding:8px 12px!important;font-size:.8rem!important}
+  .hero-logo-block>.hero-mini-emblem{width:min(85vw,330px)!important}
+  .section-title{line-height:1.17!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
