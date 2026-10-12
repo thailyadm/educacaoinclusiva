@@ -1895,6 +1895,35 @@ body .section-inner .visual-pillar-heading h3{display:block!important;background
 #tecnologia .pillar-item:nth-child(4){background:linear-gradient(140deg,#FBFDFD,#F1F7F5)!important}
 #dados .card h4{background:none!important;background-image:none!important;-webkit-text-fill-color:#425C66!important;color:#425C66!important}
 @media(max-width:600px){#dados .card h3,#tecnologia .pillar-item h3{font-size:.97rem!important;padding:7px 10px!important}}
+
+/* FINAL explicit gradient treatment: all highlighted labels, not just first cards */
+#dados [data-i18n="dados.card1.title"],#dados [data-i18n="dados.card2.title"],
+#dados [data-i18n="dados.marco.title"],#dados [data-i18n="dados.marco.legislacao"],
+#dados [data-i18n="dados.marco.lacunas"],
+#tecnologia [data-i18n="tecnologia.card1.titulo"],
+#tecnologia [data-i18n="tecnologia.card2.titulo"],
+#tecnologia [data-i18n="tecnologia.card3.titulo"],
+#tecnologia [data-i18n="tecnologia.card4.titulo"]{
+ display:inline-block!important;width:auto!important;max-width:100%!important;
+ padding:9px 13px!important;margin:0 0 15px!important;
+ border-radius:13px!important;border:1px solid #E9E2DC!important;
+ background:#F3EFEB!important;background-image:linear-gradient(110deg,#EDF5F6 0%,#F4EDE7 100%)!important;
+ background-clip:border-box!important;-webkit-background-clip:border-box!important;
+ color:#435760!important;-webkit-text-fill-color:#435760!important;
+ box-shadow:none!important;text-shadow:none!important;
+ font-size:1rem!important;font-weight:800!important;line-height:1.45!important
+}
+#dados [data-i18n="dados.card2.title"],#dados [data-i18n="dados.marco.lacunas"],
+#tecnologia [data-i18n="tecnologia.card2.titulo"],#tecnologia [data-i18n="tecnologia.card4.titulo"]{
+ background:#F9F0EC!important;background-image:linear-gradient(110deg,#F9EDE8 0%,#F8F3EF 100%)!important;
+ border-color:#F0E4DD!important
+}
+#dados [data-i18n="dados.marco.title"],#dados [data-i18n="dados.marco.legislacao"],
+#tecnologia [data-i18n="tecnologia.card3.titulo"]{
+ background:#F7F3EC!important;background-image:linear-gradient(110deg,#F3F0E9 0%,#F9F6F1 100%)!important;
+ border-color:#EAE4DC!important
+}
+#dados .card h3,#tecnologia .pillar-item h3{background-size:100% 100%!important}
 </style>
 </head>
 <body>
