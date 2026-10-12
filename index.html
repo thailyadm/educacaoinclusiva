@@ -1787,6 +1787,39 @@ body .section-inner .card,body .section-inner .pillar-item,body .section-inner .
 .inner-page-back:hover,body[data-current-page="piloto"] .pilot-page-links a:hover{background:#F5EEE8!important}
 .footer{background:#F5F1EC!important;border-color:#E9E3DD!important}
 .footer small{color:#74685F!important}
+
+/* Editorial typographic hierarchy: warm neutrals + crisp ink + restrained ruby and blue */
+:root{--eicr-ink:#29343A;--eicr-body:#465259;--eicr-caption:#6B6D6A;--eicr-heading:#3F5260;--eicr-accent:#9B505A}
+body{color:var(--eicr-ink)!important}
+body :is(p,li,dd){color:var(--eicr-body)!important}
+body :is(small,.form-note,.urgency-small-note,.section-sub){color:var(--eicr-caption)!important}
+body .section-inner .section-title,.hero-title,.hero-logo-block>.hero-title{
+ color:var(--eicr-heading)!important;-webkit-text-fill-color:var(--eicr-heading)!important;
+ font-family:"Plus Jakarta Sans",sans-serif!important;font-weight:800!important;letter-spacing:-.035em!important
+}
+body .section-inner .section-kicker,.hero-logo-block>.hero-badge{
+ color:var(--eicr-accent)!important;-webkit-text-fill-color:var(--eicr-accent)!important;
+ font-size:.75rem!important;letter-spacing:.12em!important;font-weight:800!important
+}
+body .section-inner :is(.pillar-item h3,.card h3,.form-card h3){
+ color:#3F5965!important;-webkit-text-fill-color:#3F5965!important;
+ font-size:1.08rem!important;line-height:1.4!important;font-weight:800!important
+}
+body .section-inner :is(.pillar-item,.card,.form-card) strong{
+ color:#343C42!important;-webkit-text-fill-color:#343C42!important;font-weight:750!important
+}
+body .section-inner :is(.pillar-item,.card,.form-card) li{color:#4E575B!important;line-height:1.7!important}
+body .section-inner :is(.pillar-item,.card,.form-card) p{color:#596368!important;line-height:1.75!important}
+body .section-inner .tag{background:#F1EDE8!important;color:#795E54!important;border:1px solid #E5DBD2!important}
+body .section-inner a:not(.btn):not(.inner-page-back){text-decoration-color:#C5A3A6;text-underline-offset:3px}
+body .section-inner a:not(.btn):not(.inner-page-back):hover{color:#914C55!important}
+body .navbar .nav-links>a,body .navbar .nav-dropdown-toggle{color:#45535A!important;font-weight:700!important}
+body .navbar .nav-links>a:hover,body .navbar .nav-dropdown-toggle:hover{color:#854D56!important}
+body .navbar .nav-links>a[href*="contato"]{color:#FFF!important}
+body .section-inner .form-card label{color:#36434A!important;font-weight:750!important}
+body .section-inner .form-card input,body .section-inner .form-card textarea{color:#29343A!important}
+body .section-inner .form-card input::placeholder,body .section-inner .form-card textarea::placeholder{color:#858E93!important;opacity:1!important}
+body .footer small{color:#626B6F!important}
 </style>
 </head>
 <body>
