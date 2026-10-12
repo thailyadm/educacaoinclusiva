@@ -1820,6 +1820,40 @@ body .section-inner .form-card label{color:#36434A!important;font-weight:750!imp
 body .section-inner .form-card input,body .section-inner .form-card textarea{color:#29343A!important}
 body .section-inner .form-card input::placeholder,body .section-inner .form-card textarea::placeholder{color:#858E93!important;opacity:1!important}
 body .footer small{color:#626B6F!important}
+
+/* Fine finishing: all navigation items visible as pills, individual flag circles, soft rounded labels */
+body .navbar .nav-links>a:not(.nav-cta),body .navbar .nav-dropdown-toggle{
+ border:1px solid #E5DCD4!important;border-radius:999px!important;
+ background:#FFFDFB!important;color:#5B5351!important;
+ padding:9px 12px!important;min-height:38px!important;
+ box-shadow:0 1px 3px rgba(57,48,45,.025)!important
+}
+body .navbar .nav-links>a:not(.nav-cta):hover,body .navbar .nav-dropdown-toggle:hover,
+body .navbar .nav-links>a:not(.nav-cta)[aria-current="page"]{
+ background:#F4EEEA!important;border-color:#D7B9B6!important;color:#844C55!important
+}
+body .navbar .nav-cta{border-radius:999px!important;background:#98585E!important;color:#fff!important;border:1px solid #98585E!important}
+body .navbar .language-switcher{background:none!important;border:0!important;padding:0!important;gap:6px!important;box-shadow:none!important}
+body .navbar .language-switcher .lang-btn{
+ width:36px!important;height:36px!important;min-width:36px!important;
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ padding:0!important;border-radius:50%!important;font-size:1.15rem!important;
+ background:#FFFDFB!important;border:1px solid #E5DCD4!important;
+ box-shadow:0 1px 4px rgba(57,48,45,.04)!important
+}
+body .navbar .language-switcher .lang-btn.active{background:#F8EEEC!important;border:2px solid #B8757D!important;box-shadow:0 0 0 2px rgba(152,88,94,.07)!important}
+body .navbar .language-switcher .lang-btn:hover{background:#F4EFEB!important;transform:none!important}
+body .section-inner :is(.pillar-item h3,.card h3,.form-card h3,.urgency-subhead),
+body .section-inner [data-i18n="dados.censo.title"],
+body .section-inner [data-i18n^="tecnologia.card"][data-i18n$=".titulo"]{
+ border-radius:12px!important;background:#F9F6F2!important;
+ background-image:none!important;box-shadow:none!important;
+ padding:6px 11px!important;display:table!important;max-width:100%!important;
+ color:#4A5A61!important;-webkit-text-fill-color:#4A5A61!important;
+ border:1px solid #F1EBE5!important
+}
+body .section-inner .urgency-subhead{background:#FAF7F4!important;border-radius:12px!important}
+body .section-inner .resource-book-title{font-weight:750!important}
 </style>
 </head>
 <body>
@@ -2390,13 +2424,13 @@ body .footer small{color:#626B6F!important}
           <h3 data-i18n="recursos.profissionais">Para profissionais</h3>  
           <ul>
             <li>
-              <strong>Uniquely Human, Barry Prizant</strong><br>
+              <strong class="resource-book-title" data-book-pt="Autismo: Uma Forma Diferente de Ser Humano (Uniquely Human), Barry Prizant">Uniquely Human, Barry Prizant</strong><br>
               <span data-i18n="recursos.p1">
                 Comportamento como comunicação
               </span>
             </li>  
             <li>
-              <strong>The Verbal Behavior Approach, Mary Barbera</strong><br>
+              <strong class="resource-book-title" data-book-pt="A Abordagem do Comportamento Verbal (The Verbal Behavior Approach), Mary Barbera">The Verbal Behavior Approach, Mary Barbera</strong><br>
               <span data-i18n="recursos.p2">
                 Estrutura prática para linguagem
               </span>
@@ -2420,13 +2454,13 @@ body .footer small{color:#626B6F!important}
           <h3 data-i18n="recursos.familias">Para famílias</h3>
           <ul>
             <li>
-              <strong>The Reason I Jump, Naoki Higashida</strong><br>
+              <strong class="resource-book-title" data-book-pt="O Que Me Faz Pular (The Reason I Jump), Naoki Higashida">The Reason I Jump, Naoki Higashida</strong><br>
               <span data-i18n="recursos.f1">
                 Perspectiva de pessoa autista
               </span>
             </li>
             <li>
-              <strong>Ten Things Every Child with Autism Wishes You Knew</strong><br>
+              <strong class="resource-book-title" data-book-pt="Dez Coisas que Toda Criança com Autismo Gostaria que Você Soubesse (Ten Things Every Child with Autism Wishes You Knew)">Ten Things Every Child with Autism Wishes You Knew</strong><br>
               <span data-i18n="recursos.f2">
                 Explicação simples do comportamento
               </span>
@@ -3475,6 +3509,22 @@ en: {
   });
   window.addEventListener('popstate',()=>{render();window.scrollTo(0,0)});
   document.addEventListener('DOMContentLoaded',()=>{render();new MutationObserver(()=>{if(document.body.dataset.currentPage!=='inicio'){const page=document.body.dataset.currentPage;crumb.textContent=pages[page][document.documentElement.lang==='en'?2:1]}}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']})});
+})();
+</script>
+<script>
+/* Preserve original publication names in English; show Portuguese descriptive titles on Brazilian view. */
+(function(){
+ function syncBooks(){
+  const pt=document.documentElement.lang!=='en';
+  document.querySelectorAll('.resource-book-title[data-book-pt]').forEach(el=>{
+   if(!el.dataset.bookOriginal)el.dataset.bookOriginal=el.textContent;
+   el.textContent=pt?el.dataset.bookPt:el.dataset.bookOriginal;
+  });
+ }
+ document.addEventListener('DOMContentLoaded',()=>{
+  syncBooks();
+  new MutationObserver(syncBooks).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+ });
 })();
 </script>
 </body>
