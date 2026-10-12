@@ -1717,6 +1717,15 @@ button[type="submit"]:hover{background:#195664!important}
 @media(min-width:901px){.hero-inner{grid-template-columns:minmax(0,1.06fr) minmax(355px,.94fr)!important}.nav-links{flex-wrap:wrap!important}}
 @media(max-width:900px){.nav-links{background:#FAF9F6!important}.nav-links>a,.nav-dropdown-toggle{font-size:.95rem!important;padding:12px 14px!important}.hero-inner{grid-template-columns:1fr!important}.hero-logo-block>.hero-title{font-size:clamp(1.95rem,6vw,2.6rem)!important}}
 @media(max-width:600px){.navbar-logo{width:59px!important;height:54px!important}.brand-name{font-size:.8rem!important}.section-title{font-size:clamp(1.7rem,7vw,2.15rem)!important}.hero-urgent-card{padding:18px!important}}
+
+/* Stronger visible visual reset: stop old rainbow/green gradients from competing with the institutional palette */
+:root{--spectrum:linear-gradient(90deg,#246A7B,#8C776B)!important;--spectrum-soft:linear-gradient(90deg,#E7F1F0,#F3EEE9)!important}
+body{background:#FAF9F6!important}
+.section-inner :is(h2,h3,h4){text-shadow:none!important}
+.section-inner :is(.card,.pillar-item){background:#fff!important}
+.section-inner :is(.card,.pillar-item):hover{transform:translateY(-2px)!important}
+.hero-logo-block>.hero-badge{font-size:.82rem!important}
+.navbar{border-image:none!important}
 </style>
 </head>
 <body>
@@ -3281,8 +3290,8 @@ en: {
     // Detecta idioma do navegador ou preferência salva
     function detectLanguage() {
       const savedLang = localStorage.getItem('preferred-language');
-      const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-      return savedLang === 'en' || savedLang === 'pt' ? savedLang : browserLang;
+      // The Brazilian site defaults to Portuguese; English is an explicit visitor choice.
+      return savedLang === 'en' ? 'en' : 'pt';
     }
     
     // Inicializa
