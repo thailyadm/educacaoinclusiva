@@ -1613,6 +1613,23 @@ body[data-current-page]:not([data-current-page="inicio"]) .footer{margin-top:0!i
   .section-title{line-height:1.17!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* October 2026 design quality pass: coherent spacing, readable content, responsive pages. */
+:root{--eicr-ink:#485750;--eicr-muted:#68746c;--eicr-edge:rgba(142,156,139,.24)}
+html{scroll-padding-top:90px}
+body{overflow-x:hidden}
+body>.navbar,body>.inner-page-toolbar,body>main,body>section,body>footer{min-width:0}
+body>.footer{margin-top:auto!important;position:relative;z-index:1}
+body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(68vh,calc(100dvh - 240px))!important;padding-bottom:clamp(110px,15vh,190px)!important}
+body[data-current-page]:not([data-current-page="inicio"]) .section-inner{width:min(100% - 36px,1170px);margin-inline:auto}
+.section p,.section li,.hero-sub p,.card p,.eicr-audience-card p,.eicr-support-card p,.pillar-item p,.section-sub,.eicr-library-card p{text-align:left!important;text-wrap:pretty;hyphens:none!important}
+.section-title,.hero-title{overflow-wrap:break-word;text-wrap:balance}
+.section-header{max-width:980px}
+.section-sub{max-width:850px}
+.card,.eicr-audience-card,.eicr-support-card,.pillar-item{height:100%;min-width:0}
+.nav-links a:focus-visible,.lang-btn:focus-visible,.inner-page-back:focus-visible,.eicr-audience-card a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #577f79!important;outline-offset:3px}
+@media(max-width:720px){body[data-current-page]:not([data-current-page="inicio"]) section.section{min-height:max(65vh,calc(100dvh - 190px))!important;padding-bottom:100px!important}.section-inner{width:min(100% - 32px,1170px)}.section-title{line-height:1.28!important}.eicr-audience-grid,.eicr-support-grid,.pillar-grid{grid-template-columns:1fr!important}.footer-inner{gap:12px}.footer small{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -3166,13 +3183,14 @@ en: {
       });    
       localStorage.setItem('preferred-language', lang);
       document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      const yearNode=document.getElementById('ano');if(yearNode)yearNode.textContent=String(new Date().getFullYear());
     }
 
     // Detecta idioma do navegador ou preferência salva
     function detectLanguage() {
       const savedLang = localStorage.getItem('preferred-language');
       const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-      return savedLang === 'en' ? 'en' : 'pt';
+      return savedLang === 'en' || savedLang === 'pt' ? savedLang : browserLang;
     }
     
     // Inicializa
