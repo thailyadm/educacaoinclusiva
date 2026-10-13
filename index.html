@@ -1931,12 +1931,24 @@ body .section-inner .visual-pillar-heading h3{display:block!important;background
 .hero-logo-block>.hero-mini-emblem img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;mix-blend-mode:normal!important;mask-image:none!important;-webkit-mask-image:none!important;filter:none!important;opacity:1!important}
 .back-to-top .back-to-top-logo{width:72%!important;height:72%!important;object-fit:contain!important;mix-blend-mode:normal!important;mask-image:none!important;-webkit-mask-image:none!important;filter:none!important;opacity:1!important}
 @media(max-width:600px){.hero-logo-block>.hero-mini-emblem{width:min(100%,440px)!important;height:auto!important;margin:4px auto 12px!important}.navbar .navbar-logo{width:54px!important;height:54px!important}}
+
+/* Editorial hero integration — brand artwork belongs to the page, not a floating image */
+.hero{background:radial-gradient(ellipse at 12% 24%,rgba(229,196,183,.19),transparent 42%),radial-gradient(ellipse at 90% 72%,rgba(187,207,203,.17),transparent 44%),#FBFAF8!important}
+.hero-inner{max-width:1320px!important;align-items:start!important}
+.hero-content{min-width:0!important}
+.hero-logo-block{position:relative!important}
+.hero-logo-block>.hero-mini-emblem{display:block!important;width:min(100%,680px)!important;max-width:680px!important;aspect-ratio:1280/590!important;height:auto!important;overflow:hidden!important;border-radius:24px!important;margin:0 0 24px!important;box-shadow:none!important;background:transparent!important}
+.hero-logo-block>.hero-mini-emblem img{width:100%!important;height:100%!important;display:block!important;object-fit:contain!important;object-position:left center!important;border-radius:24px!important}
+.navbar .navbar-logo{width:62px!important;height:62px!important;border-radius:15px!important;object-fit:cover!important}
+.back-to-top .back-to-top-logo{width:88%!important;height:88%!important;border-radius:50%!important;object-fit:cover!important}
+@media(max-width:900px){.hero-logo-block>.hero-mini-emblem{margin:0 auto 22px!important;width:min(100%,620px)!important}}
+@media(max-width:600px){.hero-logo-block>.hero-mini-emblem{width:100%!important;border-radius:16px!important;margin-bottom:16px!important}.hero-logo-block>.hero-mini-emblem img{border-radius:16px!important}.navbar .navbar-logo{width:54px!important;height:54px!important}}
 </style>
 </head>
 <body>
 <script>(function(){var p=new URLSearchParams(location.search).get("pagina");var valid=["historia","dados","piloto","pilares","tecnologia","para-voce","biblioteca","recursos","perguntas","contato"];document.body.dataset.currentPage=valid.includes(p)?p:"inicio";document.documentElement.classList.add("eicr-page-ready")})();</script>
   <!-- Botão Voltar ao Topo -->
-  <button class="back-to-top" id="backToTopBtn" aria-label="Voltar ao topo" title="Voltar ao topo"><img src="assets/logo-simbolo-suave.svg" alt="" class="back-to-top-logo" aria-hidden="true"></button>
+  <button class="back-to-top" id="backToTopBtn" aria-label="Voltar ao topo" title="Voltar ao topo"><img src="assets/logo-educacional-emblema.svg" alt="" class="back-to-top-logo" aria-hidden="true"></button>
 <body>
   <!-- Skip Link para Acessibilidade -->
   <a href="#main" class="skip-link">Pular para conteúdo principal</a>
@@ -1946,7 +1958,7 @@ body .section-inner .visual-pillar-heading h3{display:block!important;background
     <div class="navbar-inner">
       <!-- Logo + Nome -->
       <div class="brand-container">
-        <img src="assets/logo-simbolo-suave.svg" 
+        <img src="assets/logo-educacional-emblema.svg" 
              alt="Educação Inclusiva com Resultado" 
              class="navbar-logo"
              width="40" 
@@ -2011,7 +2023,7 @@ body .section-inner .visual-pillar-heading h3{display:block!important;background
       <div class="hero-content">
         <div class="hero-logo-block">
           <div class="hero-badge" data-i18n="hero.badge">EDUCAÇÃO INCLUSIVA - TECNOLOGIA - RESULTADO</div>
-          <div class="hero-mini-emblem" aria-hidden="true"><img src="assets/logo-completa-suave.svg" alt="" width="320" height="200"></div>
+          <div class="hero-mini-emblem" aria-hidden="true"><img src="assets/logo-educacional-banner.svg" alt="" width="320" height="200"></div>
           <!-- STATUS com tradução -->
           <div class="status-badge" data-i18n="hero.status">
             📋 STATUS: PROPOSTA EM ANÁLISE
