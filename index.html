@@ -1997,6 +1997,26 @@ body .section-inner .visual-pillar-heading h3{display:block!important;background
 }
 .hero{background:#FBFAF8!important;background-image:radial-gradient(ellipse at 23% 25%,#FFF8F3 0%,transparent 58%),radial-gradient(ellipse at 85% 70%,#F0F4F1 0%,transparent 55%)!important}
 @media(max-width:600px){.hero-logo-block>.hero-mini-emblem{margin:-8px auto 0!important}}
+
+/* Accessible skip link: hidden visually until keyboard focus, never a permanent banner */
+a.skip-link:not(:focus):not(:focus-visible){
+ position:fixed!important;top:0!important;left:0!important;
+ width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;
+ overflow:hidden!important;clip-path:inset(50%)!important;
+ -webkit-clip-path:inset(50%)!important;white-space:nowrap!important;
+ border:0!important;opacity:0!important;transform:none!important;
+ transition:none!important;pointer-events:none!important
+}
+a.skip-link:focus,a.skip-link:focus-visible{
+ position:fixed!important;top:12px!important;left:12px!important;
+ width:auto!important;height:auto!important;margin:0!important;
+ padding:11px 16px!important;clip-path:none!important;-webkit-clip-path:none!important;
+ overflow:visible!important;opacity:1!important;pointer-events:auto!important;
+ background:#FFFDFB!important;color:#344852!important;
+ border:2px solid #98585E!important;border-radius:12px!important;
+ box-shadow:0 8px 22px rgba(30,35,38,.14)!important;
+ z-index:2147483647!important;transform:none!important;transition:none!important
+}
 </style>
 </head>
 <body>
